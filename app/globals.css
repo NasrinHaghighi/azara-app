@@ -2,32 +2,236 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'payda';
+  src: url('../public/fonts/PEYDA-MEDIUM.TTF'),
+       
+  /* Add more src lines for additional font formats if needed */
+}
+@font-face {
+  font-family: 'vazir';
+  src: url('./../public/fonts/Vazirmatn-Medium.ttf'),
+       
+  /* Add more src lines for additional font formats if needed  ../public/fonts/Vazirmatn-Medium.ttf*/
+}
+#root {
+  margin: 1rem 4rem;
+}
+
+.quill{
+  
+border-radius: 10px !important;
+  /* background-color: #ffff !important; */
+  outline: none !important;
+  height: auto !important;
+  border: 1px solid rgb(133, 128, 128) !important;
+ 
+  box-shadow: none !important;
+
+}
+ .ql-container {
+  border: none !important;
+font-family: vazir !important;
+
+ 
+}
+.ql-conainer .ql-snow {
+border: none !important;
+outline: none !important;
+
+}
+
+/* Snow Theme */
+ .ql-snow .ql-toolbar {
+  display: block;
+  /* background: #eee3e3 !important; */
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  border-radius: 10px !important;
+}
+.ql-editor {
+  text-align: right !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  outline: none !important;
+  height: 500px !important;
+  border-radius: 10px !important;
+  color: black !important;
+}
+.ql-editor .ql.blank{
+  outline: none !important;
+  border: none !important;
+
+}
+/* .ql-editor p{
+  min-height: 18em;
+  text-align:  center !important;
+} */
+
+ .ql-clipboard {
+  position: absolute;
+ text-align: center !important;
+ margin: auto !important;
+
+}
+.ql-toolbar.ql-snow {
+
+ margin: auto !important;
+
+}
+button:hover .ql-stroke,
+.ql-picker-label:hover .ql-stroke {
+  fill: none;
+  stroke: red !important;
+}
+
+.ql-active .ql-stroke {
+  fill: none;
+  stroke: red !important;
+}
+
+button:hover .ql-fill,
+.ql-picker-label:hover .ql-fill {
+  fill: red !important;
+  stroke: none;
+}
+
+.ql-active .ql-fill {
+  fill: red !important;
+  stroke: none;
+}
+.ql-syntax{
+  text-align: left !important;
+  direction: ltr !important;
+ padding: 15px !important;
+ background-color: #3d2f4b;
+ border-radius: 15px !important;
+ color: #EEEEEE !important;
+}
+
+@media (max-width: 800px) {
+  .ql-syntax {
+    width: 500px !important;
+    overflow-x: auto;
+   
+  }
+}
+@media (max-width: 500px) {
+  .ql-syntax {
+    width: 420px !important;
+  }
+}
+@media (max-width: 400px) {
+  .ql-syntax {
+    width: 320px !important;
+  }
+}
+
+.ql-snow .ql-editor img {
+  max-width: 100%;
+  margin: 0 auto !important;
+}
+.leading-relaxed p{
+  line-height: 2 !important;
+  font-size: 18px !important;
+ 
+}
+@media (max-width: 700px) {
+  .leading-relaxed p{
+    line-height: 2 !important;
+    font-size: 14px !important;
+   
+  }
+}
+.leading-relaxed p img{
+  /* //line-height: 2.5 !important; */
+  background-color: red;
+  margin: 0 auto !important;
+}
+.leading-relaxed ul li img{
+  /* //line-height: 2.5 !important; */
+ 
+  margin: 0 auto !important;
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font-family-body:'vazir', sans-serif !important;
+  --bg:rgb(246, 246, 252);
+  --textColor:rgb(20, 20, 20);
+  --softBg:#f0f0f0;
+  --softTextColor:#626262 ;
+  --icons:rgb(213, 108, 245);
+  --iconDisable:rgba(213, 108, 245, 0.527);
+  --loginBg:#BEBEBE;
+  --light-blue:rgb(141, 177, 197);
+  --light-purple:rgb(186, 156, 253);
+  --light-pink: rgb(253, 186, 210);
+  --light-green: rgb(149, 220, 149);
+  --input-bg:rgb(226 232 240);
+  --input-bg2:rgb(226 232 240);
+  --red-btn:#ff5757;
+  --lightPurple:#27095f80;
+  --ligthBlue:#89a9c2;
+  --textPurple:#A39FB4;
+  --hlight-blue:rgb(77, 116, 152);
+  --hlight-purple: rgb(96, 75, 148);
+  --hlight-pink:rgb(148, 87, 96);
+  --hlight-green:rgb(108, 148, 108);
+}
+[data-theme="dark"] {
+  --bg:rgb(46, 38, 65);
+  --textColor:rgb(247, 243, 239);
+  --softBg:#1f273a;
+  --softTextColor:#a6a6a6;
+  --icons:rgb(135, 108, 245);
+  --iconDisable:rgba(113, 94, 189, 0.445);
+  --ligthBg:rgb(163, 159, 180);
+  --loginBg:#EEEEEE;
+  --gray400:rgb(202, 210, 228);
+  --light-blue:rgb(77, 116, 152);
+  --light-purple: rgb(96, 75, 148);
+  --light-pink:rgb(148, 87, 96);
+  --light-green:rgb(108, 148, 108);
+  --input-bg:#38304d;
+  --input-bg2:#564977;
+  --red-btn:#ff0000;
+
+ 
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  
+  
+  font-family:var(--font-family-body) !important;
+  background-color: var( --input-bg) !important;
+  color: var(--textColor) !important;
+
+  
+}
+/* @media (max-width: 400px) {
+  body {
+    font-size: 14px; 
   }
+} */
+a{
+  text-decoration: none;
+  color: inherit;
+}
+/* swiper*/
+.swiper-pagination-bullet{
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50%;
+  background: var( --icons) !important;
+  opacity: 1;
+  margin: 0 5px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
