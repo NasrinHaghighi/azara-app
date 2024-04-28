@@ -26,7 +26,7 @@ const aboutBtn = useRef(null);
         opacity: 1,
         y: 0,
     
-       duration: 1,
+       duration: 2,
         ease: "ease ",
        
         stagger:{
@@ -52,7 +52,7 @@ const aboutBtn = useRef(null);
         .to(sunTitleRef.current, {
        opacity:1,
        y:0,
-       duration:1,
+       duration:2,
        scale:1
 
 
@@ -70,13 +70,13 @@ const aboutBtn = useRef(null);
         const tl = gsap.timeline();
         tl.from(poetryBtn.current, {
           opacity: 0,
-      x:50,
+      x:150,
           
       })
         .to(poetryBtn.current, {
        opacity:1,
        x:0,
-       duration:1,
+       duration:2,
     ease:"easeOut"
     });
       
@@ -89,13 +89,13 @@ const aboutBtn = useRef(null);
         const tl = gsap.timeline();
         tl.from(aboutBtn.current, {
           opacity: 0,
-      x:-50,
+      x:-150,
           
       })
         .to(aboutBtn.current, {
        opacity:1,
        x:0,
-       duration:1,
+       duration:2,
     ease:"easeOut"
     });
       
@@ -105,16 +105,16 @@ const aboutBtn = useRef(null);
       }, []); 
   return (
     <div className=' '> 
-    <h1 className='text-[clamp(1rem,8vmin,5rem)] font-extrabold leading-none tracking-tighter ' ref={titleRef} >     <span> استاد حاج </span>
+    <h1 className='text-7xl font-extrabold leading-none tracking-tighter ' ref={titleRef} >     <span> استاد حاج </span>
     <span>    حسن آذریان </span>
  
     </h1>
     <div className='p-5'></div>
-    <div className='text-4xl font-blod track-[.2em] block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-transparent opacity-0 ' ref={sunTitleRef}>شاعر و مداح اهل بیت</div>
+    <div className='text-4xl font-extrabold track-[.2em] block bg-gradient-to-tr from-orange-700 via-orange-300 to-orange-600 bg-clip-text text-transparent opacity-0 ' ref={sunTitleRef}>شاعر و مداح اهل بیت</div>
     
     <div className='flex justify-center my-10'>
-        <button className=' border-2 border-red-200 rounded-md mx-8 px-5 py-3 w-36 h-16 ' ref={poetryBtn}>اشعار</button>
-        <button className='border-2 border-red-200 rounded-md mx-8 px-5 py-3 w-36 h-16 ' ref={aboutBtn}>درباره ما</button>
+        <button className=' bg-text text-white rounded-md mx-8 px-5 py-3 w-36 h-16 hover:shadow-2xl' ref={poetryBtn}>اشعار</button>
+        <button className='bg-ligthText text-white rounded-md mx-8 px-5 py-3 w-36 h-16  hover:shadow-2xl ' ref={aboutBtn}>درباره ما</button>
     </div>
     </div>
   )

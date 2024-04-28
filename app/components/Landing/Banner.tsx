@@ -2,10 +2,11 @@
 
 import React,{useState, useEffect, useRef} from 'react'
 import Image from 'next/image'
-import Photo from '../../../public/img/ali.png'
+
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import Title from './Title';
+import BannerPhoto from './BannerPhoto';
 gsap.registerPlugin(TextPlugin);
 
 
@@ -17,18 +18,16 @@ function Banner() {
 return (
 <div className='grid grid-cols-12 grid-rows-1 gap-4 h-100 w-full h-full'>
 
-<div className="relative col-span-4  text-right min-w-300 bg-gray-300 shadow-md"
+<div className="relative col-span-4  text-right min-w-300 bg-gray-100 shadow-md "
 style={{ 
-  
-  // backgroundImage: `url(${Photo.src})`,
-  // backgroundSize: 'cover',
-  // backgroundPosition: 'center',
   clipPath: 'polygon(16% 0, 100% 0, 83% 100%, 0 100%)'
 }}
 >
-   <Image  src={Photo.src} layout="fill" objectFit="cover" alt='img' className='absolute  animate-faderigth ' /> 
- <div className='bg-green-500 absolute top-0 left-0  w-full h-full animate-progress opacity-0 z-1'></div> 
-   <div className='bg-blue-500 absolute top-0 left-0  w-full h-full animate-progress2 opacity-0 z-2'></div>   
+  <BannerPhoto />
+
+   
+ <div className='bg-purple absolute top-0 left-0  w-full h-full animate-progress opacity-0 z-1'></div> 
+   <div className='bg-orangecolor absolute top-0 left-0  w-full h-full animate-progress2 opacity-0 z-2'></div>   
 </div>
 <div className="col-span-8 flex justify-start items-end pb-24 h-full">
 <Title />

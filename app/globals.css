@@ -156,49 +156,18 @@ button:hover .ql-fill,
 }
 :root {
   --font-family-body:'vazir', sans-serif !important;
-  --bg:rgb(246, 246, 252);
-  --textColor:rgb(20, 20, 20);
-  --softBg:#f0f0f0;
-  --softTextColor:#626262 ;
-  --icons:rgb(213, 108, 245);
-  --iconDisable:rgba(213, 108, 245, 0.527);
-  --loginBg:#BEBEBE;
-  --light-blue:rgb(141, 177, 197);
-  --light-purple:rgb(186, 156, 253);
-  --light-pink: rgb(253, 186, 210);
-  --light-green: rgb(149, 220, 149);
-  --input-bg:rgb(226 232 240);
-  --input-bg2:rgb(226 232 240);
-  --red-btn:#ff5757;
-  --lightPurple:#27095f80;
-  --ligthBlue:#89a9c2;
-  --textPurple:#A39FB4;
-  --hlight-blue:rgb(77, 116, 152);
-  --hlight-purple: rgb(96, 75, 148);
-  --hlight-pink:rgb(148, 87, 96);
-  --hlight-green:rgb(108, 148, 108);
-}
-[data-theme="dark"] {
-  --bg:rgb(46, 38, 65);
-  --textColor:rgb(247, 243, 239);
-  --softBg:#1f273a;
-  --softTextColor:#a6a6a6;
-  --icons:rgb(135, 108, 245);
-  --iconDisable:rgba(113, 94, 189, 0.445);
-  --ligthBg:rgb(163, 159, 180);
-  --loginBg:#EEEEEE;
-  --gray400:rgb(202, 210, 228);
-  --light-blue:rgb(77, 116, 152);
-  --light-purple: rgb(96, 75, 148);
-  --light-pink:rgb(148, 87, 96);
-  --light-green:rgb(108, 148, 108);
-  --input-bg:#38304d;
-  --input-bg2:#564977;
-  --red-btn:#ff0000;
-
+  --bg:rgb(255, 255, 255);
+  --text:rgba(28, 12, 61, 0.9);
+  --ligthText:rgba(90, 36, 177, 0.9);
+  --white:#fff;
+  --orangecolor:rgba(218,110,25);
+  --purple:rgba(65,24,78);
+  --red:rgba(184,0,25);
+  --green:rgba(122,203,174);
+  --shadowBox:rgba(0 4px 2px -2px gray)
  
-
 }
+
 
 
 *{
@@ -210,7 +179,7 @@ body{
   
   
   font-family:var(--font-family-body) !important;
-  background-color: var( --input-bg) !important;
+  background-color: var( --bg) !important;
   color: var(--textColor) !important;
 
   
