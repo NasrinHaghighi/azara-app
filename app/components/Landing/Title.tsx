@@ -105,14 +105,14 @@ const aboutBtn = useRef(null);
       }, []); 
   return (
     <div className=' '> 
-    <h1 className='text-7xl font-extrabold leading-none tracking-tighter ' ref={titleRef} >     <span> استاد حاج </span>
+    <h1 className='xl:text-7xl md:text-5xl text-3xl font-extrabold leading-none tracking-tighter ' ref={titleRef} >     <span> استاد حاج </span>
     <span>    حسن آذریان </span>
  
     </h1>
     <div className='p-5'></div>
-    <div className='text-4xl font-extrabold track-[.2em] block bg-gradient-to-tr from-orange-700 via-orange-300 to-orange-600 bg-clip-text text-transparent opacity-0 ' ref={sunTitleRef}>شاعر و مداح اهل بیت</div>
+    <div className='md:text-4xl text-2xl font-extrabold track-[.2em] block bg-gradient-to-tr from-orange-700 via-orange-300 to-orange-600 bg-clip-text text-transparent opacity-0 ' ref={sunTitleRef}>شاعر و مداح اهل بیت</div>
     
-    <div className='flex justify-center my-10'>
+    <div className='flex lg:flex-row  flex-col justify-center items-center my-10 gap-12 '>
         <button className=' bg-text text-white rounded-md mx-8 px-5 py-3 w-36 h-16 hover:shadow-2xl' ref={poetryBtn}>اشعار</button>
         <button className='bg-ligthText text-white rounded-md mx-8 px-5 py-3 w-36 h-16  hover:shadow-2xl ' ref={aboutBtn}>درباره ما</button>
     </div>
