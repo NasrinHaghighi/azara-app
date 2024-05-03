@@ -8,7 +8,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import Title from './Title';
 import BannerPhoto from './BannerPhoto';
 import Photo from '../../../public/img/face2.png'
-gsap.registerPlugin(TextPlugin);
+
 
 
 
@@ -17,9 +17,9 @@ gsap.registerPlugin(TextPlugin);
 function Banner() {
 
 return (
-<div className='grid grid-cols-1   lg:grid-cols-12 lg:grid-rows-1 gap-14 lg:gap-4 h-100 w-full h-full'>
+<div className='grid grid-cols-11 place-center  lg:grid-cols-12 lg:grid-rows-1 gap-4 lg:gap-4 h-100 w-full h-full lg:mb-24 mb-96'>
 
-<div className="lg:block hidden relative col-span-4  text-right min-w-300 bg-gray-100 shadow-md "
+ <div className="lg:block hidden relative col-span-4  text-right min-w-300 bg-gray-100 shadow-md "
 style={{
 clipPath: 'polygon(16% 0, 100% 0, 83% 100%, 0 100%)'
 }}
@@ -29,14 +29,14 @@ clipPath: 'polygon(16% 0, 100% 0, 83% 100%, 0 100%)'
 
 <div className='bg-purple absolute top-0 left-0  w-full h-full animate-progress opacity-0 z-1'></div>
 <div className='bg-orangecolor absolute top-0 left-0  w-full h-full animate-progress2 opacity-0 z-2'></div>
-</div>
-
-<div className=' lg:hidden col-span-12 h-96  my-24 flex justify-center items-center  ' style={{
+</div> 
+{/* RESPONSIV */}
+   <div className=' lg:hidden col-span-12 h-96  my-24 flex justify-center items-center  ' style={{
 backgroundImage: `url(${Photo.src})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
 }}>
-</div>
+</div>  
 
-<div className="lg:col-span-8 col-span-12  flex lg:justify-start justify-center items-end pb-24 h-full ">
+<div className="lg:col-span-8 col-span-12 flex lg:justify-start justify-center items-end  pb-24 h-full ">
 <Title />
 </div>
 </div>

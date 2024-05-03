@@ -28,7 +28,7 @@ useEffect(() => {
 return (
 <div
 ref={container}
-className={`${isOpen ? 'right-0' : '-right-96'} bg-gray-200 h-lvh z-5 absolute flex flex-col  py-48 text-center transition-all duration-500 ease-in-out px-16 z-10`}>
+className={`${isOpen ? 'right-0' : '-right-96'} bg-gray-200 h-lvh z-5  flex flex-col  py-48 text-center transition-all duration-500 ease-in-out px-16 z-10 fixed`}>
 {sidebarItems.map((item) => {
 return (
 <div className='menuLink my-4 text-3xl font-medium text-gray-900 text-orangecolor' key={item.name} onClick={toggleSidebar}>

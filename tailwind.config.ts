@@ -14,6 +14,14 @@ const config: Config = {
         extend: {
          
           keyframes: {
+            moveText:{
+              '0%':{transform: 'translateX(0)'},
+              '100%':{transform: 'translateX(-100%)'},
+            },
+            moveText2:{
+              '0%':{transform: 'translateX(0)'},
+              '100%':{transform: 'translateX(-100%)'},
+            },
             progress: {
              ' 0%': {
                 left:' 0',
@@ -66,6 +74,8 @@ const config: Config = {
           animation: {
             'progress': 'progress 3s ease-out',
             'progress2': 'progress2 2s ease-out 1s',
+            'moveText': 'moveText 50s linear infinite',
+            'moveText2': 'moveText2 6s linear infinite 1s',
             'faderigth': 'faderigth 3s ease-out ',
             'rotate-circle': 'rotateCircle 1s ease-out',
           },

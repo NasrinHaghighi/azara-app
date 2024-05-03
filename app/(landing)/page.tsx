@@ -1,11 +1,16 @@
 import Image from "next/image";
 import Banner from "../components/Landing/Banner";
+import MovingText from "../components/Landing/MovingText";
+import Article from "../components/Landing/Article/Article";
 
 export default function Home() {
   return (
-    <main className="flex  h-lvh flex-col items-center justify-between px-12 overflow-y-scroll ">
+    <main className=" relative  h-screen  ">
   <Banner/>
-   
+
+   {/* <MovingText/> */}
+
+   <Article />
     </main>
   );
 }

@@ -104,7 +104,7 @@ const aboutBtn = useRef(null);
         };
       }, []); 
   return (
-    <div className=' '> 
+    <div className=''> 
     <h1 className='xl:text-7xl md:text-5xl text-3xl font-extrabold leading-none tracking-tighter ' ref={titleRef} >     <span> استاد حاج </span>
     <span>    حسن آذریان </span>
  
