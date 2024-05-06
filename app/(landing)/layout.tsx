@@ -11,7 +11,7 @@ function MainLayout({children}:MainLayoutProps) {
  
   return (
     <div  className="overflow-y-scroll overflow-x-hidden h-screen">
-    {/* <SidebarAndHeader /> */}
+     <SidebarAndHeader /> 
     <ChildrenWrapper>
   {children}
     </ChildrenWrapper>

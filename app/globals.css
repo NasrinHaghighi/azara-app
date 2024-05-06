@@ -204,3 +204,17 @@ a{
 }
 
 
+.box {
+  width: 75px;
+  height: 75px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: blue;
+  font-weight: 600;
+  color: red;
+  line-height: 1.2;
+  will-change: transform;
+}

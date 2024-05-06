@@ -4,17 +4,14 @@ import face from '../../../../public/img/face3.png'
 import Image from 'next/image'
 import PoemUniqe from './PoemUniqe'
 
+const arr =[1, 2, 3, 4]
 function Article() {
   return (
     <div className='lg:p-24 md:p-12 p-5 grid lg:grid-cols-2 grid-cols-1  relative gap-12'>
   
     
       <div className='lg:order-2 order-2'>
-      <PoemUniqe />
-      <br/>
-      <PoemUniqe />
-      <br/>
-      <PoemUniqe />
+  <PoemUniqe />
       </div>
 
 

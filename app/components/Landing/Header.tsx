@@ -14,7 +14,8 @@ function Header({toggleSidebar}: {toggleSidebar: () => void}) {
         <RiMenu5Fill />
         </div>
         <div>
-          <Image src={Logo} alt="logo" width={100} height={100} />
+          LOGO
+          {/* <Image src={Logo} alt="logo" width={100} height={100} /> */}
         </div>
     </div>
   )

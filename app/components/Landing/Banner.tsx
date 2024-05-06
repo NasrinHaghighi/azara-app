@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import Title from './Title';
 import BannerPhoto from './BannerPhoto';
-import Photo from '../../../public/img/face2.png'
+import Photo from '../../../public/img/face3.png'
 
 
 
