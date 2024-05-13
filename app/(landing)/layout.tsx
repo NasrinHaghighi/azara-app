@@ -10,13 +10,19 @@ interface MainLayoutProps {
 function MainLayout({children}:MainLayoutProps) {
  
   return (
-    <div  className="overflow-y-scroll overflow-x-hidden h-screen">
-     <SidebarAndHeader /> 
-    <ChildrenWrapper>
+    <>
+    <div  className="overflow-y-scroll overflow-x-hidden h-screen ">
+     <SidebarAndHeader />
+    
+    <ChildrenWrapper >
   {children}
+  
     </ChildrenWrapper>
    
+   
     </div>
+ 
+    </>
   )
 }
 

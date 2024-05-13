@@ -9,9 +9,13 @@ function ChildrenWrapper({children}: {children: React.ReactNode}) {
 
 const toggler = useSelector((state: RootState) => state.toggler.value)
 return (
-<div className={`${toggler ? 'mr-0' : 'mr-0' } transition-all duration-500 ease-in-out h-full`}>
+  <>
+<div className={`${toggler ? 'mr-0' : 'mr-0' } transition-all duration-500 ease-in-out h-full  `}>
 {children}
-    </div>
+
+    </div>    
+  
+    </>
   )
 }
 

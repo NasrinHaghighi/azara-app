@@ -6,12 +6,13 @@ import React,{useEffect, useRef, useState} from 'react'
 function MovingText() {
   
   return (
-    <div className='animate-moveText overflow-hidden'>
+    <>
+<div className="realtive w-full overflow-hidden p-0 m-0">
+  <div className="inline-block   overflow-x-hidden overflow-y-hidden whitespace-nowrap animate-marquee">
    
-       
-       
-       
     </div>
+</div>
+  </>
   )
 }
 

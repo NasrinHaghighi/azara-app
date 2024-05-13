@@ -16,19 +16,20 @@ const config: Config = {
           keyframes: {
             fadeIn:{
               '0%':{transform: 'translateX(10%)', opacity: '0'},
+              
               '100%':{transform: 'translateX(0%)', opacity: '1'},
             },
             fadeOut:{
               '0%':{transform: 'translateY(0%)', opacity: '1'},
               '100%':{transform: 'translateX(10%)', opacity: '0'},
             },
-            moveText:{
-              '0%':{transform: 'translateX(0)'},
-              '100%':{transform: 'translateX(-100%)'},
+            marquee: {
+              '0%': { transform: 'translateX(100%)' },
+              '100%': { transform: 'translateX(-100%)' },
             },
-            moveText2:{
-              '0%':{transform: 'translateX(0)'},
-              '100%':{transform: 'translateX(-100%)'},
+            marquee2: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
             },
             progress: {
              ' 0%': {
@@ -82,8 +83,8 @@ const config: Config = {
           animation: {
             'progress': 'progress 3s ease-out',
             'progress2': 'progress2 2s ease-out 1s',
-            'moveText': 'moveText 50s linear infinite',
-            'moveText2': 'moveText2 6s linear infinite 1s',
+           'marquee': 'marquee 3s  infinite linear',
+           'marquee2': 'marquee 3s  infinite linear 2s',
             'fadeIn': 'fadeIn 2s ease-out',
             'fadeOut': 'fadeOut 2s ease-out',
             'faderigth': 'faderigth 3s ease-out ',
