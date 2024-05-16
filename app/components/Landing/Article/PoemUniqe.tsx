@@ -25,7 +25,7 @@ threshold: 0.3,
 
 return (
 <>
-<div className={`bg-gray-200 rounded-lg text-center py-14 z-0 relative mb-12 
+<div className={`bg-darkPink rounded-lg text-center py-14 z-0 relative mb-12 
     ${isVisible ? 'animate-fadeIn' : 'animate-fadeOut'} ${isVisible ? 'opacity-1' : 'opacity-0'}`} ref={ref}>
 
 <h1 className='md:text-3xl mb-5  text-lg'>طفلان مسلم</h1>
@@ -62,7 +62,7 @@ return (
 بـــیــا از روی پـــیــغــــــمــبـــر حـــیــــا کـــــــــن
 </p>
 </div>
-<div className='bg-gray-300 absolute -z-10 rounded-lg top-2 -left-3 h-full w-full'></div>
+<div className='bg-pink absolute -z-10 rounded-lg top-2 -left-3 h-full w-full'></div>
 </div>
 
 </>
