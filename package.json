@@ -11,8 +11,10 @@
   "dependencies": {
     "@gsap/react": "^2.1.0",
     "@reduxjs/toolkit": "^2.2.3",
+    "formik": "^2.4.6",
     "gsap": "^3.12.5",
     "next": "14.2.2",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-inview": "^4.5.1",
@@ -20,7 +22,8 @@
     "react-icons-animated": "^1.0.2",
     "react-redux": "^9.1.1",
     "react-slick": "^0.30.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
