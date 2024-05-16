@@ -3,6 +3,7 @@ import React,{useRef ,useEffect,useState} from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FriendsCard from './FriendsCard';
 
 
 
@@ -31,11 +32,11 @@ function Friends() {
 };
 
   return (
-    <div className='mx-12 my-12 relative '>
+    <div className='mx-12 my-12 relative  '>
     <Slider  {...settings}>
        {arr.map((item, index) => (
           <div key={item}  >
-            <h3>Slide {item} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat deserunt earum sint qui cupiditate aut ullam maxime ipsam praesentium, ducimus adipisci illum? Quidem sit odio dolorum ut sint officia temporibus dolore. Perspiciatis ad sit aliquid impedit eligendi voluptas ipsum consequatur accusamus enim, explicabo totam praesentium harum illo alias, debitis laudantium nihil nam nesciunt. Doloribus cumque error minima magni molestias accusantium reprehenderit, eius accusamus obcaecati unde officia provident in repellendus fuga impedit at ipsum placeat .</h3>
+          <FriendsCard/>
           </div>
         ))}
       </Slider>
