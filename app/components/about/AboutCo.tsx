@@ -4,7 +4,7 @@ import Photo from '../../../public/img/face3.png'
 
 function AboutCo() {
 return (
-<div className='relative bg-bg mb-24'>
+<div className='relative bg-bg my-24'>
 <div className="grid grid-cols-2 grid-rows-1 gap-4 my-8 bg-input-bg rounded-lg shadow-lg mx-auto relative overflow-hidden ">
 <div className='bg-gray-200 '>
 <Image src={Photo} alt="Description" className='w-full h-full ' objectFit='cover' width={200} height={200} />
@@ -18,8 +18,15 @@ return (
 </div>
 </div>
 <div className='w-full md:px-24 sm:px-12 px-6 bg-bg rounded-md aboslute z-0 -top-5'>
-<div className='bg-input-bg p-5 rounded-lg shadow-md '>
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum mollitia exercitationem non eius, voluptate atque nam, illum corrupti facilis repellat numquam quos magnam architecto repellendus amet quam voluptas asperiores, dicta sit eveniet! Dolore blanditiis quaerat quidem adipisci velit provident optio, exercitationem, in earum autem atque explicabo recusandae, voluptas nobis doloribus accusantium veritatis vero maxime illum iusto culpa amet suscipit id cumque? Laboriosam consectetur ab rem iusto. Necessitatibus odio odit nam deserunt quaerat sed molestias minus est quisquam labore non quo magnam hic debitis, consequatur totam error voluptate eligendi fugit quam! Maxime ducimus saepe, aliquid quam accusantium tempore quasi nisi, laudantium, nobis est sed repellat excepturi ullam. Architecto sequi libero ratione error a qui assumenda neque dolorem incidunt nostrum, quos veritatis non quo quod tempore! Accusamus, quam. Inventore incidunt reiciendis minus? Officiis alias laboriosam, fugit error accusamus aliquid nemo facilis eum tempore mollitia, nam, voluptas libero aperiam? Nam alias deserunt tempora, vel sit in nesciunt id, velit eaque rerum laborum deleniti! Pariatur quaerat nostrum repellat modi quasi porro unde. Perferendis quidem provident error modi laboriosam omnis, reprehenderit cumque aliquid, in deleniti, corrupti a consectetur officia commodi architecto fugit rerum nam? Omnis labore magnam numquam velit, rerum veniam magni quaerat fugit quibusdam.
+<div className='bg-input-bg p-8 rounded-lg shadow-md '>
+لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+<br/>
+<p>
+لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+</p>
+<br/>
+<p>
+لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
 </div>
 </div>
 </div>
