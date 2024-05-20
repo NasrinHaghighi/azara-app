@@ -5,7 +5,8 @@ import { useFormik } from "formik";
 import { useRouter } from 'next/navigation';
 import * as Yup from "yup";
 import Link from 'next/link';
-
+import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignupSchema = Yup.object().shape({
@@ -21,6 +22,7 @@ const SignupSchema = Yup.object().shape({
   });
   
 function RegisterPge() {
+
     const router = useRouter()
     const formik = useFormik({
       initialValues: {
@@ -41,15 +43,21 @@ function RegisterPge() {
     body: JSON.stringify(values)
   })
   if(res.ok) {
-    console.log(res)
-    router.push('/signin')
+    
+    toast.success('ثبت نام شما با موفقیت انجام شد.')
+ setTimeout(() => {
+  router.push('/signin')
+ },3000)
+  
   }else{
     console.log(res)
+    toast.error('ثبت نام شما با خطا مواجه شد.')
   }
       },
      })
     return (
         <>
+         <ToastContainer  position="top-right"  autoClose={5000} />
    <form onSubmit={formik.handleSubmit} >
         <div className="grid gap-6 mb-5 max-w-3xl mx-auto pt-10">
             <div className='text-center'>

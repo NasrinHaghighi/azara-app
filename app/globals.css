@@ -294,4 +294,9 @@ background-color: rgb(179, 255, 0) !important;
   }
 }
 
+.Toastify{
+  text-align:  right !important;
+  font-family:var(--font-family-body) !important;
+font-size: 28px !important;
+}
 

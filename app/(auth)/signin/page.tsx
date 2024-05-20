@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { useSession } from "next-auth/react";
 import SignbyGoogle from '../../components/SigninbyGoogle/SignbyGoogle';
 import { signIn } from 'next-auth/react';
-
+import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -33,18 +34,22 @@ function SignPage() {
         email: values.email,
         password: values.password,redirect: false
       })
-    console.log(signInData)
+    //console.log(signInData)
       if (signInData?.error) {
         console.log('Error during sign-in:', signInData.error);
-        /*set toast for error*/
+        toast.error('ایمیل یا رمز عبور اشتباه است.')
       } else{
-        router.push('/');
+        toast.success('خوش آمدید.')
+        setTimeout(() => {
+          router.push('/')
+         },3000)
       }
       },
      })
 
     return (
         <>
+         <ToastContainer  position="top-right"  autoClose={5000} />
           <form onSubmit={formik.handleSubmit} >
             <div className="grid gap-6 mb-5 max-w-3xl mx-auto pt-10">
                 <div className='text-center'>
