@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import Link from 'next/link';
 import { useSession } from "next-auth/react";
 import SignbyGoogle from '../../components/SigninbyGoogle/SignbyGoogle';
-//import { signIn } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 
 
 const SignupSchema = Yup.object().shape({
@@ -18,7 +18,7 @@ const SignupSchema = Yup.object().shape({
 
 function SignPage() {
     const {data, status} =useSession()
-    console.log(data)
+   console.log(data)
     const router = useRouter()
     const formik = useFormik({
       initialValues: {
@@ -29,17 +29,17 @@ function SignPage() {
     validationSchema: SignupSchema,
       onSubmit : async (values) => {
   
-    //   const signInData = await signIn('credentials', {
-    //     email: values.email,
-    //     password: values.password,redirect: false
-    //   })
-    // // console.log(signInData)
-    //   if (signInData?.error) {
-    //     console.log('Error during sign-in:', signInData.error);
-    //     /*set toast for error*/
-    //   } else{
-    //     router.push('/');
-    //   }
+      const signInData = await signIn('credentials', {
+        email: values.email,
+        password: values.password,redirect: false
+      })
+    console.log(signInData)
+      if (signInData?.error) {
+        console.log('Error during sign-in:', signInData.error);
+        /*set toast for error*/
+      } else{
+        router.push('/');
+      }
       },
      })
 
@@ -94,14 +94,14 @@ function SignPage() {
                 {/* /** Code to be completed */ }
     {/* GO TO REGISTERATION */}
     <div className='text-center p-5'> هنوز حساب کاربری ندارید? <Link href='/register' className='text-green-500 font-semibold'>اینجا ثبت نام کنید.</Link></div>
-    
+{/*     
     <div className="flex justify-center items-center mt-4 mb-4">
   <hr className="w-1/4 border-gray400"></hr>
   <div className="mx-4 text-gray400 font-bold">or</div>
   <hr className="w-1/4 border-gray400"></hr>
 </div>
 
- <SignbyGoogle />
+ <SignbyGoogle /> */}
         </>
   )
 }

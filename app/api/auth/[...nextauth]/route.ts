@@ -1,8 +1,13 @@
-import NextAuth from "next-auth";
+import NextAuth from "next-auth/next"
+
+import { NextApiRequest, NextApiResponse } from 'next'
 
 
-import {options} from '../../../utils/auth'
+//import prisma from "@/utils/connect"
+import { options } from "../../../utils/auth"
 
-const handeler= NextAuth(options)
 
-export {handeler as GET , handeler as POST}
+
+
+const handler= NextAuth( options)
+export {handler as GET, handler as POST}

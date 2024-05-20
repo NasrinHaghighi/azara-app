@@ -1,8 +1,5 @@
 'use client';
 
-
-
-
 //import SigninbyGoogle from '../../../components/SigninbyGoogle/SigninbyGoogle';
 import { useFormik } from "formik";
 import { useRouter } from 'next/navigation';
