@@ -17,7 +17,7 @@ import Photo from '../../../public/img/face3.png'
 function Banner() {
 
 return (
-<div className='grid grid-cols-11 place-center  lg:grid-cols-12 lg:grid-rows-1 gap-4 lg:gap-4 h-100 w-full h-full lg:mb-24 mb-96 pr-56 pl-
+<div className='grid grid-cols-11 place-center  lg:grid-cols-12 lg:grid-rows-1 gap-4 lg:gap-4  h-100 w-full h-full lg:mb-24 mb-96 md:mr-48 mr:0 
 '>
 
  <div className="lg:block hidden relative col-span-4  text-right min-w-300 bg-gray-100 shadow-md "

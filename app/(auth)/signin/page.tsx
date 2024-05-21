@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { useRouter } from 'next/navigation';
 import * as Yup from "yup";
 import Link from 'next/link';
-import { useSession } from "next-auth/react";
+//import { useSession } from "next-auth/react";
 import SignbyGoogle from '../../components/SigninbyGoogle/SignbyGoogle';
 import { signIn } from 'next-auth/react';
 import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
@@ -18,8 +18,7 @@ const SignupSchema = Yup.object().shape({
   });
 
 function SignPage() {
-    const {data, status} =useSession()
-   console.log(data)
+  
     const router = useRouter()
     const formik = useFormik({
       initialValues: {

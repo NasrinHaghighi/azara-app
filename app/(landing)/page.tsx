@@ -13,7 +13,7 @@ export default function Home() {
   
     <Article /> 
     <Friends />
-     <div className="h-96 bg-yellow-400 flex justify-center items-center ">footer</div>
+   
     </main>
   );
 }
