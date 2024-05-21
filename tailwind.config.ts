@@ -48,8 +48,7 @@ const config: Config = {
                 width: '0%',
                opacity:'0'
               }
-            }
-          ,
+            },
           progress2: {
             ' 0%': {
                left:' 0',
@@ -67,13 +66,17 @@ const config: Config = {
                width: '0',
               opacity:'0'
              }
-           }
-         ,
-            
+           },
+        //  shake: {
+        //  ' 10%': { transform: 'translateX(10px)' },
+        //  ' 90%': { transform: 'translateX(10px)' },
+        //    '20%': { transform: 'translateX(-10px)' },
+        //    '80%': { transform: 'translateX(-10px)' },
+        //   },
           faderigth: {
               '0%': {  opacity: '0'},
-              '50%': { opactiy: '0.5'},
-              '100%': {  opactiy: '1'},
+              '50%': { opacity: '0.5'},
+              '100%': {  opacity: '1'},
             },
             slideInLeft: {
               '0%': { transform: 'translateX(-100%)', opacity: '0' },
@@ -86,6 +89,7 @@ const config: Config = {
            'marquee': 'marquee 3s  infinite linear',
            'marquee2': 'marquee 3s  infinite linear 2s',
             'fadeIn': 'fadeIn 2s ease-out',
+            // 'shake':'shake 0.82s cubic-bezier(.36,.07,.19,.97) both',
             'fadeOut': 'fadeOut 2s ease-out',
             'faderigth': 'faderigth 3s ease-out ',
             'rotate-circle': 'rotateCircle 1s ease-out',
