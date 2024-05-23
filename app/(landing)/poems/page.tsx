@@ -2,13 +2,15 @@ import Filters from '@/app/components/Poem/Filters'
 import PoemList from '@/app/components/Poem/PoemList'
 import React from 'react'
 
-function PoemPage() {
+function PoemPage({params, searchParams}: any) {
+  const page=parseInt(searchParams.page) || 1
+  const cat =searchParams.cat || ''
   return (
     <div className='py-36 px-24
     '>
  <h1 className='text-center text-4xl font-bold'>اشعار</h1>
 <Filters/>
- <PoemList/>
+ <PoemList page={page} cat={cat} />
       </div>
   )
 }

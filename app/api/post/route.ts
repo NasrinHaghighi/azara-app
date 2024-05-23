@@ -21,7 +21,7 @@ export const GET = async (req: NextRequest) => {
     const search = url.searchParams.get('search');
     //console.log(sort, search)
 
-    const POST_PER_PAGE = 6;
+    const POST_PER_PAGE = 3;
     const RECENT_POST_COUNT = 3;
     const query: any = {
         take: POST_PER_PAGE,
