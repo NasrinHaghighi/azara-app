@@ -12,11 +12,150 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+model Account {
+  id                 String  @id @default(cuid()) @map("_id") 
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  
+  access_token       String?  
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  
+  session_state      String?
 
-model User {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  email   String   @unique
-  name    String?
-  password String?
-  role     String     @default("user")
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }
+
+model Session {
+  id           String   @id @default(cuid()) @map("_id") 
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+enum ReactionType {
+  LIKE
+  LOVE
+  HAHA
+  WOW
+  SAD
+  ANGRY
+}
+model User {
+  id            String    @id @default(cuid()) @map("_id") 
+  name          String
+  likes         Like[]
+  email         String   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  role          String     @default("user")
+  Post        Post[]  
+  Comment       Comment[] 
+  password     String
+  replies      Reply[]
+
+}
+
+model VerificationToken {
+  identifier String    @id  @map("_id") 
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+model Category {
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt   DateTime  @default(now())
+  slug      String   @unique
+  title     String
+  img       String?
+  Posts     Post[]
+}
+model About {
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt   DateTime  @default(now())
+  img       String?
+  des       String?
+  title     String?
+  subTitle   String?
+}
+model Post {
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt   DateTime  @default(now())
+  slug      String   @unique
+  title     String
+  des       String
+  img       String?
+  views     Int      @default(0)
+  catSlug   String
+  cat       Category @relation(fields: [catSlug], references: [slug])
+  userEmail  String
+  user       User  @relation(fields: [userEmail], references: [email])
+  userName  String?
+  comments   Comment[]   
+  replies   Reply[]
+  likes         Like[]
+    tags      String[] 
+    sabk       String?
+             
+}
+model Comment {
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt   DateTime  @default(now())
+  des       String?
+  postSlug  String
+  post      Post @relation(fields: [postSlug], references: [slug])
+  userEmail  String
+  userName  String?
+  user       User  @relation(fields: [userEmail], references: [email])
+  replies   Reply[]
+}
+
+model Reply {
+  id          String   @id @default(cuid()) @map("_id")
+  createdAt   DateTime @default(now())
+  des         String
+  commentId   String
+  comment     Comment  @relation(fields: [commentId], references: [id])
+  userEmail  String
+  userName  String?
+  user       User  @relation(fields: [userEmail], references: [email])
+ postSlug  String
+  post      Post @relation(fields: [postSlug], references: [slug])
+
+}
+
+model Img {
+  id String @id @default(cuid()) @map("_id")
+  url       String
+  createdAt DateTime @default(now())
+}
+
+model Like {
+  id      String   @id @default(cuid()) @map("_id")
+  user      User         @relation(fields: [userEmail], references: [id])
+  userEmail    String
+  post      Post         @relation(fields: [postId], references: [slug])
+  postId    String
+  reaction      ReactionType   @default(LIKE)
+  createdAt     DateTime       @default(now())
+   @@unique([userEmail, postId])
+}
+
+
+
+
+// model User {
+//   id      String   @id @default(auto()) @map("_id") @db.ObjectId
+//   email   String   @unique
+//   name    String?
+//   password String?
+//   role     String     @default("user")
+// }

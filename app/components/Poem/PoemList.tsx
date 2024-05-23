@@ -3,14 +3,27 @@ import PoemItem from './PoemItem'
 import Pagination from './Pagination'
 
 
-const arr=[1,2,3,4,5,6,7,8,9,10]
-function PoemList() {
+const getData = async () => {
+  const res = await fetch(`http://localhost:3000/api/post`, { cache: 'no-store' }, );
+  if (!res.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  return res.json();
+}
+
+
+
+
+async function PoemList() {
+  const data =await getData()
+//console.log('data.posts', data.posts)
   return (
     <div>
-        {arr.map((item)=>{
-            return <PoemItem key={item} />
-        })}
-        <Pagination />
+          {data?.posts.map((item:any)=>{
+            return <PoemItem key={item} item={item} />
+        })} 
+        <Pagination /> 
     </div>
   )
 }
