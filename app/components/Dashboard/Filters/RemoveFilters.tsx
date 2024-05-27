@@ -2,7 +2,7 @@
 import React from 'react'
 
 const handelRemove=()=>{
-    window.history.replaceState(null, '', '/dashboard/posts')
+    window.history.replaceState(null, '', '/dashboard/poems')
     window.location.reload();
 }
 

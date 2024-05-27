@@ -6,22 +6,22 @@ import Link from 'next/link';
  function CatDropdown() {
  
     const [open, setOpen] = useState(false);
-    //const data = await getData()
+ 
   
 const [data, setData ] = useState([]);
-//   const fetchData=async () => {
-//     const res=await fetch(`/api/categories`, {cache: 'no-store'})
+  const fetchData=async () => {
+    const res=await fetch(`/api/categories`, {cache: 'no-store'})
 
-//     if(!res.ok)  throw new Error('Network response was not ok')
+    if(!res.ok)  throw new Error('Network response was not ok')
 
-//     const data = await res.json();
-//     return setData(data)
-//   }
+    const data = await res.json();
+    return setData(data)
+  }
 
 
-// useEffect(()=>{
-//   fetchData()
-// },[])
+useEffect(()=>{
+  fetchData()
+},[])
 
 
     return (
@@ -32,14 +32,14 @@ const [data, setData ] = useState([]);
       <span></span>
     </button>
     <ul className={`dropdown-menu absolute ${!open && 'hidden'} bg-input-bg text-text-color  w-52 p-2 rounded-md  shadow mt-2`}>
-     {/* {data?.map((item:any)=>{
+     {data?.map((item:any)=>{
        return(
       
         <li className="" key={item.id}>
           <Link className="rounded-md   hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" 
-      href={`/dashboard/posts?cat=${item.slug}`} onClick={()=>setOpen(false)}>{item.title}</Link></li>
+      href={`/dashboard/poems?cat=${item.slug}`} onClick={()=>setOpen(false)}>{item.title}</Link></li>
        )
-     })} */}
+     })} 
      
     </ul>
   </div>

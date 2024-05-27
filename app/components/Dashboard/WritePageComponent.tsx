@@ -43,7 +43,7 @@ function WritPageComponenet() {
   const [cate, setCate] = useState<Cate[] | null>(null);
   const [tag, setTag] = useState<string[] | null>(null);
   const [sabk, setSabk] = useState<string | null>(null);
-    console.log(sabk)
+    //console.log(sabk)
   const slugify = (text: string) => {
    text= text.toLowerCase().trim().replace(/\s+/g, '-')
     return text;

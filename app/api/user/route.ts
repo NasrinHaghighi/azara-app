@@ -55,4 +55,36 @@ export const GET = async (req: Request) => {
      return new NextResponse(JSON.stringify({message:'SOME'}), {status: 500})
  }
  };
-   
+   ///delete a user
+   export const DELETE = async (req: Request) => {
+    const body = await req.json();
+
+    const { email } = body;
+console.log('body in the delete route', body);
+    try {
+
+        await prisma.comment.deleteMany({
+            where: {
+             userEmail: email as string
+            }
+        });
+
+        await prisma.user.delete({
+            where: {
+                email: email as string
+            }
+        });
+
+        // Fetch the updated list of comments
+        const updatedusers = await prisma.user.findMany();
+
+        return new NextResponse(JSON.stringify({ message: 'User deleted', comments: updatedusers }), {
+            status: 200
+        });
+
+    } catch (error: any) {
+        return new NextResponse(JSON.stringify({ message: error.message }), {
+            status: 500
+        });
+    }
+};

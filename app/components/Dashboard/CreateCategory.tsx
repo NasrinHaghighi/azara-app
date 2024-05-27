@@ -38,7 +38,7 @@ function Createcategory() {
     
 
   return (
-    <div className='bg-input-bg2 p-5 rounded-lg shadow-md '>
+    <div className='bg-slate-200 p-5 rounded-lg shadow-md '>
          <h2 className="text-lg font-semibold mb-4">ایجاد دسته بندی جدید</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">

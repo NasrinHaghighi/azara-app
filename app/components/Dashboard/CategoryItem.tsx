@@ -25,7 +25,7 @@ async function CategoryItem({ item }: { item: Category }) {
 
     return (
         <div className='gird grid-cols-1 md:grid-cols-3 gap-5 mb-5'>
-            <div className='bg-input-bg2 p-5 rounded-lg shadow-md first-line: '>
+            <div className='bg-slate-200 p-5 rounded-lg shadow-md first-line: '>
                 <div className='text-gary-500 mb-3'>
                     ایجاد شده در تاریخ:
                     <span className='text-green-500 font-semibold mr-3'>

@@ -14,7 +14,7 @@ function RenderDangerous({post}:any) {
     <>
     <div >
     {render ?
-<div className='text-right ' dangerouslySetInnerHTML={{ __html:render && post?.des.substring(0, 850) + '...' }} />
+<div className='lg:text-right ' dangerouslySetInnerHTML={{ __html:render && post?.des.substring(0, 1000) + '...' }} />
         : <p>loading</p>}
         </div>
      </>
