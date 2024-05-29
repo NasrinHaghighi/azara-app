@@ -7,13 +7,13 @@ import Friends from "../components/Landing/Firends/Friends";
 export default function Home() {
   return (
     <main className=" relative  h-screen   ">
-  <Banner/>
+  <Banner/> 
 
    {/* <MovingText/> */}
   
-    <Article /> 
-    <Friends />
-   
+    <Article />  
+ <Friends />  
+   <div>gggg</div>
     </main>
   );
 }

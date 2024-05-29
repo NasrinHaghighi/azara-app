@@ -17,7 +17,7 @@ import Photo from '../../../public/img/face3.png'
 function Banner() {
 
 return (
-<div className='grid grid-cols-11 place-center  lg:grid-cols-12 lg:grid-rows-1 gap-4 lg:gap-4  h-100 w-full h-full lg:mb-24 mb-96 md:mr-48 mr:0 
+<div className='grid grid-cols-11 place-center  lg:grid-cols-12 lg:grid-rows-1 gap-0 lg:gap-4  h-100 w-full h-full lg:mb-24 mb-48 lg:mr-24 mr-0 
 '>
 
  <div className="lg:block hidden relative col-span-4  text-right min-w-300 bg-gray-100 shadow-md "
@@ -32,12 +32,12 @@ style={{
 <div className='bg-orangecolor absolute top-0 left-0  w-full h-full animate-progress2 opacity-0 z-2'></div>
 </div> 
 {/* RESPONSIV */}
-   <div className=' lg:hidden col-span-12 h-96  my-24 flex justify-center items-center  ' style={{
+ <div className=' lg:hidden col-span-12 h-96   flex justify-center items-center  ' style={{
 backgroundImage: `url(${Photo.src})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
 }}>
 </div>  
 
-<div className="lg:col-span-8 col-span-12 flex lg:justify-start justify-center items-end  pb-24 h-full ">
+<div className="lg:col-span-8 col-span-12 flex lg:justify-start  items-center mt-24 h-full lg:-mr-8 m-auto">
 <Title />
 </div>
 </div>

@@ -12,14 +12,13 @@ function MainLayout({children}:MainLayoutProps) {
  
   return (
     <>
-    <div  className="overflow-y-scroll overflow-x-hidden h-screen ">
-<Header/>
+    <div  className=" h-screen overflow-x-hidden">
+ <Header/>  
   {children}
 
     
     </div>
-    <div 
-    className="h-96 bg-yellow-400 flex justify-center items-center ">footer</div>
+    {/* <div     className="h-96 bg-yellow-400 flex justify-center items-center ">footer</div> */}
     </>
   )
 }

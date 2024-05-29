@@ -47,8 +47,11 @@ export const GET = async (req: NextRequest) => {
         const mostRecentPost = await prisma.post.findMany({
             orderBy: { createdAt: 'desc', }, take: 4
         });
-
-        return new NextResponse(JSON.stringify({ posts, count, lastPost, mostRecentPost }), { status: 200 });
+        const selectedPosts = await prisma.post.findMany({
+            where: { tags: { has: 'selected' } }, // Adjust this line to fetch posts with the 'selected' tag
+            take: 4
+        });
+        return new NextResponse(JSON.stringify({ posts, count, lastPost, mostRecentPost,selectedPosts }), { status: 200 });
     } catch (err) {
         console.log(err);
         return new NextResponse(JSON.stringify({ message: 'error' }), { status: 500 });
