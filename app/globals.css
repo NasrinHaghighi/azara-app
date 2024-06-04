@@ -169,7 +169,7 @@ button:hover .ql-fill,
   --greencolor:rgba(122,203,174);
   --greenBg:rgba(85, 136, 64, 0.918);
   --pink:rgb(246, 226, 250);
-  --darkPink:rgb(199, 185, 213);
+  --darkPink:rgba(149, 139, 158, 0.336);
   --shadowBox:rgba(0 4px 2px -2px gray)
  
 }

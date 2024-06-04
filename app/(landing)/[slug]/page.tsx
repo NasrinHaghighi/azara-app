@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Banner from '../../../public/img/culture.png'
+import Banner from '../../../public/img/leaf2.png'
 //import Sidebar from '@/components/Landing/Sidebar'
 //import Comments from '@/components/Landing/Comments'
 //import LikePostco from '@/components/Landing/LikePostco'
@@ -24,9 +24,9 @@ const getData = async ( slug : string) => {
  
 
   return (
-    <div className=' bg-slate-200 lg:mx-24 my-48 '>
+    <div className='  lg:mx-48 my-48 border-2 border-gray-300 rounded-lg relative background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);'>
       
-         <div className="grid grid-flow-col justify-around items-center lg:gap-10 py-10 ">
+         <div className="grid grid-flow-col justify-around items-center lg:gap-10 p-5 ">
         <div className="col-span-4 lg:block hidden  ">
         <Image src={data?.img} alt='logo' width={200}  height={200} className='object-cover rounded-md h-[400px] w-[400px] m-auto'  />
     </div> 
@@ -52,23 +52,14 @@ const getData = async ( slug : string) => {
            </div>
       </div>
       <div>
-      <div className='leading-relaxed text-center' dangerouslySetInnerHTML={{ __html: data?.des || '' }} />  
+      <div className='text-center text-3xl leading-10' dangerouslySetInnerHTML={{ __html: data?.des || '' }} />  
 
       </div>
-      {/* <div className="grid lg:grid-flow-col grid-flow-row gap-8 p-4 mt-8">
-   
-   <div className="lg:col-span-4 col-span-12 order-2 lg:order-1 ">
-   <Sidebar/> 
-   </div>
-   <div className="lg:col-span-8 col-span-12 order-1 lg:order-2">
-   
-     <div className='leading-relaxed' dangerouslySetInnerHTML={{ __html: data?.des || '' }} />  
-    <div>
-      <LikePostco postId={data?.id} />
-      <Comments postSlug={data?.slug} /> 
-    </div>
-   </div> 
-  </div> */}
+    {/* <div className='absolute bottom-0 left-0 right-0'>
+     
+        <Image src={Banner} alt='logo' width={300}  height={300} className='object-cover rounded-md h-[400px] w-[400px] m-auto'  />
+      
+    </div> */}
   </div>
   )
 }

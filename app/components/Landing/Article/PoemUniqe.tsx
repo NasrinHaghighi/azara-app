@@ -4,27 +4,30 @@ import Link from 'next/link'
 import React,{useRef, useEffect, useState} from 'react'
 import { useInView } from 'react-hook-inview'
 
+import ImagePoem from '../../../../public/img/bg1.png'
+import ImagePoem2 from '../../../../public/img/bg2.png'
+import ImagePoem3 from '../../../../public/img/bg3.png'
 
-
-const arr=[1,2,3]
+const arr=[ImagePoem,ImagePoem2,ImagePoem3]
 function PoemUniqe({selectedPosts}:any) {
-  console.log(selectedPosts)
+ // console.log(selectedPosts)
 
   return (
     <div className="item relative mb-5 w-full h-fit p-2">
-      {selectedPosts?.map((item:any) => (
-        <PoemElement item={item}/>
+      {selectedPosts?.map((item:any, index:number) => (
+        <PoemElement item={item} index={index} key={index}/>
       ))}
     </div>
   );
 }
-function PoemElement({ item }: any) {
-  console.log(item)
+function PoemElement({ item,index }: any) {
+  //console.log(item)
   const [ref, isVisible] = useInView({
     threshold: 0.3,
     // triggerOnce: true, // Assuming 'triggerOnce' is a valid option for useInView
   });
-
+  const backgroundImage = arr[index % arr.length].src;
+  console.log(backgroundImage) 
   return (
     <>
       <div
@@ -41,10 +44,12 @@ function PoemElement({ item }: any) {
         />
         <div className='text-red-500 my-5 font-semibold'><Link href={item.slug}> ادامه مطلب...</Link></div>
       </div>
-        <div className=" absolute -z-10 rounded-lg top-2 -left-3 h-full w-full bg-pink"></div>
+        <div className=" absolute -z-10 rounded-lg top-2 -left-3 h-full w-full "  style={{
+backgroundImage: `url(${backgroundImage} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
+}}></div>
       </div>
     </>
-  );
+  ); 
 }
 export default PoemUniqe
 

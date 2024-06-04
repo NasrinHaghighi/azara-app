@@ -6,7 +6,7 @@ function PoemPage({params, searchParams}: any) {
   const page=parseInt(searchParams.page) || 1
   const cat =searchParams.cat || ''
   return (
-    <div className='lg:mx-24 my-48 
+    <div className='lg:mx-48 my-48 
     '>
  <h1 className='text-center text-4xl font-bold'>اشعار</h1>
 <Filters/>
