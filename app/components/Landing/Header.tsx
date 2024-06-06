@@ -12,8 +12,8 @@ import Welcome from './Welcome';
 function Header() {
  
   return (
-    <div className={`lg:px-40 px-12  py-12  flex justify-between items-center z-20
-     fixed w-full top-0 right-0  `}>
+    <div className={`lg:px-40 px-0  py-12  flex justify-between items-center z-20
+      w-full top-0 right-0 bg-transparent fixed `}>
    
       <div className='flex-1 hidden md:flex'>
             <NavbarLinks />

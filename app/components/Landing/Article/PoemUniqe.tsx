@@ -27,7 +27,7 @@ function PoemElement({ item,index }: any) {
     // triggerOnce: true, // Assuming 'triggerOnce' is a valid option for useInView
   });
   const backgroundImage = arr[index % arr.length].src;
-  console.log(backgroundImage) 
+  //console.log(backgroundImage) 
   return (
     <>
       <div

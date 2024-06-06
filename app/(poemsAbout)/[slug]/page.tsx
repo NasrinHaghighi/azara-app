@@ -24,11 +24,11 @@ const getData = async ( slug : string) => {
  
 
   return (
-    <div className='  lg:mx-48 my-48 border-2 border-gray-300 rounded-lg relative background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);'>
+    <div className='  lg:mx-24  rounded-lg relative'>
       
          <div className="grid grid-flow-col justify-around items-center lg:gap-10 p-5 ">
         <div className="col-span-4 lg:block hidden  ">
-        <Image src={data?.img} alt='logo' width={200}  height={200} className='object-cover rounded-md h-[400px] w-[400px] m-auto'  />
+        <Image src={data?.img} alt='logo' width={200}  height={200} className='object-cover rounded-md h-[300px] w-[300px] m-auto'  />
     </div> 
 
        <div className="lg:col-span-8  col-span-12 text-center lg:text-right">  
@@ -36,12 +36,12 @@ const getData = async ( slug : string) => {
        <h2 className='sm:text-3xl text-lg  font-bold  mb-10 leading-10 '> <span className='pl-5'>عنوان شعر:</span>{data?.title}</h2>
 
        <div className='text-center lg:text-right'>
-        <div><span className='sm:text-3xl text-lg font-semibold'><span>توسط : </span> <span className='text-green-500'>{data?.userName ? data?.userName : ''}</span>   </span>
+        <div><span className='sm:text-l text-lg font-semibold'><span>توسط : </span> <span className='text-green-500'>{data?.userName ? data?.userName : ''}</span>   </span>
         
   
         </div>
         <div className='mb-10'>
-          <span className='sm:text-3xl text-lg font-semibold'>تاریخ انتشار  : </span><span className='text-orange-500'>{data?.createdAt.substring(0, 10)}</span>
+          <span className='sm:text-l text-lg font-semibold'>تاریخ انتشار  : </span><span className='text-orange-500'>{data?.createdAt.substring(0, 10)}</span>
           
  
         </div>
@@ -52,7 +52,7 @@ const getData = async ( slug : string) => {
            </div>
       </div>
       <div>
-      <div className='text-center text-3xl leading-10' dangerouslySetInnerHTML={{ __html: data?.des || '' }} />  
+      <div className='text-center text-2xl leading-10' dangerouslySetInnerHTML={{ __html: data?.des || '' }} />  
 
       </div>
     {/* <div className='absolute bottom-0 left-0 right-0'>

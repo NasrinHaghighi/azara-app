@@ -1,43 +1,45 @@
 import Image from 'next/image'
 import React from 'react'
 import Face from '../../../../public/img/face3.png'
+import Link from 'next/link';
+import bg1 from '../../../../public/img/bluebg.png'
+import bg2 from '../../../../public/img/bgblue2.png'
+import bg3 from '../../../../public/img/bluebg3.png'
+import bg4 from '../../../../public/img/bgblue4.png'
 
-function FriendsCard() {
+
+
+interface Props {
+  _id:number, createdAt: string;
+  slug: string;
+  name: string;
+  des: string;
+  img: string;
+  sabk: string[];
+  title:string
+}
+const arr=[bg1,bg2,bg3,bg4]
+function FriendsCard({item, index}:{item:Props, index:number}) {
+  const backgroundImage = arr[index % arr.length].src;
   return (
-   <div>
-    <div className='flex justify-end pb-3 border-b border-gray-200 items-baseline'>
-    <h1>استاد محمد باقرمحب زاده </h1>
-   <Image src={Face} alt="face" width={60} height={60} className="rounded-full"/>
+   <div className=' h-[600px]  mx-3 rounded-lg md:p-8 px-1 py-3 flex flex-col shadow-lg' style={{
+    backgroundImage: `url(${backgroundImage} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
+    }}>
+    <div className='lg:flex lg:justify-end lg:items-center pb-3 border-b border-gray-200 flex flex-col justify-center items-center'>
+    <h1 className='text-ligthText md:text-lg  text-md text-center'>{item.name}</h1>
+   <Image src={item?.img} alt="face" width={120} height={120} className="rounded-full ml-5 my-3"/>
 
     </div>
   
 <div className='m-3'>
-<h1 className='text-md '>طفلان مسلم</h1>
-<div className='text-sm text-righ'>
-<p>تــوای حــارث بـــیـــــا رحــــمــــی بـــــمـــا کــــن</p>
-<p>بـــیــــا آزا د مـــــان بــــهـــــر خـــــــــد ا کـــــــن</p>
-
-<p>د ر ایــن کــوفــه غــریـب و بـــی پــنـاهـــــیـــــــم</p>
-<p>د وتــا کـود ک قــــریــن اشـــــــک وآهــــــیـــــــم</p>
-
-<p>بــه د ور از هــر گـنـاه واشــــــــتباهــــیــــــــم</p>
-<p>تــرحــم بــر د و طــفــل بـــــی نــــــوا کـــــــــــــن</p>
-
-<p> نـمـوده قـلـبـــــمـان شــاد آن نـگــــهـــــــــبـــــان </p>
-<p>کـه کـرده راحــت از زنـجـــیــر و ز نـــــــــــــدا ن</p>
-
-<p>    بــیــا بـهــرخـــد ا و د یـــــــن و قـــــــــــــــــــرآن
-</p>
-<p>
-تــوهــم رحــمـی بــه جـان مـــا د و تــــــا کـــــــن
-</p>
-
-<p>
-بــیـــا از مــــا گـــــــذ ر هـــر د و صــغـــیــــریـــم
-</p>
+{/* <h1 className='text-md '>{item.title}</h1> */}
+<div className='text-center md:text-lg  text-sm my-5' dangerouslySetInnerHTML={{ __html: item?.des.substring(0,280) || '' }} />  
+<div className='mt-5 text-center'>
+  <Link href={`/friends/${item.slug}`} className='text-red-500' >... ادامه مطلب</Link>
 </div>
 </div>
-   </div>
+</div>
+   
   )
 }
 

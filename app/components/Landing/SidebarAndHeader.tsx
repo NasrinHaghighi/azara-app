@@ -18,9 +18,9 @@ function SidebarAndHeader() {
     <>
     <div className='relative'>
     
-    <Header toggleSidebar={toggleSidebar}/>
+    {/* <Header toggleSidebar={toggleSidebar}/>
    <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar}/>
-  
+   */}
    </div>
   
    </>

@@ -21,7 +21,8 @@ function DashboardLinks() {
     <li ><Link href='/dashboard/category'>دسته بندی ها</Link></li>
 
     <li ><Link href='/dashboard/writeabout'>درباره ما</Link></li>
-
+    <li ><Link href='/dashboard/friends'>دوستان</Link></li>
+    <li ><Link href='/dashboard/writefriends'>ایجاد دوست جدید</Link></li>
     <li className=" text-red-400"><Link href='/'>بازگشت به صفحه اصلی</Link></li>
     
 </ul>

@@ -149,7 +149,17 @@ model Like {
    @@unique([userEmail, postId])
 }
 
-
+model Friend {
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt   DateTime  @default(now())
+  slug      String   @unique
+  name     String
+  des       String
+  img       String?
+  sabk       String[]
+  title     String
+             
+}
 
 
 // model User {
