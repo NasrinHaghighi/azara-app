@@ -1,5 +1,5 @@
 import React from 'react'
-import BG from '../../../../public/img/bluebg3.png'
+import BG from '../../../../public/img/blue4.png'
 import Image from 'next/image'
 import { convertSabkToTitle } from '../../../utils/func';
 
@@ -22,7 +22,7 @@ async function page({params}:any) {
   const titles = convertSabkToTitle(data.sabk);
   //console.log(titles)
   return (
-    <div className=' border-2 border-gray-200 rounded-lg p-5 h-auto mb-24 shadow-lg' style={{
+    <div className=' border-2 border-gray-200 rounded-lg p-5 h-auto mb-24 shadow-lg ' style={{
       backgroundImage: `url(${BG.src} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
       }} >
 <div>

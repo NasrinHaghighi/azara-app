@@ -20,7 +20,21 @@
 #root {
   margin: 1rem 4rem;
 }
-
+.gradiant-text{
+  background: linear-gradient(to right,#461f69, #bd1cdd, #dbce14, #e423da, #461f69,  #ecc517);
+  background-clip: text;
+  background-size:300% ;
+}
+.gradiant-text2{
+  background: linear-gradient(to right, #003366, #ff9933, #cc0033b9, #ffcc00, #003366, #ff9933);
+  background-clip: text;
+  background-size:300% ;
+}
+.gradiant-text3{
+  background: linear-gradient(to right, #1e3c72, #2a5298, #e52d27b2, #ff4b2bbb, #1e3c72, #2a5298);
+  background-clip: text;
+  background-size:300% ;
+}
 .quill{
   
 border-radius: 10px !important;
@@ -240,24 +254,16 @@ a{
   color: var(--purple) !important;
 }
 
-/* .slick-slide:not(.slick-active) { 
-  margin: 20px 0; 
-} */
-
-
-
-
-
-
-/* .slick-cloned{
-   transform: scale(.5) !important; 
+.slick-dots{
+  margin-top: 20px !important;
+  
 }
-.slick-slide  .slick-center  .slick-cloned {
-   transform: scale(1.5) !important; 
+.slick-dots li button{
+  width: 32px !important; 
+  height: 32px !important;
+  
+  
 }
-.slick-slide  .slick-current  .slick-cloned {
-  transform: scale(1.5) !important; 
-} */
 .Toastify{
   text-align:  right !important;
   font-family:var(--font-family-body) !important;

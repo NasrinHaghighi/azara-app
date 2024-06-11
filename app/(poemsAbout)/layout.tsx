@@ -14,7 +14,7 @@ function PoemAboutLayout({children}:MainLayoutProps) {
     <>
     <div  className=" h-screen overflow-x-hidden ">
  <Header />
-<div className="grid grid-cols-12 lg:gap-3 gap-0 mt-8 mx-8 ">
+<div className="grid grid-cols-12 lg:gap-3 gap-0 mt-8  sm:mx-24 md:mx-36 mx-10 ">
    
                  
    <div className='lg:col-span-3 col-span-12 lg:order-1 order-1 '>
