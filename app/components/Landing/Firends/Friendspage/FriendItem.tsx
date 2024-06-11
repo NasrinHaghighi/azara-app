@@ -44,7 +44,7 @@ function FriendItem({ item, index , backgroundImage}: any) {
                 />
                 {/* <Link href={`/friends/${item.slug} `}>ادامه مطلب...</Link> */}
           {/* <div className='text-center text-red-700 my-5'><Link href={`/friends/${item.slug} `}>ادامه مطلب...</Link></div>  */}
-          <Link className='text-center text-red-700  font-semibold my-24' href={item.slug}>ادامه مطلب...</Link></div>
+          <Link className='text-center text-red-700  font-semibold my-24' href={`/friends/${item.slug} `}>ادامه مطلب...</Link></div>
            
             
         </div>

@@ -6,10 +6,16 @@ import Link from 'next/link'
 
 
 
-function PoemItem({item}:any) {
+function PoemItem({item, backgroungImage}:any) {
  
   return (
-    <div className="lg:p-4 p-1 bg-slate-200 border border-gray-300 rounded-md shadow-md hover:scale-105 transition duration-300 ease-out mb-10">
+    <div className="lg:p-4 p-1  border  rounded-md shadow-md hover:scale-105 transition duration-300 ease-out mb-10" 
+    style={{
+      backgroundImage: `url(${backgroungImage.src})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+    >
     <div className="grid lg:grid-cols-12 lg:grid-rows-1 grid-cols-1 grid-rows-2 lg:gap-5 gap-0">
       <div className="lg:col-span-5  row-span-5 pt-24">
        <Image src={item.img} alt="logo" width={300} height={300} className="object-cover rounded-md w-[300px] h-[200px] m-auto" />
@@ -32,8 +38,8 @@ function PoemItem({item}:any) {
         <div className="text-lg">
           <RenderDangerous post={item} />
         </div>
-        <div className='text-sm flex justify-end xxs:justify-center items-center '>
-          <Link href={item.slug} className='border-b-2 border-gray-500 hover:border-red-500 py-1 hover:text-red-500' >ادامه مطلب</Link>
+        <div className='text-sm flex justify-end xxs:justify-center items-center font-semibold '>
+          <Link href={item.slug} className='text-center text-red-700  font-semibold my-8' >ادامه مطلب ...</Link>
         </div>
       </div>
     </div>

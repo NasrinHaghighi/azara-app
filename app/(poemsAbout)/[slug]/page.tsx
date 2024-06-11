@@ -1,9 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Banner from '../../../public/img/leaf2.png'
-//import Sidebar from '@/components/Landing/Sidebar'
-//import Comments from '@/components/Landing/Comments'
-//import LikePostco from '@/components/Landing/LikePostco'
+import Mainpoem from '../../../public/img/mainpoem.png'
 
 /////
 const getData = async ( slug : string) => {
@@ -24,9 +22,13 @@ const getData = async ( slug : string) => {
  
 
   return (
-    <div className='  lg:mx-24  rounded-lg relative'>
+    <div className=' border-2   rounded-lg relative mb-24  p-5'    style={{
+      backgroundImage: `url(${Mainpoem.src})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
       
-         <div className="grid grid-flow-col justify-around items-center lg:gap-10 p-5 ">
+         <div className="grid grid-flow-col justify-around items-center lg:gap-10 border-b-2 border-gray-200 p-5 shadow-lg mb-5 ">
         <div className="col-span-4 lg:block hidden  ">
         <Image src={data?.img} alt='logo' width={200}  height={200} className='object-cover rounded-md h-[300px] w-[300px] m-auto'  />
     </div> 
