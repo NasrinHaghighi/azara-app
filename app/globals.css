@@ -174,8 +174,8 @@ button:hover .ql-fill,
 :root {
   --font-family-body:'vazir', sans-serif !important;
   --bg:rgb(255, 255, 255);
-  --text:rgba(28, 12, 61, 0.9);
-  --ligthText:rgba(90, 36, 177, 0.9);
+  --text:#1c0c3de6;
+  --ligthText:#7d51c2e6;
   --white:#fff;
   --orangecolor:rgba(218,110,25);
   --purple:rgba(65,24,78);
@@ -184,8 +184,10 @@ button:hover .ql-fill,
   --greenBg:rgba(85, 136, 64, 0.918);
   --pink:rgb(246, 226, 250);
   --darkPink:rgba(149, 139, 158, 0.336);
-  --shadowBox:rgba(0 4px 2px -2px gray)
- 
+  --shadowBox:rgba(0 4px 2px -2px gray);
+  --sidebar-bg: #f6e2fa;
+  --sidebar-bg1: #41244e;
+  --sidebar-bg2: rgba(122, 203, 174, 0.1);
 }
 
 
@@ -196,7 +198,7 @@ button:hover .ql-fill,
   box-sizing: border-box;
 }
 body{
-  
+  overflow-x: hidden !important;
  
   font-family:var(--font-family-body) !important;
   background-color: var( --bg) !important;

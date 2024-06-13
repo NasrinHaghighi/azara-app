@@ -36,7 +36,7 @@ function PoemElement({ item,index }: any) {
         ref={ref}
       >
       <div>
-        <h1 className="md:text-5xl mb-8  text-lg">{item.title}</h1>
+        <h1 className="md:text-3xl mb-8  text-lg">{item.title}</h1>
 
         <div
           className="leading-relaxed text-center text-lg"

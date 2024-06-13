@@ -22,11 +22,13 @@ const arr=[bg1,bg2,bg3,bg4]
 function FriendsCard({item, index}:{item:Props, index:number}) {
   const backgroundImage = arr[index % arr.length].src;
   return (
+    <>
+    
    <div className=' h-[600px]  mx-3 rounded-lg md:p-8 px-1 py-3 flex flex-col shadow-lg' style={{
     backgroundImage: `url(${backgroundImage} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
     }}>
     <div className='lg:flex lg:justify-end lg:items-center pb-3 border-b border-gray-200 flex flex-col justify-center items-center'>
-    <h1 className='text-ligthText md:text-lg  text-md text-center'>{item.name}</h1>
+    <h1 className='text-ligthText md:text-lg  text-md text-center font-semibold'>{item.name}</h1>
    <Image src={item?.img} alt="face" width={120} height={120} className="rounded-full ml-5 my-3"/>
 
     </div>
@@ -39,7 +41,7 @@ function FriendsCard({item, index}:{item:Props, index:number}) {
 </div>
 </div>
 </div>
-   
+</> 
   )
 }
 

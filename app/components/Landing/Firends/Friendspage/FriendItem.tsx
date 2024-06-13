@@ -10,7 +10,7 @@ function FriendItem({ item, index , backgroundImage}: any) {
     const titles = convertSabkToTitle(item?.sabk);
     const isOdd = index % 2 !== 0;
     return (
-        <div className="grid grid-cols-12 px-12 py-8 bg-slate-300 rounded-md mb-5 gap-8 " 
+        <div className="grid grid-cols-12 px-12 py-8 bg-slate-300 rounded-md mb-5 gap-8 border-2 " 
         style={{
             backgroundImage: `url(${backgroundImage.src})`,
             backgroundSize: 'cover',
