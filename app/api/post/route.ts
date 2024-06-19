@@ -21,12 +21,11 @@ export const GET = async (req: NextRequest) => {
 
     const search = url.searchParams.get('search') ?? '';
 
-    const sabk = url.searchParams.get('sabk') ?? '';
+    const sabk = url.searchParams.get('sabk') || '';
 
+    const sabkArray = sabk.split(',').filter(Boolean);
 
-console.log('sabk', sabk)
-
- 
+ console.log('sabkArr', sabkArray)
 
 
 
@@ -36,7 +35,7 @@ console.log('sabk', sabk)
         take: POST_PER_PAGE,
         skip: POST_PER_PAGE * (Number(page) - 1),
         where: {
-            
+            ...(sabkArray.length > 0 && { sabk: { in: sabkArray } }),
             ...(cat && { catSlug: cat }),
             ...(search && { title: { contains: search.toLowerCase(), mode: 'insensitive' } }),
         },

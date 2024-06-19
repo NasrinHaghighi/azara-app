@@ -34,7 +34,7 @@ function Filters({  cat, search, sabk }: any) {
        
                   <span className='text-green-300 font-semibold mx-2'>{sabk }</span>
           
-           }
+           } 
           {search && <p>جستجو : <span className='text-blue-300 font- mx-2 '>{search}</span></p>}
           {cat && <p>دسته بندی : <span className='text-red-300 font-semibold mx-2'>{cat}</span></p>}
           </div>

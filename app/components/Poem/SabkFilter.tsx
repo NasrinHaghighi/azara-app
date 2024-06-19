@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 
 import { useRouter } from 'next/navigation'
 
-const sabks=[{id:1,title:'غزل', slug:'ghazal'},{id:2,title:'دوبیتی',slug:'dobaiti'},{id:3, title:'مثنوی', slug:'masnavi' },{id:4,title:' چهارپاره',slug:'chaharpare'},{id:5,title:'رباعی',slug:'robaie'}, {id:6, title:'شعر نو',slug:'share-no'}]
+const sabks=[{id:1,title:'غزل', slug:'ghazal'},{id:2,title:'دوبیتی',slug:'dobaiti'},{id:3, title:'مثنوی', slug:'masnavi' },{id:4,title:' چهارپاره',slug:'chaharpare'},{id:5,title:'رباعی',slug:'robaie'}, {id:6, title:'شعرنو',slug:'shareno'}]
 
 
 
@@ -26,16 +26,12 @@ function SabkFilter() {
           });
 
     }
+    console.log(sabk)
     //const sabkString = JSON.stringify(sabk);
     useEffect(() => {
-      if (sabk) {
-       
-        //const sabkString = encodeURIComponent(JSON.stringify(sabk));  // Encode the JSON string
-      router.push(`/poems?sabk=${sabk}`);
-      } else {
-        router.push('/poems');
-      }
-    }, [sabk, router]);
+      const sabkParams = sabk && sabk.length > 0 ? sabk.join(',') : '';
+      router.push(`/poems${sabkParams ? `?sabk=${sabkParams}` : ''}`);
+    }, [sabk]);
    
   return (
     <div className=''>
@@ -43,24 +39,25 @@ function SabkFilter() {
     <div className=' mb-8'>
             <label htmlFor="tags" className="block mb-2 text-sm font-medium text-textColor">سبک های شعری :</label>
             <div id="tags" className='flex flex-wrap gap-2'>
-            {sabks.map((sabk: any) => (
-               
-                <label key={sabk.id} className='flex items-center'>
-                    
-                  <span className='ml-2'>{sabk.title}</span>
-                 
-                  <input
-                    type="checkbox"
-                    name="tags"
-                    value={sabk.id}
-                    //checked={setTag(tag.tagSlug)}
-                    onChange={() => handleTagChange(sabk.title)}
-                  />
-               
-                 
-                </label>
-             
-              ))}
+          {sabks.map((sabk: any) => (
+
+            <label key={sabk.id} className='flex items-center'>
+
+              <span className='ml-2'>{sabk.title}</span>
+
+              <input
+                type="checkbox"
+                name="tags"
+                value={sabk.id}
+                //checked={sabk?.includes(sabk.title)}
+                onChange={() => handleTagChange(sabk.title)}
+              />
+
+
+            </label>
+
+          ))}
+
              
             </div>
           </div>
