@@ -7,8 +7,8 @@ import Poem3 from '../../../public/img/poem3.png'
 
 
 const arr = [Poem1, Poem2, Poem3]
-const getData = async ({page, cat}:any) => {
-  const res = await fetch(`http://localhost:3000/api/post?page=${page}&cat=${cat}`, { cache: 'no-store' }, );
+const getData = async ({page, cat,search,sabk}:any) => {
+  const res = await fetch(`http://localhost:3000/api/post?page=${page}&cat=${cat}&search=${search}&sabk=${sabk}`, { cache: 'no-store' }, );
   if (!res.ok) {
     throw new Error('Network response was not ok');
   }
@@ -19,9 +19,13 @@ const getData = async ({page, cat}:any) => {
 
 
 
-async function PoemList({ page, cat }: any) {
-  const {posts, count} =await getData({ page, cat });
-  const POST_PER_PAGE=2
+async function PoemList({ page, cat ,search, sabk}: any) {
+  console.log('page', page, 'cat', cat,'search', search, 'sabk', sabk)
+
+
+  const {posts, count} =await getData({ page, cat, search,sabk });
+  
+  const POST_PER_PAGE=5
   const hasPrev = POST_PER_PAGE * (page - 1) > 0
   const hasNext = POST_PER_PAGE * (page - 1)+POST_PER_PAGE  < count
 //console.log('data.posts', data.posts)

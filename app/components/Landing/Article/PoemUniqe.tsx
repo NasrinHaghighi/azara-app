@@ -40,7 +40,7 @@ function PoemElement({ item,index }: any) {
 
         <div
           className="leading-relaxed text-center text-lg"
-          dangerouslySetInnerHTML={{ __html: item?.des.substring(0, 300) || '' }}
+          dangerouslySetInnerHTML={{ __html: item?.des.substring(0, 400) || '' }}
         />
         <div className='text-red-500 my-5 font-semibold'><Link href={item.slug}> ادامه مطلب...</Link></div>
       </div>

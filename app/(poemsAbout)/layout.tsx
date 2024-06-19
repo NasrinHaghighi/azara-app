@@ -14,14 +14,14 @@ function PoemAboutLayout({children}:MainLayoutProps) {
     <>
     <div  className=" h-screen overflow-x-hidden ">
  <Header />
-<div className="grid grid-cols-12 lg:gap-3 gap-0 mt-8  sm:mx-24 md:mx-36 mx-10 ">
+<div className="grid grid-cols-12 lg:gap-3 gap-0 mt-8  sm:mx-0 md:mx-36 mx-5 ">
    
                  
-   <div className='lg:col-span-3 col-span-12 lg:order-1 order-1 '>
+   <div className='xl:col-span-3 col-span-12 lg:order-1 order-1 '>
   <SidebarPoems />
     
    </div>
-   <div className='lg:col-span-9 col-span-12 lg:order-2 order-2 mx-3'>{children}</div>
+   <div className='xl:col-span-9 col-span-12 lg:order-2 order-2 '>{children}</div>
 </div>
     
     </div>

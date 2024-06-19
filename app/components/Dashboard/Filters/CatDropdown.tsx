@@ -27,17 +27,17 @@ useEffect(()=>{
     return (
         <div>
              <div className="dropdown inline-block relative ">
-    <button onClick={()=>setOpen(!open)} className="bg-gray-300 text-text-color font-semibold py-2 px-4 rounded inline-flex items-center">
+    <button onClick={()=>setOpen(!open)} className="bg-white text-text-color font-semibold py-2 px-4 rounded inline-flex items-center">
       <span className="mr-1">دسته بندی</span>
       <span></span>
     </button>
-    <ul className={`dropdown-menu absolute ${!open && 'hidden'} bg-input-bg text-text-color  w-52 p-2 rounded-md  shadow mt-2`}>
+    <ul className={`dropdown-menu absolute ${!open && 'hidden'} bg-white text-text-color  w-52 p-2 rounded-md  shadow mt-2`}>
      {data?.map((item:any)=>{
        return(
       
         <li className="" key={item.id}>
           <Link className="rounded-md   hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" 
-      href={`/dashboard/poems?cat=${item.slug}`} onClick={()=>setOpen(false)}>{item.title}</Link></li>
+      href={`/poems?cat=${item.slug}`} onClick={()=>setOpen(false)}>{item.title}</Link></li>
        )
      })} 
      

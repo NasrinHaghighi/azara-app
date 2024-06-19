@@ -22,7 +22,7 @@ const getData = async ( slug : string) => {
  
 
   return (
-    <div className=' border-2   rounded-lg relative mb-24  p-5'    style={{
+    <div className=' border-2   rounded-lg relative my-24  p-5'    style={{
       backgroundImage: `url(${Mainpoem.src})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',

@@ -10,6 +10,9 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 
 function Pagination({ page, hasPrev, hasNext, cat }: {page:number,hasPrev:boolean,hasNext:boolean, cat:string}) {
+  console.log('page',page)
+  console.log('hasPrev',hasPrev)
+  console.log('hasNext',hasNext)
   const router=useRouter()
   return (
     <div className='my-12 flex justify-center items-center gap-12 text-white '>

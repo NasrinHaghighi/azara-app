@@ -10,25 +10,35 @@ import prisma from '../../utils/connect'
 //get all posts//
 import { NextRequest } from 'next/server';
 import { revalidatePath } from 'next/cache'
+import { json } from 'stream/consumers';
 
 export const GET = async (req: NextRequest) => {
 
     const url = new URL(req.url)
     const page = url.searchParams.get('page') ?? '1';
-    const cat = url.searchParams.get('cat');
-    const sort = url.searchParams.get('sort');
+    const cat = url.searchParams.get('cat') ?? '';
+    const sort = url.searchParams.get('sort') ?? '';
 
-    const search = url.searchParams.get('search');
-    //console.log(sort, search)
+    const search = url.searchParams.get('search') ?? '';
 
-    const POST_PER_PAGE =5;
+    const sabk = url.searchParams.get('sabk') ?? '';
+
+
+console.log('sabk', sabk)
+
+ 
+
+
+
+    const POST_PER_PAGE = 5;
     const RECENT_POST_COUNT = 3;
     const query: any = {
         take: POST_PER_PAGE,
         skip: POST_PER_PAGE * (Number(page) - 1),
         where: {
-            ...(cat && { catSlug: cat as string }),
-            ...(search && { title: { contains: search.toLowerCase(), mode: 'insensitive' } })
+            
+            ...(cat && { catSlug: cat }),
+            ...(search && { title: { contains: search.toLowerCase(), mode: 'insensitive' } }),
         },
         orderBy: sort === 'oldest' ? { createdAt: 'asc' } : { createdAt: 'desc' }
     };
@@ -39,7 +49,7 @@ export const GET = async (req: NextRequest) => {
             prisma.post.count({ where: query.where })
 
         ]);
-      
+
         // Fetch the most recent post
         const lastPost = await prisma.post.findFirst({
             orderBy: { createdAt: 'desc' },
@@ -48,10 +58,10 @@ export const GET = async (req: NextRequest) => {
             orderBy: { createdAt: 'desc', }, take: 4
         });
         const selectedPosts = await prisma.post.findMany({
-            where: { tags: { has: 'selected' } }, // Adjust this line to fetch posts with the 'selected' tag
+            where: { tags: { has: 'selected' } },
             take: 4
         });
-        return new NextResponse(JSON.stringify({ posts, count, lastPost, mostRecentPost,selectedPosts }), { status: 200 });
+        return new NextResponse(JSON.stringify({ posts, count, lastPost, mostRecentPost, selectedPosts }), { status: 200 });
     } catch (err) {
         console.log(err);
         return new NextResponse(JSON.stringify({ message: 'error' }), { status: 500 });

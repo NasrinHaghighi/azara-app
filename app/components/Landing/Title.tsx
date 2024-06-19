@@ -3,6 +3,7 @@
 import React,{useEffect, useRef} from 'react'
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import Link from 'next/link';
 gsap.registerPlugin(TextPlugin);
 
 
@@ -105,16 +106,21 @@ const aboutBtn = useRef(null);
       }, []); 
   return (
     <div className=''> 
-    <h1 className='xl:text-7xl md:text-5xl text-2xl font-extrabold  ' ref={titleRef} >     <span> استاد حاج </span>
+    <h1 className='xl:text-7xl md:text-5xl text-3xl font-extrabold  ' ref={titleRef} >     <span> استاد حاج </span>
     <span>    حسن آذریان </span>
  
     </h1>
     <div className='p-5'></div>
-    <div className='md:text-4xl text-lg font-extrabold track-[.2em] block bg-gradient-to-tr from-orange-700 via-orange-300 to-orange-600 bg-clip-text text-transparent opacity-0 ' ref={sunTitleRef}>شاعر و مداح اهل بیت</div>
+    <div className='md:text-4xl text-lg font-extrabold track-[.2em] block bg-gradient-to-tr from-orange-700 via-orange-300 to-orange-600 bg-clip-text text-transparent opacity-0 text-center' ref={sunTitleRef}>شاعر و مداح اهل بیت</div>
     
     <div className='flex lg:flex-row  flex-col justify-center items-center my-10 gap-12 '>
-        <button className=' bg-text text-white rounded-md mx-8 px-5 py-3 w-36 h-16 hover:shadow-2xl' ref={poetryBtn}>اشعار</button>
-        <button className='bg-ligthText text-white rounded-md mx-8 px-5 py-3 w-36 h-16  hover:shadow-2xl ' ref={aboutBtn}>درباره ما</button>
+        <button className=' bg-text text-white rounded-md mx-8 px-5 py-3 w-36 h-16 hover:shadow-2xl' ref={poetryBtn}>
+
+          <Link href='/poems'> اشعار</Link>
+        </button>
+        <button className='bg-ligthText text-white rounded-md mx-8 px-5 py-3 w-36 h-16  hover:shadow-2xl ' ref={aboutBtn}>
+          <Link href='/about'>درباره من</Link>
+        </button>
     </div>
     </div>
   )

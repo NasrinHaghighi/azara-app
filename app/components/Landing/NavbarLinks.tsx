@@ -9,8 +9,10 @@ function NavbarLinks() {
     <>
     <div className='text-left  justify-start gap-5 items-center font-semibold text-lg md:flex'>
      <Link href='/'>خانه</Link>
+   
+     <Link href='/poems'>اشعار</Link>
+     <Link href='/friends'> دوستان</Link>
      <Link href='/about'>درباره ما</Link>
-     <Link href='/'>اشعار</Link>
      <AuthLinks />
     </div>
    
