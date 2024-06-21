@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Banner from '../../../public/img/leaf2.png'
 import Mainpoem from '../../../public/img/mainpoem.png'
 import LikePostco from '@/app/components/Poem/LikePostco'
+import Comments from '@/app/components/Poem/Comments'
 
 /////
 const getData = async ( slug : string) => {
@@ -65,7 +66,7 @@ const getData = async ( slug : string) => {
     </div> */}
       <div>
       <LikePostco postId={data?.id} />
-      {/* <Comments postSlug={data?.slug} /> */}
+       <Comments postSlug={data?.slug} />
     </div>
   </div>
   )
