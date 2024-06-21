@@ -9,7 +9,7 @@ export const convertSabkToTitle = (sabkArray:string[]  = []) => {
                 return '   غزل';
             case 'dobaiti':
                 return '   دوبیتی';
-            case 'share-no':
+            case 'shareno':
                 return '  شعر نو';
             case 'masnavi':
                 return '  مثنوی';

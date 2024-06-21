@@ -36,9 +36,9 @@ function SabkFilter() {
   return (
     <div className=''>
     
-    <div className=' mb-8'>
+    <div className='text-center lg:text-right '>
             <label htmlFor="tags" className="block mb-2 text-sm font-medium text-textColor">سبک های شعری :</label>
-            <div id="tags" className='flex flex-wrap gap-2'>
+            <div id="tags" className='flex flex-wrap lg:justify-start justify-center gap-2  my-3 '>
           {sabks.map((sabk: any) => (
 
             <label key={sabk.id} className='flex items-center'>

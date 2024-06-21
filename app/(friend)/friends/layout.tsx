@@ -21,7 +21,7 @@ function FriendsLayout({children}:MainLayoutProps) {
   <SidebarPoems />
     
    </div>
-   <div className='lg:col-span-9 col-span-12 lg:order-2 order-2 mx-3'>{children}</div>
+   <div className='lg:col-span-9 col-span-12 lg:order-2 order-2 mx-3 py-10'>{children}</div>
 </div>
     
     </div>

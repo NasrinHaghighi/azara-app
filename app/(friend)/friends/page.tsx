@@ -25,7 +25,8 @@ async function FriendsPage() {
      <h1 className='text-center text-3xl font-semibold mb-5'> دوستان شاعر</h1>
    {data.map((item:any, index:number)=>{
    const backgroundImage = arr[index % arr.length];
-        return <FriendItem index={index} key={index} item={item} backgroundImage={backgroundImage} />
+   const isOdd = index % 2 !== 0;
+        return <FriendItem index={index} key={index} item={item} isOdd={isOdd} backgroundImage={backgroundImage} />
     })} 
     </>
   )

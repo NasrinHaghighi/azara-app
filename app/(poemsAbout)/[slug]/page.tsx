@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Banner from '../../../public/img/leaf2.png'
 import Mainpoem from '../../../public/img/mainpoem.png'
+import LikePostco from '@/app/components/Poem/LikePostco'
 
 /////
 const getData = async ( slug : string) => {
@@ -62,6 +63,10 @@ const getData = async ( slug : string) => {
         <Image src={Banner} alt='logo' width={300}  height={300} className='object-cover rounded-md h-[400px] w-[400px] m-auto'  />
       
     </div> */}
+      <div>
+      <LikePostco postId={data?.id} />
+      {/* <Comments postSlug={data?.slug} /> */}
+    </div>
   </div>
   )
 }
