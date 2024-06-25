@@ -37,7 +37,7 @@ async function Article() {
 <div className='   md:w-[500px] md:h-[350px] w-[250px] h-[300px]flex justify-center items-center  m-auto mb-14 '>
     <Image src={face} alt="face" layout='fit' objectFit='content' />
      </div>
-    <p className='text-2xl md:text-md'>شاعر اشعار خود را در قالبهای غزل ، مثنوی ، چهار پاره ، دوبیتی ، رباعی و شعر نو سروده است و بیشتر اشعار خود را در موضوع های عاشقانه ، عارفانه و اجتماعی سروده است </p>
+    <p className='text-xl md:text-md'>شاعر اشعار خود را در قالبهای غزل ، مثنوی ، چهار پاره ، دوبیتی ، رباعی و شعر نو سروده است و بیشتر اشعار خود را در موضوع های عاشقانه ، عارفانه و اجتماعی سروده است </p>
         </div>
     </div>
     </>

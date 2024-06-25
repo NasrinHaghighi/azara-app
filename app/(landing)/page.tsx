@@ -5,6 +5,7 @@ import Article from "../components/Landing/Article/Article";
 import Friends from "../components/Landing/Firends/Friends";
 import { GrGallery } from "react-icons/gr";
 import Gallery from "../components/Landing/Gallery/Gallery";
+import Footer from "../components/Landing/Footer";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
   <MovingText/> 
   <br/> 
  <Gallery /> 
-   <div>gggg</div>
+  <Footer />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../../components/PoemsAbout/Header'
 import SidebarPoems from '../../components/PoemsAbout/Sidebar'
+import Footer from '@/app/components/Landing/Footer'
 
 
 
@@ -12,7 +13,7 @@ function FriendsLayout({children}:MainLayoutProps) {
  
   return (
     <>
-    <div  className=" h-screen overflow-x-hidden ">
+    <div  className=" h-screen relative ">
  <Header />
 <div className="grid grid-cols-12 lg:gap-3 gap-0 mt-8 sm:mx-24 md:mx-36 mx-10">
    
@@ -23,9 +24,9 @@ function FriendsLayout({children}:MainLayoutProps) {
    </div>
    <div className='lg:col-span-9 col-span-12 lg:order-2 order-2 mx-3 py-10'>{children}</div>
 </div>
-    
+<Footer />
     </div>
-    {/* <div     className="h-96 bg-yellow-400 flex justify-center items-center ">footer</div> */}
+    
     </>
   )
 }
