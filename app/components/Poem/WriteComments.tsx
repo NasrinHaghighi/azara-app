@@ -9,6 +9,9 @@ function WriteComments({postSlug}:any) {
     const { data: session } = useSession()
     const [des, setDes] = useState('')
     const router = useRouter()
+
+
+    
     const handelSubmit =async (event:any) => {
         //console.log('by ersal nazar', des, postSlug)
           event.preventDefault()

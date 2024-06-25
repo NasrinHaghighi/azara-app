@@ -10,14 +10,15 @@ function Filters({ sort, page, cat, search }: any) {
   // console.log(sort, page, cat, search)
   return (
     <>
-      <div className='flex flex-col lg:flex-row gap-y-5 justify-start items-center py-4 gap-x-36 md'>
+    <div className='bg-slate-200 rounded-md p-4'>
+      <div className='flex flex-col lg:flex-row gap-y-5 justify-start items-center py-4 gap-x-36 '>
         <SearchInput />
         <div className='flex gap-x-5'>
           <CatDropdown />
           <SortDropdown />
         </div>
       </div>
-<div className='border-b-2 border-gray-300 py-2'>
+<div className=' py-2'>
       {sort || search || cat ? (
         <div className='flex justify-between items-center gap-5  p-3 rounded-md my-5 '>
           <div className='flex justify-start items-center font-semibold bg-red-100'>
@@ -28,6 +29,7 @@ function Filters({ sort, page, cat, search }: any) {
         <RemoveFilters />
         </div>
       ) : <p className='my-5 font-semibold'>هیچ فیلتری انتخاب نشده است</p>}
+      </div>
       </div>
     </>
   )

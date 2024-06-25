@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import SearchInput from '../Dashboard/Filters/SearchInput'
 import RemoveFilters from '../Dashboard/Filters/RemoveFilters'
-import CatDropdown from '../Dashboard/Filters/CatDropdown'
+
 import RemoveFlitersPoems from './RemoveFlitersPoems'
 import SabkFilter from './SabkFilter'
 import {convertSabkToTitle} from '../../utils/func'
+import CatDropdownPoemsPage from './CatDropdownPoemsPage'
 
 
 function Filters({  cat, search, sabk }: any) {
@@ -18,7 +19,7 @@ function Filters({  cat, search, sabk }: any) {
     <div className='flex flex-col lg:flex-row gap-y-5 justify-start items-center py-4 gap-x-36 '>
        <SearchInput/>
        <div className='flex gap-x-5 '>
-          <CatDropdown />
+          <CatDropdownPoemsPage />
         
         </div>
      

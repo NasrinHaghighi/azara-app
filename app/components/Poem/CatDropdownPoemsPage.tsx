@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import Link from 'next/link';
 
 
- function CatDropdown() {
+ function CatDropdownPoemsPage() {
  
     const [open, setOpen] = useState(false);
  
@@ -37,7 +37,7 @@ useEffect(()=>{
       
         <li className="" key={item.id}>
           <Link className="rounded-md   hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" 
-      href={`/dashboard/poems?cat=${item.slug}`} onClick={()=>setOpen(false)}>{item.title}</Link></li>
+      href={`/poems?cat=${item.slug}`} onClick={()=>setOpen(false)}>{item.title}</Link></li>
        )
      })} 
      
@@ -48,4 +48,4 @@ useEffect(()=>{
   
 }
 
-export default CatDropdown
+export default CatDropdownPoemsPage

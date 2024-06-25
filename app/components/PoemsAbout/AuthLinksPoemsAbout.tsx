@@ -15,7 +15,7 @@ function AuthLinksPoemsAbout() {
          :
          (
              <div className='flex  justify-center items-center  md:gap-5 gap-2'>
-                 {data?.user?.role === 'admin' ? <Link href='/dashboard/posts' className='text-green-500'> پنل مدیریت</Link> : null}
+                 {data?.user?.role === 'admin' ? <Link href='/dashboard/poems' className='text-green-500'> پنل مدیریت</Link> : null}
                  <span className='pl-3'></span>
                  <button className='text-center' onClick={() => signOut()}>
                      <span className='text-red-500' onClick={(event) => { event.preventDefault(); signOut(); }}>خروج</span>
