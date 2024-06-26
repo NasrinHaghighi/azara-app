@@ -3,7 +3,7 @@ import { convertSabkToTitle } from '../../../../utils/func';
 
 import Image from 'next/image'
 import Link from 'next/link';
-import LinkCo from './LinkCo';
+
 
 
 function FriendItem({ item, isOdd, backgroundImage }: any) {
@@ -46,7 +46,7 @@ function FriendItem({ item, isOdd, backgroundImage }: any) {
                     className="leading-relaxed  text-lg"
                     dangerouslySetInnerHTML={{ __html: item?.des.substring(0, 300) || '' }}
                 />
-           {/* <LinkCo  />  */}
+            <Link href={`/friends/${item.slug}`} className='text-red-500' >... ادامه مطلب</Link>
             </div>
 
            

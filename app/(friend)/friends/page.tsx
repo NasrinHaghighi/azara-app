@@ -4,6 +4,7 @@ import F1 from '../../../public/img/f1.png'
 import F2 from '../../../public/img/f2.png'
 import F3 from '../../../public/img/f3.png'
 import F4 from '../../../public/img/f4.png'
+import Link from 'next/link'
 
 
 const arr = [F1, F2, F3, F4, ]

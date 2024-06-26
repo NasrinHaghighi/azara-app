@@ -55,7 +55,7 @@ const getLikes=async()=>{
 }catch (error) {}}
 
 
-console.log(likeData)
+// console.log(likeData)
 
 useEffect(() => {
     getLikes();
