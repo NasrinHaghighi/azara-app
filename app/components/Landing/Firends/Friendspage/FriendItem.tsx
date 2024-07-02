@@ -12,7 +12,7 @@ function FriendItem({ item, isOdd, backgroundImage }: any) {
     // const isOdd = index % 2 !== 0;
     return (
         <>
-        <div className="grid grid-cols-12 lg:px-12 px-3 py-8 bg-slate-300 rounded-md mb-5 lg:gap-8 gap:0 border-2 "
+        <div className="grid grid-cols-12 lg:px-12 px-3 py-8 text-text rounded-md mb-5 lg:gap-8 gap:0 border-2 "
             style={{
                 backgroundImage: `url(${backgroundImage.src})`,
                 backgroundSize: 'cover',
@@ -40,7 +40,7 @@ function FriendItem({ item, isOdd, backgroundImage }: any) {
                 </div>
             </div>
             <div className={`lg:col-span-8 col-span-12   order-2 lg:${isOdd ? 'order-2' : 'order-1'} py-5 lg:text-center `}>
-                <div className='lg:text-2xl text-xl mb-3 '>عنوان : <span className='text-ligthText'>{item.title}</span></div>
+                <div className='lg:text-2xl text-xl mb-3 '>عنوان : <span className='text-text'>{item.title}</span></div>
                 {/* poem */}
                 <div
                     className="leading-relaxed  text-lg"

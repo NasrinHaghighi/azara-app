@@ -24,7 +24,7 @@ function FriendsCard({item, index}:{item:Props, index:number}) {
   return (
     <>
     
-   <div className=' h-[600px]  mx-3 rounded-lg md:p-8 px-1 py-3 flex flex-col shadow-lg' style={{
+   <div className='text-text h-[600px]  mx-3 rounded-lg md:p-8 px-1 py-3 flex flex-col shadow-lg' style={{
     backgroundImage: `url(${backgroundImage} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
     }}>
     <div className='lg:flex lg:justify-end lg:items-center pb-3 border-b border-gray-200 flex flex-col justify-center items-center'>

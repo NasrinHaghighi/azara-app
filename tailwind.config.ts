@@ -100,6 +100,8 @@ const config: Config = {
       },
       colors: {
         'bg': 'var(--bg)',
+        'bgGolden': 'var(--bgGolden)',
+        'ligthBlue': 'var(--ligthBlue)',
         "text": "var(--text)",
         'ligthText': "var(--ligthText)",
         "white": "var(--white)",

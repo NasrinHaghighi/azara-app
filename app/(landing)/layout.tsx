@@ -12,8 +12,8 @@ function MainLayout({children}:MainLayoutProps) {
  
   return (
     <>
-    <div  className=" h-screen overflow-x-hidden ">
- <Header/>  
+    <div  className=" h-screen overflow-x-hidden bg-bg ">
+  <Header/>  
   {children}
 
     

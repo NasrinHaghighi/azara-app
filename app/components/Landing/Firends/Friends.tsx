@@ -43,7 +43,7 @@ function Friends() {
 
   return (
     <div className='mx-12 my-12 relative'>
-      <h1 className='text-center text-3xl font-semibold mb-5'> دوستان شاعر</h1>
+      <h1 className='text-center text-3xl font-semibold mb-5 text-bgGolden'> دوستان شاعر</h1>
       <Slider {...settings}>
 
         {data.map((item: any, index: number) => (

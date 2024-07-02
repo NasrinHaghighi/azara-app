@@ -14,7 +14,7 @@ export default function Home() {
 
  
   
-     <Article /> 
+      <Article /> 
   <Friends />  
   <br/> 
   <MovingText/> 

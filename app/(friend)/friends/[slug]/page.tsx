@@ -22,7 +22,7 @@ async function page({params}:any) {
   const titles = convertSabkToTitle(data.sabk);
   //console.log(titles)
   return (
-    <div className=' border-2  rounded-lg p-5 h-auto mb-24 shadow-lg ' style={{
+    <div className=' border-2  rounded-lg p-5 h-auto mb-24 shadow-lg text-text' style={{
       backgroundImage: `url(${BG.src} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
       }} >
 <div>

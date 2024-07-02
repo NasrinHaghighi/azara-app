@@ -25,9 +25,9 @@ function Header() {
     };
 
   }, []);
- console.log()
+
   return (
-    <div className={`md:px-40 px-10 py-5  flex justify-between items-center 
+    <div className={`md:px-40 px-0 py-5  flex justify-between items-center 
       w-full top-0 right-0    bg-trnsparent z-20`}>
 
       <div className='flex-1 hidden md:flex'>

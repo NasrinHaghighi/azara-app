@@ -6,7 +6,7 @@ function AboutPage() {
   return (
     <div className='relative h-screen  my-48'>
       <div className='lg:mx-24'>
-      <h1 className='mb-5 text-5xl text-center'>درباه من</h1>
+      <h1 className='mb-5 text-5xl text-center text-bgGolden'>درباه من</h1>
       <AboutCo />
       </div>
      <Footer />

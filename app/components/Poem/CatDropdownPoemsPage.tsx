@@ -26,7 +26,7 @@ useEffect(()=>{
 
     return (
         <div>
-             <div className="dropdown inline-block relative ">
+             <div className="dropdown inline-block relative text-text">
     <button onClick={()=>setOpen(!open)} className="bg-white text-text-color font-semibold py-2 px-4 rounded inline-flex items-center">
       <span className="mr-1">دسته بندی</span>
       <span></span>

@@ -184,7 +184,7 @@ function WritPageComponenet() {
           ) : null}
 
         </div>
-        <div className=' mb-8'>
+        <div className=' mb-8 bg-gray-200 p-2 rounded-md'>
             <label htmlFor="tags" className="block mb-2 text-sm font-medium text-textColor">تگ‌ها</label>
             <div id="tags" className='flex flex-wrap gap-2'>
             {tags.map((tag: any) => (
@@ -205,7 +205,7 @@ function WritPageComponenet() {
             </div>
           </div>
 {/* ****************** */}
-<div className="mb-8 ">
+<div className="mb-8 bg-gray-200 p-2 rounded-md">
           <label className="block mb-2 text-sm font-medium text-textColor">
            سبک شعر
           </label>
@@ -229,7 +229,7 @@ function WritPageComponenet() {
         </div>
 
         {/* *************** */}
-        <div className=' mb-8'>
+        <div className=' mb-8 bg-gray-200 p-2 rounded-md'>
           <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-textColor"> اضافه کردن تصویر</label>
           <div className=' flex felx-row justify-start items-center gap-5'  >
             <div onClick={() => setOpen(!open)}><CiCirclePlus className='text-green-800 text-5xl font-extrabold' /></div>

@@ -6,7 +6,7 @@ interface AuthLayoutProps {
 
 function AuthLayout({ children }: AuthLayoutProps) {
   return (
-    <div>{children}</div>
+    <div className='bg-bg h-screen'>{children}</div>
   )
 }
 

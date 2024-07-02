@@ -38,7 +38,7 @@
 .quill{
   
 border-radius: 10px !important;
-  /* background-color: #ffff !important; */
+  background-color: #ffff !important; 
   outline: none !important;
   height: auto !important;
   border: 1px solid rgb(133, 128, 128) !important;
@@ -173,7 +173,10 @@ button:hover .ql-fill,
 }
 :root {
   --font-family-body:'vazir', sans-serif !important;
-  --bg:rgb(255, 255, 255);
+  --bg:#2d3e5f;
+  --bgGolden:#e9c274;
+  --ligthBlue:#85bfe887;
+  --black:#eee;
   --text:#1c0c3de6;
   --ligthText:#7d51c2e6;
   --white:#fff;
@@ -201,9 +204,9 @@ body{
   overflow-x: hidden !important;
  
   font-family:var(--font-family-body) !important;
-  background-color: var( --bg) !important;
-  color: var(--textColor) !important;
-
+  background-color: var( --bg) !important; 
+/* color: var(--text) !important;  */
+ color: #fff !important; 
   
 }
 /* @media (max-width: 400px) {
@@ -246,14 +249,15 @@ a{
   content: '>' !important;
   font-size: 24px !important;
   font-weight: 900 !important;
-  color: var(--purple) !important;
+  color: var(--bgGolden) !important;
 
 }
 .slick-next::before {
+ 
   content: '<' !important;
   font-size: 24px !important;
   font-weight: 900 !important;
-  color: var(--purple) !important;
+  color: var(--bgGolden) !important;
 
 }
 
@@ -272,4 +276,3 @@ a{
   font-family:var(--font-family-body) !important;
 font-size: 18px !important;
 }
-

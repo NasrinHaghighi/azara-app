@@ -9,8 +9,8 @@ import Image from 'next/image'
 
 function Header() {
   return (
-    <div className={`lg:px-40 px-12  py-5  flex justify-between items-center z-20
-     w-full top-0 right-0  bg-gray-100`}>
+    <div className={`lg:px-40 px-12  py-5  flex justify-between items-center z-20 
+     w-full top-0 right-0  bg-transparent `}>
    <AuthLinksPoemsAbout /> 
         <div className='hidden md:flex flex-1 justify-center  gap-5 '>
        

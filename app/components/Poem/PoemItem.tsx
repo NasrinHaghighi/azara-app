@@ -3,18 +3,18 @@ import React from 'react'
 import Image from 'next/image'
 import RenderDangerous from './RenderDangerous'
 import Link from 'next/link'
-
-
+import Yellow from '../../../public/img/yellow.jpg'
 
 function PoemItem({item, backgroungImage}:any) {
  
   return (
-    <div className="  border  rounded-md shadow-md  mb-10 pb-5" 
-    style={{
-      backgroundImage: `url(${backgroungImage.src})`,
+    <div className="  border  rounded-md shadow-md  mb-10 pb-5 text-black" 
+     style={{
+      backgroundImage: `url(${Yellow.src})`,
       backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}
+       backgroundPosition: 'center',
+       backgroundRepeat: 'no-repeat'
+     }}
     >
     <div className="grid lg:grid-cols-12 lg:grid-rows-1 grid-cols-1 grid-rows-2 lg:gap-5 gap-0 ">
       <div className="lg:col-span-5  row-span-5 pt-14">

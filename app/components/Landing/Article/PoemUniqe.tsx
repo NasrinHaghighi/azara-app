@@ -3,12 +3,13 @@
 import Link from 'next/link'
 import React,{useRef, useEffect, useState} from 'react'
 import { useInView } from 'react-hook-inview'
+import Yellow from '../../../../public/img/yellow.jpg'
+import RenderDangerous from '../../Poem/RenderDangerous'
+// import ImagePoem from '../../../../public/img/bg1.png'
+// import ImagePoem2 from '../../../../public/img/bg2.png'
+// import ImagePoem3 from '../../../../public/img/bg3.png'
 
-import ImagePoem from '../../../../public/img/bg1.png'
-import ImagePoem2 from '../../../../public/img/bg2.png'
-import ImagePoem3 from '../../../../public/img/bg3.png'
-
-const arr=[ImagePoem,ImagePoem2,ImagePoem3]
+// const arr=[ImagePoem,ImagePoem2,ImagePoem3]
 function PoemUniqe({selectedPosts}:any) {
  // console.log(selectedPosts)
 
@@ -26,27 +27,31 @@ function PoemElement({ item,index }: any) {
     threshold: 0.3,
     // triggerOnce: true, // Assuming 'triggerOnce' is a valid option for useInView
   });
-  const backgroundImage = arr[index % arr.length].src;
+ // const backgroundImage = arr[index % arr.length].src;
   //console.log(backgroundImage) 
   return (
     <>
       <div
-        className={`bg-darkPink rounded-lg text-center py-10 z-0 relative mb-12 
+        className={`bg-bgGolden rounded-lg text-center py-10 z-0 relative mb-12 text-text
     ${isVisible ? 'animate-fadeIn' : 'animate-fadeOut'} ${isVisible ? 'opacity-1' : 'opacity-0'}`}
         ref={ref}
       >
-      <div>
+     <div>
         <h1 className="md:text-3xl mb-8  text-lg">{item.title}</h1>
-
-        <div
+<RenderDangerous post={item}/>
+        {/* <div
           className="leading-relaxed text-center text-lg"
           dangerouslySetInnerHTML={{ __html: item?.des.substring(0, 400) || '' }}
-        />
-        <div className='text-red-500 my-5 font-semibold'><Link href={item.slug}> ادامه مطلب...</Link></div>
-      </div>
-        <div className=" absolute -z-10 rounded-lg top-2 -left-3 h-full w-full "  style={{
-backgroundImage: `url(${backgroundImage} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
-}}></div>
+        /> */}
+        <div className='text-red-500 my-5 font-semibold'>
+          <Link href={item.slug}> ادامه مطلب...</Link>
+          </div>
+      </div> 
+        <div className=" absolute -z-10 rounded-lg top-2 -left-3 h-full w-full bg-white"
+         style={{
+backgroundImage: `url(${Yellow.src} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
+ }}
+></div>
       </div>
     </>
   ); 

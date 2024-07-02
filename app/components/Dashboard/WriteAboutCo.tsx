@@ -64,8 +64,8 @@ setValues({value, file})
    // setFile(about?.img as File)
     setSubTitle(about?.subTitle as string)
   }, [about])
-console.log(about)
-console.log(file)
+// console.log(about)
+// console.log(file)
 /*get abot from api*/
   const handelValue = (content:string) => {
 setValue(content)
@@ -143,7 +143,7 @@ const handelSubmite = async (e: any) => {
 
         <div className=' mb-8 bg-input-bg rounded p-4'>
           <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-textColor"> اضافه کردن تصویر</label>
-          <div className=' rounded-md flex md:flex-row flex-col  justify-start items-center gap-5 border border-gray-200 p-4 border-spacing-1 border-1'  >
+          <div className='  flex md:flex-row flex-col  justify-start items-center gap-5 border border-gray-200  border-spacing-1 border-1 bg-gray-200 p-2 rounded-md'  >
 
 
             <div className='items-center justify-between gap-5 flex flex-col md:flex-row'>

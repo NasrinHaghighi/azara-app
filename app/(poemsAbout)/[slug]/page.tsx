@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Banner from '../../../public/img/leaf2.png'
+import Yellow from '../../../public/img/yellow.jpg'
 import Mainpoem from '../../../public/img/mainpoem.png'
 import LikePostco from '@/app/components/Poem/LikePostco'
 import Comments from '@/app/components/Poem/Comments'
@@ -24,10 +24,11 @@ const getData = async ( slug : string) => {
  
 
   return (
-    <div className=' border-2   rounded-lg relative my-24  p-5'    style={{
-      backgroundImage: `url(${Mainpoem.src})`,
+    <div className=' border-2   rounded-lg relative my-24  p-5 text-black'    style={{
+      backgroundImage: `url(${Yellow.src})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
+      backgroundRepeat:'no-repeat'
     }}>
       
          <div className="grid grid-flow-col justify-around items-center lg:gap-10 border-b-2 border-gray-200 p-5 shadow-lg mb-5 ">

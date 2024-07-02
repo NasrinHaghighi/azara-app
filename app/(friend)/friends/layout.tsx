@@ -13,7 +13,7 @@ function FriendsLayout({children}:MainLayoutProps) {
  
   return (
     <>
-    <div  className=" h-screen relative ">
+    <div  className=" h-screen relative bg-bg">
  <Header />
 <div className="grid grid-cols-12 lg:gap-3 gap-0 mt-8 sm:mx-24 md:mx-36 mx-10">
    

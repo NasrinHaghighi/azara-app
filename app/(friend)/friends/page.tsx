@@ -24,7 +24,7 @@ async function FriendsPage() {
   return (
     <>
     <div>
-     <h1 className='text-center text-3xl font-semibold mb-5'> دوستان شاعر</h1>
+     <h1 className='text-center text-3xl font-semibold mb-5 text-bgGolden'> دوستان شاعر</h1>
    {data.map((item:any, index:number)=>{
    const backgroundImage = arr[index % arr.length];
    const isOdd = index % 2 !== 0;

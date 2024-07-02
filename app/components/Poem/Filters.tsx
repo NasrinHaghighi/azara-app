@@ -15,7 +15,14 @@ function Filters({  cat, search, sabk }: any) {
 
   return (
     <>
-    <div className='bg-gray-300 mb-5 rounded-md p-3'>
+    <div className=' mb-5 rounded-md p-3'  
+    // style={{
+    //   backgroundImage: `url(${Blue.src})`,
+    //   backgroundSize: 'cover',
+    //    backgroundPosition: 'center',
+    //    backgroundRepeat: 'no-repeat'
+    //  }}
+     >
     <div className='flex flex-col lg:flex-row gap-y-5 justify-start items-center py-4 gap-x-36 '>
        <SearchInput/>
        <div className='flex gap-x-5 '>

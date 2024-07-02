@@ -7,7 +7,7 @@ function MovingText() {
   
   return (
     <>
-    <div className="relative flex overflow-x-hidden  font-bold bg-gray-300 " dir="rtl">
+    <div className="relative flex overflow-x-hidden  font-bold bg-bgGolden " dir="rtl">
       <div className='absolute left-0 lg:w-48 md:w-24 w-14 bg-gradient-to-r from-gray-300 to-transparent z-10 h-full'></div>
   <div className="py-12 animate-marquee whitespace-nowrap ">
  

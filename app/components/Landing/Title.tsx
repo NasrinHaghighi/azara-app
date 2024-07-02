@@ -114,7 +114,7 @@ const aboutBtn = useRef(null);
     <div className='md:text-4xl text-lg font-extrabold track-[.2em] block bg-gradient-to-tr from-orange-700 via-orange-300 to-orange-600 bg-clip-text text-transparent opacity-0 text-center' ref={sunTitleRef}>شاعر و مداح اهل بیت</div>
     
     <div className='flex lg:flex-row  flex-col justify-center items-center my-10 gap-12 '>
-        <button className=' bg-text text-white rounded-md mx-8 px-5 py-3 w-36 h-16 hover:shadow-2xl' ref={poetryBtn}>
+        <button className=' bg-ligthText text-white rounded-md mx-8 px-5 py-3 w-36 h-16 hover:shadow-2xl' ref={poetryBtn}>
 
           <Link href='/poems'> اشعار</Link>
         </button>
