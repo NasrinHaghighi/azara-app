@@ -3,6 +3,8 @@
 import React from 'react'
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
  interface Props {
     post:{
         id: string;
@@ -32,21 +34,31 @@ function ActionPostItem({ post }: Props) {
                 });
 
             if (!res.ok) {
+                toast.error('خطا در حذف پست.')
                 throw new Error('Failed to remove post');
+         
+            }else{
+                toast.success('پست با موفقیت حذف شد.')
+                setTimeout(() => {
+                    router.push('/dashboard')
+                    router.refresh()
+                   },3000)
             }
             router.push('/dashboard');
             router.refresh()
             // Handle successful response
-            console.log('Post removed successfully');
+           // console.log('Post removed successfully');
         } catch (error) {
             // Handle error
             console.error('Error removing post:', error);
         }
     };
 
-
+  
 
     return (
+        <>
+        <ToastContainer  position="top-right"  autoClose={5000} />
         <div className="flex justify-between items-center gap-x-3">
             <div className='bg-red-500 px-3 py-1 rounded-md cursor-pointer' onClick={() => removeHandle(post)} >حذف</div>
             <div className='bg-green-500 px-3 py-1 rounded-md cursor-pointer' >
@@ -56,6 +68,7 @@ function ActionPostItem({ post }: Props) {
                 <Link href={`/dashboard/comments/${post?.slug}`}>کامنت ها</Link>
             </div>
         </div>
+        </>
     )
 }
 

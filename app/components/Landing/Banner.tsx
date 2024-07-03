@@ -28,8 +28,8 @@ style={{
 <BannerPhoto />
 
 
-<div className='bg-purple absolute top-0 left-0  w-full h-full animate-progress opacity-0 z-1'></div>
-<div className='bg-orangecolor absolute top-0 left-0  w-full h-full animate-progress2 opacity-0 z-2'></div>
+<div className='bg-bg absolute top-0 left-0  w-full h-full animate-progress opacity-0 z-1'></div>
+<div className='bg-bgGolden absolute top-0 left-0  w-full h-full animate-progress2 opacity-0 z-2'></div>
 </div> 
 {/* RESPONSIV */}
  <div className=' lg:hidden col-span-12 h-96  w-[350px] lg:w-[550px] flex justify-center items-center  m-auto' style={{

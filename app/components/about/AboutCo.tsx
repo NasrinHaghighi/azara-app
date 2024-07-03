@@ -5,7 +5,7 @@ import Photo from '../../../public/img/face3.png'
 function AboutCo() {
 return (
 <div className='relative  my-24'>
-<div className="grid grid-cols-2 grid-rows-1 gap-4 my-8 bg-input-bg rounded-lg shadow-lg mx-auto relative overflow-hidden shadow-lg shadow-yellow-500/40">
+<div className="grid grid-cols-2 grid-rows-1 gap-4 my-8 bg-input-bg rounded-lg shadow-lg mx-auto relative overflow-hidden  shadow-yellow-500/40">
 <div className='bg-gray-200 '>
 <Image src={Photo} alt="Description" className='w-full h-full ' objectFit='cover' width={200} height={200} />
 </div>

@@ -13,7 +13,7 @@ setTimers(true);
 }, [])
 
 return (
-<div className={`absolute w-full h-full animate-faderigth z-0 transition-opacity duration-2000 bg-white ${timer ? 'opacity-100' : 'opacity-0'}  `} >
+<div className={`absolute w-full h-full animate-faderigth z-0 transition-opacity duration-2000 bg-bgGolden ${timer ? 'opacity-100' : 'opacity-0'}  `} >
 <Image src={Photo.src} layout="fill" objectFit="cover" alt='img' />
 </div>
 )

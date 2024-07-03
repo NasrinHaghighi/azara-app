@@ -12,7 +12,7 @@ function SidebarPoems() {
      const pathname  = usePathname();
      console.log(pathname)
   return (
-    <div className='md:min-w-[230px] min-w-[230px] md:p-8 p-2 rounded-md shadow-2xl lg:mt-24 mt-5   bg-bgGolden shadow-yellow-500/40   text-black lg:fixed ' 
+    <div className='md:min-w-[230px] min-w-[230px] md:p-8 p-2 rounded-md shadow-2xl lg:mt-24 mt-5   bg-bgGolden shadow-yellow-500/40   text-black lg:fixed mb-96' 
      >
   <ul className='grid place-items-center py-5 gap-10 mt-5 font-semibold lg:text-lg text-base '>
 

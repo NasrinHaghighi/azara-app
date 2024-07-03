@@ -35,7 +35,7 @@ function SignPage() {
       })
     //console.log(signInData)
       if (signInData?.error) {
-        console.log('Error during sign-in:', signInData.error);
+        //console.log('Error during sign-in:', signInData.error);
         toast.error('ایمیل یا رمز عبور اشتباه است.')
       } else{
         toast.success('خوش آمدید.')
