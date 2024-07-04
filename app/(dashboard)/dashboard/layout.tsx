@@ -8,8 +8,8 @@ interface MainLayoutProps {
 function DashboardLayout({children}:MainLayoutProps) {
     return (
         <>
-        <div className="p-12 text-text">
-            <Header /> 
+        <div className="py-12 px-0 lg:px-12 text-text">
+            <Header />  
              <div className="grid grid-cols-12 gap-8 mt-8 mx-3 tex">
    
                  

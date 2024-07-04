@@ -1,8 +1,7 @@
 'use client'
 import React , { useState ,useEffect ,useMemo} from 'react'
 import { useFormik } from "formik";
-import * as Yup from "yup";
-//import ReactQuill from 'react-quill';
+
 
 import { CiCirclePlus } from "react-icons/ci";
 import Upload from '../../components/Dashboard/Upload';
@@ -13,7 +12,8 @@ import WriteModal from '../../components/Dashboard/WriteModal';
 import Image from 'next/image';
 
 import ReactQuillBox from '../../components/Dashboard/ReactQuilBox';
-
+import {tags} from '../../utils/data'
+import {sabks} from '../../utils/data'
 interface Cate{
   id:number,
   createdAt:string,
@@ -24,18 +24,13 @@ interface Cate{
 
 
 
-const sabks=[{id:1,title:'غزل', slug:'ghazal'},{id:2,title:'دوبیتی',slug:'dobaiti'},{id:3, title:'مثنوی', slug:'masnavi' },{id:4,title:' چهارپاره',slug:'chaharpare'},{id:5,title:'رباعی',slug:'robaie'}, {id:6, title:'شعر نو',slug:'share-no'}]
-const tags=[{id:1,title:'برگزیده', tagSlug:'selected'},{id:2,title:'طنز', tagSlug:'tanz'}]
+
 function WritPageComponenet() {
     const router = useRouter();
     const session = useSession();
     const role = session.data?.user.role;
   
-    useEffect(() => {
-      // if (role !== 'user') {
-      //   router.push('/')
-      // }
-    });
+
   
     const [open, setOpen] = useState(true);
     const [openModal, setOpenModal] = useState(false);
@@ -184,12 +179,13 @@ function WritPageComponenet() {
           ) : null}
 
         </div>
-        <div className=' mb-8 bg-gray-200 p-2 rounded-md'>
+        {/* /*******tags********** */ }
+        <div className=' mb-8 '>
             <label htmlFor="tags" className="block mb-2 text-sm font-medium text-textColor">تگ‌ها</label>
-            <div id="tags" className='flex flex-wrap gap-2'>
+            <div id="tags" className='flex flex-wrap gap-2 bg-gray-200 p-2 rounded-md'>
             {tags.map((tag: any) => (
                 <label key={tag.id} className='flex items-center'>
-                  <span className='ml-2'>{tag.title}</span>
+                  <span className='ml-2 text-black'>{tag.title}</span>
                   <input
                     type="checkbox"
                     name="tags"
@@ -197,21 +193,19 @@ function WritPageComponenet() {
                     //checked={setTag(tag.tagSlug)}
                     onChange={() => handleTagChange(tag.tagSlug)}
                   />
-                 
-                 
                 </label>
               ))}
              
             </div>
           </div>
 {/* ****************** */}
-<div className="mb-8 bg-gray-200 p-2 rounded-md">
+<div className="mb-8 ">
           <label className="block mb-2 text-sm font-medium text-textColor">
            سبک شعر
           </label>
-          <div id="tags" className='flex flex-wrap gap-2'>
+          <div id="tags" className='flex flex-wrap gap-2 bg-gray-200 p-2 rounded-md'>
           {sabks.map((sabk) => (
-            <div key={sabk.id} className="mb-4 ">
+            <div key={sabk.id} className="mb-4  ">
               <label className="inline-flex items-center">
                 <input
                   type="radio"
@@ -221,7 +215,7 @@ function WritPageComponenet() {
                    onChange={()=>handleSabkChange(sabk.title)}
                   className="form-radio"
                 />
-                <span className="ml-2">{sabk.title}</span>
+                <span className="ml-2 text-black">{sabk.title}</span>
               </label>
             </div>
           ))}

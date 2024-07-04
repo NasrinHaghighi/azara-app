@@ -209,11 +209,11 @@ body{
  color: #fff !important; 
   
 }
-/* @media (max-width: 400px) {
-  body {
-    font-size: 14px; 
-  }
-} */
+label{
+  font-size: 18px !important;
+margin-bottom: 20px !important;
+color: var(--bgGolden);}
+
 a{
   text-decoration: none;
   color: inherit;

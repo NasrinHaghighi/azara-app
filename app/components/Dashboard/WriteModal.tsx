@@ -28,13 +28,13 @@ const WriteModal:React.FC<ModalProps> =({openModal, setOpenModal, values}) =>{
       </div>
 
             <br/>            
-          {!values.title || !values.file || !values.value &&(
-               <div className="text-white text-center mt-12 text-lg font-semibold">پر کردن حداقل یکی از موارد الزامی است.</div>)}
+          {!values?.title || !values?.file || !values?.value &&(
+               <div className="text-white text-center mt-12 text-lg font-semibold">پر کردن حداقل یکی از موارد الزامی است.</div>)} 
             
          
     
                   
-              <div className=' bg-input-bg text-textColor rounded-md  max-h-[80vh] overflow-y-auto px-5 py-5 mx-5    sm:text-center'>
+              <div className=' bg-bg text-white rounded-md  max-h-[80vh] overflow-y-auto px-5 py-5 mx-5    sm:text-center'>
                     <div className="grid md:grid-flow-col grid-flow-row md:justify-around justify-center items-center w-l ">
                        
                         <div className="col-span-4 mb-10">

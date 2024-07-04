@@ -32,3 +32,20 @@ export const convertSabkToTitle = (sabkArray:string[]  = []) => {
     
   return sabkArray.map(convertSabk)
   };
+  export const convertTag = (tag:string ) => {
+    console.log('tagArray',tag)
+    const convert = (tag: string) => {
+        switch (tag) {
+            case 'selected':
+                return 'برگزیده';
+            case 'tanz':
+                return '   طنز';
+             
+            default:
+                return tag; 
+        }
+    }
+   
+    
+    return convert(tag)
+  };

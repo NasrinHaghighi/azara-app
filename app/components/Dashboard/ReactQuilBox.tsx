@@ -10,34 +10,38 @@ Quill.register('modules/imageResize', ImageResize);
 
 import QuillBetterTable from 'quill-better-table'
 import 'quill-better-table/dist/quill-better-table.css';
-import { forwardRef } from 'react';
+
 
 
 /********* */
 const modules = {
   toolbar: [
-    [{ 'size': ['small', false, 'large', 'huge'] }],
+    [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
     [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-    ['bold', 'italic', 'underline', 'strike'],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
     ['blockquote', 'code-block'],
-    [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
+    [
+      { list: 'ordered' },
+      { list: 'bullet' },
+      { indent: '-1' },
+      { indent: '+1' }
+    ],
     ['link', 'image', 'video'],
     ['clean'],
-    [{ 'color': ['red', 'pink', 'orange', 'yellow', 'green', 'blue', 'brown'] }, { 'background': [] }],
-    [{ 'table': true }],
-    [{ align: "" }, { align: "center" }, { align: "right" }, { align: "justify" }],
+    [{ 'color': ['red', 'pink', 'orange', 'yellow', 'green', 'blue', 'brown'] }, { 'background': [] }],          // dropdown with defaults from theme
+   
+    [{ 'align': [] }],
   ],
-
   clipboard: {
-    matchVisual: false,
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false
   },
   imageResize: {
-    modules: ['Resize', 'DisplaySize'],
-  },
-  //table: true, 
+    parchment: Quill.import('parchment'),
+    modules: ['Resize', 'DisplaySize']
+  }
+}
 
-
-};
 
 const formats = [
   'header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote',

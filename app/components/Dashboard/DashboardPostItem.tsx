@@ -2,9 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import ActionPostItem from './ActionPostItem'
 import NumberOfLikes from './NumberOfLikes'
-//import {bgCat} from '../../utils/bgcategory'
-//import ActionPostItem from './ActionPostItem'
-//import NumberOfLikes from './NumberOfLikes'
+import {convertTag} from '@/app/utils/func'
+
 
 function DashboardPostitem({post}:any) {
 //console.log('post',post.id)
@@ -19,6 +18,11 @@ function DashboardPostitem({post}:any) {
             <div >توسط:<span className='px-1 text-lime-500 font-semibold text-lg'>{post.userEmail}</span> </div> 
             <div >سبک:<span className='px-1 text-yellow-600 font-semibold text-lg'>{post.sabk}</span> </div> 
             <div> دسته بندی: <span className='text-red-500'>{post.catSlug}</span> </div> 
+            <div> تگ ها: 
+    {post.tags.map((item:string,index:number) => {
+      return <span className='text-red-500'>{convertTag(item)} {index < post.tags.length-1 ? <span >و</span> : ''}</span>
+    })}
+               </div> 
         </div>
           <div className='mb-8 md:text-3xl  '>عنوان:<span className='px-1'></span><span>{post.title}</span></div>
 <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center gap-3'>
