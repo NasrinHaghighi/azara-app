@@ -1,13 +1,7 @@
 import React from 'react'
 import CategoryItem from './CategoryItem';
 
-interface Category {
-    id: string;
-    slug: string;
-    title: string;
-    img: string;
-    createdAt: string;
-}
+import { Category } from '../../utils/types';
 
 const getData = async () => {
     const res = await fetch(`http://localhost:3000/api/categories`, { cache: 'no-store' }, );
@@ -21,7 +15,7 @@ const getData = async () => {
 
 async function ListOfCategory() {
     const data = await getData();
-console.log('data, ', data)
+//console.log('data, ', data)
     return (
         <div>
             {data.length < 1 ? (

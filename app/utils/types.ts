@@ -30,3 +30,17 @@ export interface Cate{
     tags: string[] | null;
     value ?:string
   }
+  export interface User {
+    _id: string;
+    email: string;
+    name: string;
+    role:string
+}
+
+export interface Category {
+  id: string;
+  slug: string;
+  title: string;
+  img: string;
+  createdAt: string;
+}

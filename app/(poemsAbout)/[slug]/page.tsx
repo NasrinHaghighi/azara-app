@@ -57,7 +57,7 @@ const getData = async ( slug : string) => {
            </div>
       </div>
       <div>
-      <div className='text-center md:text-2xl text-l leading-10' dangerouslySetInnerHTML={{ __html: data?.des || '' }} />  
+      <div className='text-rigth md:text-xl text-l leading-10' dangerouslySetInnerHTML={{ __html: data?.des || '' }} />  
 
       </div>
     {/* <div className='absolute bottom-0 left-0 right-0'>

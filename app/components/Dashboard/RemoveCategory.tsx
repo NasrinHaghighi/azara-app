@@ -1,6 +1,8 @@
 'use client';
 import React ,{useState, useEffect}from 'react'
 import { useRouter } from 'next/navigation';
+import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function RemoveCategory({item}:any) {
     //console.log(item)
@@ -23,13 +25,17 @@ const [value, setValue] = useState('');
    
                    });
    
-               if (!res.ok) {
-                   throw new Error('Failed to remove post');
-               }
-               router.push('/dashboard');
-               router.refresh()
-               // Handle successful response
-               console.log('Post removed successfully');
+                   if (res.ok) {
+                    toast.success('دسته بندی با موفقیت حذف شد.');
+                    setTimeout(() => {
+                      router.push('/dashboard/poems');
+                      router.refresh();
+                    }, 3000);
+                  } else {
+                    toast.error('خطا در حذف .');
+                    throw new Error('Failed to update post');
+                  }
+              
            } catch (error) {
                // Handle error
                console.error('Error removing post:', error);
@@ -48,13 +54,16 @@ const [value, setValue] = useState('');
                    body: JSON.stringify({slug: item.slug, title: value})
                });
 
-               if (!res.ok) {
-                   throw new Error('Failed to edite category');
-               }
-               router.push('/dashboard');
-               router.refresh()
-               // Handle successful response
-               console.log('Category edited successfully');
+               if (res.ok) {
+                toast.success('دسته بندی با موفقیت ویرایش شد.');
+                setTimeout(() => {
+                  router.push('/dashboard/poems');
+                  router.refresh();
+                }, 3000);
+              } else {
+                toast.error('خطا در ویرایش دسته بندی.');
+                throw new Error('Failed to update post');
+              }
            } catch (error) {
                // Handle error
                console.error('Error edited category:', error);
@@ -64,6 +73,7 @@ const [value, setValue] = useState('');
        useEffect(() => {setValue(item?.title || '')},[])
   return (
     <>
+       <ToastContainer  position="top-right"  autoClose={5000} />
     <div className='flex  justify-end'>
    
     <button className='px-5 py-2 bg-green-400 rounded-md' onClick={()=>setOpen(!open)}>ویرایش</button>

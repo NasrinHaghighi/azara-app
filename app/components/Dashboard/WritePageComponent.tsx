@@ -7,13 +7,15 @@ import { CiCirclePlus } from "react-icons/ci";
 import Upload from '../../components/Dashboard/Upload';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-
+import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import WriteModal from '../../components/Dashboard/WriteModal';
 import Image from 'next/image';
 
 import ReactQuillBox from '../../components/Dashboard/ReactQuilBox';
 import {tags} from '../../utils/data'
 import {sabks} from '../../utils/data'
+import { Post } from '@prisma/client';
 interface Cate{
   id:number,
   createdAt:string,
@@ -63,6 +65,14 @@ function WritPageComponenet() {
     setSabk(value)
   }
     const handelSubmit = async(values:any) => {
+      // Validate fields
+      for (const key in values) {
+        if (!values[key as keyof Post]) {
+          toast.error(`لطفا فیلد ${key} را پر کنید.`);
+          router.push('/dashboard/write');
+          return;
+        }
+      }
        const res = await fetch('http://localhost:3000/api/post', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -76,8 +86,17 @@ function WritPageComponenet() {
           sabk:sabk
         }),
       })
-      //console.log('res', res)
-     // console.log('values', values)
+      console.log(res)
+      if (res.ok) {
+        toast.success('پست با موفقیت ایجاد شد.');
+        setTimeout(() => {
+          router.push('/dashboard/poems');
+          router.refresh();
+        }, 3000);
+      } else {
+        toast.error('خطا در ایجاد پست.');
+        throw new Error('Failed to update post');
+      }
     }
   
     //console.log(tag)
@@ -93,7 +112,7 @@ function WritPageComponenet() {
           onSubmit: values => {
            // console.log('Submitting: ', values);
             handelSubmit(values);
-  router.push('/');
+  //router.push('/');
           },
         });
         useEffect(() => {
@@ -117,7 +136,7 @@ function WritPageComponenet() {
      
   return (
    <>
-   
+    <ToastContainer  position="top-right"  autoClose={5000} />
    <div className='container pb-12 '>
   <h1 className='text-4xl font-bold p-8 text-center'>ایجاد متن جدید<span className='underline '></span></h1>
 
@@ -151,11 +170,11 @@ function WritPageComponenet() {
         </div>
 
         <div className=' mb-8'>
-          <label htmlFor="category" className="block mb-2 text-sm font-medium text-textColor">دسته بندی</label>
+          <label htmlFor="category" className="block mb-2 text-sm font-medium text-textColor">دسته بندی <span className='text-xs text-red-500'>(ضروری)</span></label>
           <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-l rounded-lg focus:ring-blue-500 focus:border-blue-500 block   dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full p-2 "
          value={formik.values.category}
          onChange={formik.handleChange}
-          name="category"
+          name="category" required
           >
               <option value="">لطفاً یک دسته بندی انتخاب کنید</option>
   {cate?.map((cat:Cate) => (
@@ -166,14 +185,7 @@ function WritPageComponenet() {
   ))}
  
   </select>
-          {/* <input
-            id="category"
-            name="category"
-            type="text"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="دسته بندی" required
-            onChange={formik.handleChange}
-            value={formik.values.category}
-          /> */}
+          
           {formik.touched.category && formik.errors.category ? (
             <div className="input feedback text-rose-600">{formik.errors.category}</div>
           ) : null}
@@ -181,7 +193,7 @@ function WritPageComponenet() {
         </div>
         {/* /*******tags********** */ }
         <div className=' mb-8 '>
-            <label htmlFor="tags" className="block mb-2 text-sm font-medium text-textColor">تگ‌ها</label>
+            <label htmlFor="tags" className="block mb-2 text-sm font-medium text-textColor">تگ‌ها <span className='text-xs text-red-500'>(ضروری)</span></label>
             <div id="tags" className='flex flex-wrap gap-2 bg-gray-200 p-2 rounded-md'>
             {tags.map((tag: any) => (
                 <label key={tag.id} className='flex items-center'>
@@ -191,7 +203,7 @@ function WritPageComponenet() {
                     name="tags"
                     value={tag.id}
                     //checked={setTag(tag.tagSlug)}
-                    onChange={() => handleTagChange(tag.tagSlug)}
+                    onChange={() => handleTagChange(tag.tagSlug)} 
                   />
                 </label>
               ))}
@@ -201,7 +213,7 @@ function WritPageComponenet() {
 {/* ****************** */}
 <div className="mb-8 ">
           <label className="block mb-2 text-sm font-medium text-textColor">
-           سبک شعر
+           سبک شعر <span className='text-xs text-red-500'>(ضروری)</span>
           </label>
           <div id="tags" className='flex flex-wrap gap-2 bg-gray-200 p-2 rounded-md'>
           {sabks.map((sabk) => (
@@ -213,7 +225,7 @@ function WritPageComponenet() {
                   value={sabk.slug}
                   // checked={selectedCategory === category.slug}
                    onChange={()=>handleSabkChange(sabk.title)}
-                  className="form-radio"
+                  className="form-radio" required
                 />
                 <span className="ml-2 text-black">{sabk.title}</span>
               </label>
@@ -224,7 +236,7 @@ function WritPageComponenet() {
 
         {/* *************** */}
         <div className=' mb-8 bg-gray-200 p-2 rounded-md'>
-          <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-textColor"> اضافه کردن تصویر</label>
+          <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-textColor"> اضافه کردن تصویر <span className='text-xs text-red-500'>(ضروری)</span></label>
           <div className=' flex felx-row justify-start items-center gap-5'  >
             <div onClick={() => setOpen(!open)}><CiCirclePlus className='text-green-800 text-5xl font-extrabold' /></div>
             {open &&

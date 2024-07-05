@@ -246,7 +246,7 @@ const getcategpry =async()=>{
                     name="tags"
                     value={tagoption.id}
                     checked={tag ? tag.includes(tagoption.tagSlug) : false}
-                   onChange={() => handleCheckboxChange(tagoption.tagSlug)} required
+                   onChange={() => handleCheckboxChange(tagoption.tagSlug)} 
                   />
                  
                  

@@ -1,12 +1,7 @@
 import React from 'react'
 import RemoveUser from './RemoveUser';
 
-interface User {
-    _id: string;
-    email: string;
-    name: string;
-    role:string
-}
+import {User} from '../../utils/types'
 
 function DashboardUserItem({item}:{item:User}) {
 

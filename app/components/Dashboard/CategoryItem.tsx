@@ -1,28 +1,22 @@
 import React from 'react'
 import RemoveCategory from './RemoveCategory';
+import { Category } from '../../utils/types';
 
-interface Category {
-    id: string;
-    slug: string;
-    title: string;
-    img?: string;
-    createdAt: string;
-}
 
-// const getData = async (slug:string) => {
+const getData = async (slug:string) => {
    
-//     const res = await fetch(`http://localhost:3000/api/post?cat=${slug}`, { cache: 'no-store' }, );
+    const res = await fetch(`http://localhost:3000/api/post?cat=${slug}`, { cache: 'no-store' }, );
   
-//     if (!res.ok) {
-//       throw new Error('Network response was not ok');
-//     }
+    if (!res.ok) {
+      throw new Error('Network response was not ok');
+    }
   
-//     return res.json();
-//   }
+    return res.json();
+  }
 async function CategoryItem({ item }: { item: Category }) {
     const {slug} = item;
-   // const data = await getData(slug);
-
+ const data = await getData(slug);
+//console.log('data, ', data.posts.length)
     return (
         <div className='gird grid-cols-1 md:grid-cols-3 gap-5 mb-5'>
             <div className='bg-slate-200 p-5 rounded-lg shadow-md first-line: '>
@@ -41,7 +35,7 @@ async function CategoryItem({ item }: { item: Category }) {
                 <div className='mb-3 flex justify-between items-center'>
                     <div>
                     <span> تعداد پست : </span>
-                    <span className='text-orange-400 font-semibold text-lg mr-2'>85</span>
+                    <span className='text-orange-400 font-semibold text-lg mr-2'>{data.posts.length}</span>
                     </div>
                 
                </div>
