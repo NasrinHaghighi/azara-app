@@ -172,21 +172,21 @@ const handelSubmite = async (e: any) => {
         </div>
         {/* TITLE  */}
         <div className='mb-8'>
-                    <label htmlFor="category" className="block mb-2 text-sm font-medium text-textColor"> عنوان</label>
+                    <label htmlFor="category" className="block mb-2 text-sm font-medium text-textColor"> عنوان <span className='text-red-500'>( ضروری)</span></label>
                     <input
                         id="category"
                         name="category"
                         type="text"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="دسته بندی" required
                         onChange={(e)=>setTitle(e.target.value)}
-                        value={title}
+                        value={title} 
                     />
                     <br />
                     <br />
       </div>
             {/*Sub TITLE  */}
             <div className='mb-8'>
-                    <label htmlFor="category" className="block mb-2 text-sm font-medium text-textColor">  زیر عنوان </label>
+                    <label htmlFor="category" className="block mb-2 text-sm font-medium text-textColor">  زیر عنوان <span className='text-red-500'>( ضروری)</span></label>
                     <input
                         id="category"
                         name="category"
