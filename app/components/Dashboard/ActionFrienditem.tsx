@@ -38,7 +38,7 @@ function ActionFrienditem({friend}:any) {
     <div className="flex justify-end items-center gap-x-3">
     <div className='bg-red-500 px-3 py-1 rounded-md cursor-pointer' onClick={() => removeHandle(friend)} >حذف</div>
     <div className='bg-green-500 px-3 py-1 rounded-md cursor-pointer' >
-        <Link href={`/dashboard/friends/${friend.slug}`}>ویرایش</Link>
+        <Link href={`/dashboard/friends/${friend.id}`}>ویرایش</Link>
     </div>
    
 </div>

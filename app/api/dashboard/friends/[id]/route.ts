@@ -13,12 +13,12 @@ import { NextRequest } from 'next/server';
 
 export const GET = async (req: NextRequest,{params}:any) => {
 
-    const {slug}=params
+    const {id}=params
    // console.log('id',id)
     try {
-        const post = await prisma.post.findUnique({
+        const post = await prisma.friend.findUnique({
             where: {
-                   slug: slug
+                   id: id
                }
            })
    

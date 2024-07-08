@@ -188,7 +188,7 @@ const getcategpry =async()=>{
 
             <form onSubmit={handleSubmit}>
                 <div className='mb-8'>
-                    <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-textColor">ویرایش عنوان پست <span className='text-xs text-red-500'> ( ضروری )</span></label>
+                    <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-textColor">ویرایش عنوان پست </label>
                     <input
                         id="title"
                         name="title"
@@ -246,7 +246,7 @@ const getcategpry =async()=>{
                     name="tags"
                     value={tagoption.id}
                     checked={tag ? tag.includes(tagoption.tagSlug) : false}
-                   onChange={() => handleCheckboxChange(tagoption.tagSlug)} 
+                   onChange={() => handleCheckboxChange(tagoption.tagSlug)} required
                   />
                  
                  
@@ -277,7 +277,7 @@ const getcategpry =async()=>{
                     
                     </div>
     {/* DESCRIPTION */}
-    <ReactQuill theme="snow" value={content} onChange={handelValue} modules={modules} formats={formats}  bounds={'#root'} placeholder='****'/>
+   <ReactQuill theme="snow" value={content} onChange={handelValue} modules={modules} formats={formats}  bounds={'#root'} placeholder='****'/> 
         <br />
 
         <button className='bg-green-500  text-white w-36  rounded-md px-4 py-2 hover:bg-green-700 transition' type='submit' > ارسال</button>  

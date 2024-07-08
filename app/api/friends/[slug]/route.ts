@@ -6,15 +6,16 @@ import prisma from '../../../utils/connect'
 
 //const prisma = new PrismaClient();
 
-//get frindes by slug//
+//get frindes by id//
 export const GET = async (req: any,{params}:any) => {
 
     const {slug}=params
-    
+    console.log('id in backend',slug)
+    console.log('id in backend',params)
     try {
        const friend = await prisma.friend.findUnique({
         where: {
-               slug: slug
+              slug: slug
            }
        })
 

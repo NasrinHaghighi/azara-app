@@ -6,7 +6,7 @@ import prisma from '../../../utils/connect'
 
 //const prisma = new PrismaClient();
 
-//get all posts//
+//get one posts for edite in dashboard//
 export const GET = async (req: any,{params}:any) => {
 
     const {slug}=params

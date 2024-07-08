@@ -1,6 +1,6 @@
 
-
-
+import Quill from 'quill';
+//Quill.register('modules/imageResize', ImageResize);
 
 export const convertSabkToTitle = (sabkArray:string[]  = []) => {
     const convertSabk = (sabk: string) => {
@@ -49,3 +49,8 @@ export const convertSabkToTitle = (sabkArray:string[]  = []) => {
     
     return convert(tag)
   };
+
+ 
+  
+  
+  
