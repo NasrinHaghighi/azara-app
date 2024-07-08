@@ -9,9 +9,9 @@ import CatDropdownPoemsPage from './CatDropdownPoemsPage'
 
 
 function Filters({  cat, search, sabk }: any) {
-  console.log('sabk...333',sabk)
+//  console.log('sabk...333',sabk)
 
-  console.log('cat...333',cat)
+  //console.log('cat...333',cat)
 
   return (
     <>

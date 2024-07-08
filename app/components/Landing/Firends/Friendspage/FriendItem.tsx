@@ -19,7 +19,7 @@ function FriendItem({ item, isOdd, backgroundImage }: any) {
                 backgroundPosition: 'center',
             }}>
 
-            <div className={`lg:col-span-4 col-span-12 flex flex-col justify-center  lg:text-center border-b-2 lg:border-b-0 lg:${isOdd ? 'order-1' : 'order-2'} order-1 w-auto`} >
+            <div className={`lg:col-span-4 col-span-12 flex flex-col justify-center  lg:text-center border-b-2 border-bg  lg:border-b-0 lg:${isOdd ? 'order-1' : 'order-2'} order-1 w-auto`} >
                 <div className='w-full lg:max-w-[250px] max-w-[150px] h-auto m-auto lg:m-1 '>
                     <Image src={item.img} alt="face" width={250} height={250} className="rounded-full mb-5 shadow-lg" />
                 </div>
@@ -39,11 +39,11 @@ function FriendItem({ item, isOdd, backgroundImage }: any) {
                     </div>
                 </div>
             </div>
-            <div className={`lg:col-span-8 col-span-12   order-2 lg:${isOdd ? 'order-2' : 'order-1'} py-5 lg:text-center `}>
-                <div className='lg:text-2xl text-xl mb-3 '>عنوان : <span className='text-text'>{item.title}</span></div>
+            <div className={`lg:col-span-8 col-span-12   order-2 lg:${isOdd ? 'order-2' : 'order-1'} py-5 text-center `}>
+                <div className='lg:text-3xl text-xl  font-semibold mb-4'>عنوان : <span className='text-bgGolden'>{item.title}</span></div>
                 {/* poem */}
                 <div
-                    className="leading-relaxed  text-lg"
+                    className="leading-relaxed  text-xl mb-4"
                     dangerouslySetInnerHTML={{ __html: item?.des.substring(0, 300) || '' }}
                 />
             <Link href={`/friends/${item.slug}`} className='text-red-500' >... ادامه مطلب</Link>
