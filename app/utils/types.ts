@@ -44,3 +44,22 @@ export interface Category {
   img: string;
   createdAt: string;
 }
+export interface Friend {
+  createdAt: string;
+  des: string;
+  id: string;
+  img: string;
+  slug: string;
+  title: string;
+sabk:string[];
+name:string;
+
+}
+export interface UpdatedData{
+  des: string | undefined;
+  
+  title: string;
+sabk:string[] | undefined;
+name:string;
+img:string | File | undefined;
+}

@@ -139,9 +139,7 @@ const getcategpry =async()=>{
           return;
         }
       }
-  
-
-    const response = await fetch(`/api/dashboard/post/${id}`, {
+  const response = await fetch(`/api/dashboard/post/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

@@ -35,14 +35,14 @@ export const PUT = async (req: NextRequest,{params}:any) => {
     const body = await req.json();
    
     try {
-        const post = await prisma.post.update({
+        const friend = await prisma.friend.update({
             where: {
                 id: id
             },
             data: body
         })
    
-        return new NextResponse(JSON.stringify(post), { status: 200 });
+        return new NextResponse(JSON.stringify(friend), { status: 200 });
     } catch (err) {
         console.log(err);
         return new NextResponse(JSON.stringify({ message: 'error' }), { status: 500 });

@@ -11,38 +11,33 @@ import ImageResize from 'quill-image-resize-module-react';
 import Quill from 'quill';
 import { sabks } from '@/app/utils/data';
 import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+Quill.register('modules/imageResize', ImageResize);
+import {Friend, UpdatedData} from '../../../../utils/types'
 
-  Quill.register('modules/imageResize', ImageResize);
-interface Friend {
-    createdAt: string;
-    des: string;
-    id: string;
-    img: string;
-    slug: string;
-    title: string;
-  sabk:string[];
-  name:string;
-  }
 
 function DashboardSingleFriend() {
-    //const router = useRouter();
+    const router = useRouter();
     const params = useParams();
     const { id } = params;
     const [openModal, setOpenModal] = useState(false);
     const [postData, setPostData] = useState<Friend | null>(null);
     const [file, setFile] = useState<string | File | null>(null);
     const [content, setContent] = useState(postData?.des);
-    const [initialSabks, setInitialSabks] = useState<String []>([]);
-
+    const [initialSabks, setInitialSabks] = useState<string []>([]);
+    const [title, setTitle] = useState('');
+    const [name, setName] = useState('');
      /***************************** */
      useEffect(() => {
         if (postData) {
             setContent(postData.des);
            setInitialSabks(postData?.sabk);
+           setTitle(postData.title);
+           setName(postData.name);
+          // setFile(postData.img)
             }
     }, [postData]);
-    console.log(initialSabks)
+   //console.log(content, initialSabks, title, name, file)
   useEffect(() => {
     const fetchData = async () => {
         try {
@@ -60,12 +55,61 @@ function DashboardSingleFriend() {
 
     fetchData();
 }, [id]);
+/************* */
+const updatedData: UpdatedData = {
+    title: title,
+    des: content,
+    sabk: initialSabks,
+    name:name,
+    img: file || postData?.img,
+    
+}
+const handelSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    console.log(updatedData)
+    for (const key in updatedData) {
+        if (!updatedData[key as keyof UpdatedData]) {
+          toast.error(`لطفا فیلد ${key} را پر کنید.`);
+          //router.push('/dashboard/write');
+          return;
+        }
+      }
+      const response = await fetch(`/api/dashboard/friends/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedData),
+      });   
+      if (response.ok) {
+        toast.success('پست دوستان با موفقیت ویرایش شد.');
+        setTimeout(() => {
+          router.push('/dashboard/friends');
+          router.refresh();
+        }, 3000);
+      } else {
+        toast.error('خطا در ویرایش پست.');
+        throw new Error('Failed to update post');
+      }
+}
 
-
-
-console.log('id in front',id)
-console.log(postData)
+const handleSabkChange = (sabkSlug: string) => {
+    if (initialSabks) {
+        if (initialSabks.includes(sabkSlug)) {
+            setInitialSabks(initialSabks.filter(t => t !== sabkSlug));
+        } else {
+            setInitialSabks([...initialSabks, sabkSlug]);
+        }
+    } else {
+        setInitialSabks([sabkSlug]);
+    }
+    
+};
+//console.log('id in front',id)
+//console.log(initialSabks)
   return (
+    <>
+       <ToastContainer  position="top-right"  autoClose={5000} />
     <div className='container pb-12 '>
             <h1 className='text-4xl font-bold p-8 text-center text-bgGolden'> ویرایش متن<span className='underline '></span></h1>
             <div className='flex justify-center gap-10'>
@@ -82,7 +126,7 @@ console.log(postData)
 
          {/* <WriteModal openModal={openModal} setOpenModal={setOpenModal} values={updatedPost} />   */}
 
-            <form >
+            <form onSubmit={handelSubmit}>
             <div className='mb-8'>
                     <label htmlFor="name" className="block mb-2 text-sm font-medium text-textColor">ویرایش نام شاعر</label>
                     <input
@@ -90,8 +134,8 @@ console.log(postData)
                         name="name"
                         type="text"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="عنوان" required
-                         //onChange={(e)=>setTitle(e.target.value)}
-                        value={postData?.name}
+                         onChange={(e)=>setName(e.target.value)}
+                        value={name}
                     />
 
                 </div>
@@ -102,8 +146,8 @@ console.log(postData)
                         name="title"
                         type="text"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="عنوان" required
-                         //onChange={(e)=>setTitle(e.target.value)}
-                        value={postData?.title}
+                        onChange={(e)=>setTitle(e.target.value)}
+                        value={title}
                     />
 
                 </div>
@@ -119,10 +163,10 @@ console.log(postData)
                 <input
                   type="checkbox"
                   name="sabk"
-                  value={sabk.slug}
+                  //value={sabk.slug}
                 checked={initialSabks.includes(sabk.slug)}
-                   //onChange={()=>handleSabkChange(sabk.title)}
-                  className="form-radio" required
+                onChange={()=>handleSabkChange(sabk.slug)}
+                  className="form-radio" 
                 />
                 <span className="ml-2 text-black">{sabk.title}</span>
               </label>
@@ -161,7 +205,7 @@ console.log(postData)
 
             </form>
         </div>
-
+        </>
     )
 
 
