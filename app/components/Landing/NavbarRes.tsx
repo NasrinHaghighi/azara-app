@@ -19,7 +19,7 @@ function NavbarRes() {
 
 <div onClick={()=>setOpen(!open)} className='text-2xl bg-orangecolor p-2 rounded-full '><RiMenu5Line /></div>
 
-{open && <div className={`mt-14 z-10 mb-20 absolute w-full h-[500px] text-center pt-8 pb-8 flex flex-col gap-5 text-xl rounded-md bg-gray-200 min-w-[300px]`}>
+{open && <div className={`mt-14 z-10 mb-20 absolute w-full h-[500px] text-center pt-8 pb-8 flex flex-col gap-5 text-xl rounded-md bg-bgGolden min-w-[300px]`}>
 <div onClick={handleLinkClick}><Link href='/' > خانه</Link></div>
 <div onClick={handleLinkClick}><Link href='/about' > درباره ما</Link></div>
 <div onClick={handleLinkClick}><Link href='/poems' > اشعار</Link></div>

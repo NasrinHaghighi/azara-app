@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import RenderDangerous from '../Poem/RenderDangerous'
+
 
 
 /////
@@ -21,7 +21,7 @@ async function AboutCo() {
     const data = await getData()
     //console.log(data)
 return (
-<div className='relative  my-12 md:px-24 sm:px-12'>
+<div className='relative   md:px-24 sm:px-12 '>
 <div className="grid grid-cols-2 grid-rows-1 gap-4 my-8 bg-input-bg rounded-lg shadow-lg mx-auto relative overflow-hidden  shadow-yellow-500/40 ">
 <div className=''>
 <Image src={data[0].img} alt="Description" className='w-full h-full ' objectFit='cover' width={200} height={200} />
@@ -36,7 +36,7 @@ return (
 </div>
 <div className='w-full  bg-bg rounded-md aboslute z-0 -top-5 '>
 <div className='bg-input-bg p-8 rounded-lg shadow-md text-2xl text-bgGolden leading-10 shadow-yellow-500/40'>
-<div className=' ' dangerouslySetInnerHTML={{ __html:data[0].des }} />
+<div className='text-lg text-center ' dangerouslySetInnerHTML={{ __html:data[0].des }} />
        
         </div>
 </div>
