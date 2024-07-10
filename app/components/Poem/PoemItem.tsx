@@ -1,11 +1,11 @@
 import React from 'react'
-//import IMg from '../../../public/img/ashoora.jpg'
+
 import Image from 'next/image'
 import RenderDangerous from './RenderDangerous'
 import Link from 'next/link'
 import Yellow from '../../../public/img/yellow.jpg'
 
-function PoemItem({item, backgroungImage}:any) {
+function PoemItem({item, }:any) {
  
   return (
     <div className="  border  rounded-md shadow-md  mb-10 pb-5 text-black" 

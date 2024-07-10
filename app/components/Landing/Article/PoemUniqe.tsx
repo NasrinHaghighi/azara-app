@@ -5,13 +5,9 @@ import React,{useRef, useEffect, useState} from 'react'
 import { useInView } from 'react-hook-inview'
 import Yellow from '../../../../public/img/yellow.jpg'
 import RenderDangerous from '../../Poem/RenderDangerous'
-// import ImagePoem from '../../../../public/img/bg1.png'
-// import ImagePoem2 from '../../../../public/img/bg2.png'
-// import ImagePoem3 from '../../../../public/img/bg3.png'
 
-// const arr=[ImagePoem,ImagePoem2,ImagePoem3]
 function PoemUniqe({selectedPosts}:any) {
- // console.log(selectedPosts)
+ 
 
   return (
     <div className="item relative mb-5 w-full h-fit p-2">

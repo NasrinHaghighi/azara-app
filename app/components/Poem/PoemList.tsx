@@ -1,12 +1,12 @@
 import React from 'react'
 import PoemItem from './PoemItem'
 import Pagination from './Pagination'
-import Poem1 from '../../../public/img/poem1.png'
-import Poem2 from '../../../public/img/poem2.png'
-import Poem3 from '../../../public/img/poem3.png'
+// import Poem1 from '../../../public/img/poem1.png'
+// import Poem2 from '../../../public/img/poem2.png'
+// import Poem3 from '../../../public/img/poem3.png'
 
 
-const arr = [Poem1, Poem2, Poem3]
+//const arr = [Poem1, Poem2, Poem3]
 const getData = async ({page, cat,search,sabk}:any) => {
   const res = await fetch(`http://localhost:3000/api/post?page=${page}&cat=${cat}&search=${search}&sabk=${sabk}`, { cache: 'no-store' }, );
   if (!res.ok) {
@@ -20,7 +20,7 @@ const getData = async ({page, cat,search,sabk}:any) => {
 
 
 async function PoemList({ page, cat ,search, sabk}: any) {
-  console.log('page', page, 'cat', cat,'search', search, 'sabk', sabk)
+  //console.log('page', page, 'cat', cat,'search', search, 'sabk', sabk)
 
 
   const {posts, count} =await getData({ page, cat, search,sabk });
@@ -32,8 +32,8 @@ async function PoemList({ page, cat ,search, sabk}: any) {
   return (
     <div>
           {posts.map((item:any, index:number) => {
-            const backgroundImage = arr[index % arr.length];
-            return <PoemItem key={item} item={item} backgroungImage={backgroundImage} />
+            //const backgroundImage = arr[index % arr.length];
+            return <PoemItem key={item} item={item}  />
         })} 
         <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} cat={cat}/> 
     </div>

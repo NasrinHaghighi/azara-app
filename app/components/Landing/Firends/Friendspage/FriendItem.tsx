@@ -1,6 +1,6 @@
 import React from 'react'
 import { convertSabkToTitle } from '../../../../utils/func';
-
+import Yellow from '../../../../../public/img/yellow.jpg'
 import Image from 'next/image'
 import Link from 'next/link';
 
@@ -14,7 +14,7 @@ function FriendItem({ item, isOdd, backgroundImage }: any) {
         <>
         <div className="grid grid-cols-12 lg:px-12 px-3 py-8 text-text rounded-md mb-5 lg:gap-8 gap:0 border-2 "
             style={{
-                backgroundImage: `url(${backgroundImage.src})`,
+                backgroundImage: `url(${Yellow.src})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}>

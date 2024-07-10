@@ -1,11 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import Face from '../../../../public/img/face3.png'
+import Yellow from '../../../../public/img/yellow.jpg'
 import Link from 'next/link';
-import bg1 from '../../../../public/img/bluebg.png'
-import bg2 from '../../../../public/img/bgblue2.png'
-import bg3 from '../../../../public/img/bluebg3.png'
-import bg4 from '../../../../public/img/bgblue4.png'
 
 
 
@@ -18,14 +14,14 @@ interface Props {
   sabk: string[];
   title:string
 }
-const arr=[bg1,bg2,bg3,bg4]
+//const arr=[bg1,bg2,bg3,bg4]
 function FriendsCard({item, index}:{item:Props, index:number}) {
-  const backgroundImage = arr[index % arr.length].src;
+  //const backgroundImage = arr[index % arr.length].src;
   return (
     <>
     
    <div className='text-text h-[600px]  mx-3 rounded-lg md:p-8 px-1 py-3 flex flex-col shadow-lg' style={{
-    backgroundImage: `url(${backgroundImage} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
+    backgroundImage: `url(${Yellow.src} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
     }}>
     <div className='lg:flex lg:justify-end lg:items-center pb-3 border-b border-gray-200 flex flex-col justify-center items-center'>
     <h1 className='text-ligthText md:text-lg  text-md text-center font-semibold'>{item.name}</h1>

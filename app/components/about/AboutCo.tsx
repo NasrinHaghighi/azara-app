@@ -21,7 +21,7 @@ async function AboutCo() {
     const data = await getData()
     //console.log(data)
 return (
-<div className='relative  my-24 md:px-24 sm:px-12'>
+<div className='relative  my-12 md:px-24 sm:px-12'>
 <div className="grid grid-cols-2 grid-rows-1 gap-4 my-8 bg-input-bg rounded-lg shadow-lg mx-auto relative overflow-hidden  shadow-yellow-500/40 ">
 <div className=''>
 <Image src={data[0].img} alt="Description" className='w-full h-full ' objectFit='cover' width={200} height={200} />

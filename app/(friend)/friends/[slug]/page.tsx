@@ -1,5 +1,5 @@
 import React from 'react'
-import BG from '../../../../public/img/blue4.png'
+import Yellow from '../../../../public/img/yellow.jpg'
 import Image from 'next/image'
 import { convertSabkToTitle } from '../../../utils/func';
 
@@ -23,7 +23,7 @@ async function page({params}:any) {
   //console.log(titles)
   return (
     <div className=' border-2  rounded-lg p-5 h-auto mb-24 shadow-lg text-text' style={{
-      backgroundImage: `url(${BG.src} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
+      backgroundImage: `url(${Yellow.src} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
       }} >
 <div>
 <div className=' w-full lg:flex lg:flex-col lg:justify-start lg:items-center border-b-2 border-gray-200 p-5 shadow-lg text-center '>
