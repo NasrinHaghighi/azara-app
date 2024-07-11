@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FriendsCard from './FriendsCard';
-import Image from 'next/image';
+
 
 
 
@@ -12,7 +12,7 @@ import Image from 'next/image';
 function Friends() {
   const [data, setData] = useState([])
   const getData = async () => {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/friends`)
+    const res = await fetch(`/api/friends`)
     const data = await res.json()
     setData(data)
     return data
@@ -20,6 +20,7 @@ function Friends() {
   useEffect(() => {
     getData()
   }, [])
+  console.log(data)
   const settings = {
     dots: true,
     className: "center",
