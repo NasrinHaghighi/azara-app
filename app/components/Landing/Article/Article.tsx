@@ -6,7 +6,7 @@ import PoemUniqe from './PoemUniqe'
 import PoemItem from '../../Poem/PoemItem'
 
 const getData = async ( ) => {
-  const res = await fetch(`http://localhost:3000/api/post`
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/post`
     , { cache: 'no-store' })
 
   if (!res.ok) throw new Error('fffffffffailed')

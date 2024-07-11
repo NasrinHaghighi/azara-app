@@ -12,7 +12,7 @@ import Image from 'next/image';
 function Friends() {
   const [data, setData] = useState([])
   const getData = async () => {
-    const res = await fetch('http://localhost:3000/api/friends')
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/friends`)
     const data = await res.json()
     setData(data)
     return data
