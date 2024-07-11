@@ -1,6 +1,6 @@
 import NextAuth from "next-auth/next"
 
-import { NextApiRequest, NextApiResponse } from 'next'
+//import { NextApiRequest, NextApiResponse } from 'next'
 
 
 //import prisma from "@/utils/connect"
