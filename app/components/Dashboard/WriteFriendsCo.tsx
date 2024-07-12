@@ -14,17 +14,11 @@ import Image from 'next/image';
 
 import ReactQuillBox from '../../components/Dashboard/ReactQuilBox';
 import {sabks } from '../../utils/data'
-//import { Friend } from '@/app/utils/types';
-// interface Friend{
-//   id:number,
-//   createdAt:string,
-//   img:string,
-//   slug:string,
-//   name:string,des:string,poem:string
-//   sabk:string[],
-// }
+import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
-// const sabks=[{id:1,title:'غزل', slug:'ghazal'},{id:2,title:'دوبیتی',slug:'dobaiti'},{id:3,title:'شعر نو',slug:'shoar-no'},{id:4,title:'شعر جوان',slug:'shoar-jahan'},{id:5,title:'مثنوی',slug:'masnavi'},{id:6,title:'قصیده',slug:'ghaside'}, {id:7, title:'ترکیب بند', slug:'tarkibband'}]
+
+
 function WriteFriendsCo() {
     const router = useRouter();
     const session = useSession();
@@ -56,7 +50,7 @@ function WriteFriendsCo() {
     const handelSubmit = async(values:any) => {
         console.log(values)
         console.log(sabk)
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/friends`, {
+        const res = await fetch(`/api/friends`, {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          
@@ -70,8 +64,18 @@ function WriteFriendsCo() {
   
          }),
        })
-       console.log('res', res)
-      console.log('values', values)
+       console.log(res)
+       if (res.ok) {
+         toast.success('دوست جدید با موفقیت ایجاد شد.');
+         setTimeout(() => {
+           router.push('/dashboard/friends');
+           router.refresh();
+         }, 3000);
+       } else {
+         toast.error('خطا در ایجاد پست.');
+         throw new Error('Failed to update post');
+       }
+      
      }
     const formik = useFormik({
         initialValues: {
@@ -87,7 +91,7 @@ function WriteFriendsCo() {
         onSubmit: values => {
          // console.log('Submitting: ', values);
           handelSubmit(values);
-          router.push('/');
+         // router.push('/');
         },
       });
       useEffect(() => {
@@ -100,6 +104,8 @@ function WriteFriendsCo() {
    // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [value, file]);
     return (
+        <>
+        <ToastContainer  position="top-right"  autoClose={5000} />
         <div className='container pb-12 '>
             <h1 className='text-4xl font-bold p-8 text-center'>ایجاد متن جدید<span className='underline '></span></h1>
 
@@ -132,15 +138,15 @@ function WriteFriendsCo() {
                     <label className="block mb-2 text-sm font-medium text-textColor">
                         سبک شعر
                     </label>
-                    <div id="sabks" className='flex flex-wrap gap-2'>
+                    <div id="sabks" className='flex flex-wrap gap-2 bg-gray-300 rounded-md p-2'>
                         {sabks.map((sabk) => (
                             <div key={sabk.id} className="mb-4 ">
-                                <label className="inline-flex items-center">
+                                <label className="inline-flex items-center text-bg">
                                     <input
                                         type="checkbox"
                                         name="sabk"
                                         value={sabk.slug}
-                                        className="form-radio"
+                                        className="form-radio "
                                         onChange={()=>handleSabkChange(sabk.slug)}
                                         
                                     />
@@ -151,9 +157,9 @@ function WriteFriendsCo() {
                     </div>
                 </div>
 {/* تصویر شاعر */}
-                <div className=' mb-8'>
+                <div className=' mb-8  '>
                     <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-textColor"> اضافه کردن تصویر</label>
-                    <div className=' flex felx-row justify-start items-center gap-5'  >
+                    <div className=' flex felx-row justify-start items-center gap-5 bg-gray-300 rounded-md p-2'  >
                         <div onClick={() => setOpen(!open)}><CiCirclePlus className='text-green-800 text-5xl font-extrabold' /></div>
                         {open &&
                             <div className='md:flex:row jutify-center items-center gap-5 flex-col'>
@@ -190,6 +196,7 @@ function WriteFriendsCo() {
                 </div>
             </form>
         </div>
+        </>
     )
 }
 

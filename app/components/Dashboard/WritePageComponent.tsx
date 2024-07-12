@@ -41,7 +41,13 @@ function WritPageComponenet() {
   const [cate, setCate] = useState<Cate[] | null>(null);
   const [tag, setTag] = useState<string[] | null>(null);
   const [sabk, setSabk] = useState<string | null>(null);
-    //console.log(sabk)
+ const updateData = {
+    des: value,
+    sabk: sabk,
+    img: file,
+    
+  };
+ 
   const slugify = (text: string) => {
    text= text.toLowerCase().trim().replace(/\s+/g, '-')
     return text;
@@ -64,6 +70,7 @@ function WritPageComponenet() {
   const handleSabkChange=(value:string) => {
     setSabk(value)
   }
+
     const handelSubmit = async(values:any) => {
       // Validate fields
       for (const key in values) {
@@ -73,7 +80,7 @@ function WritPageComponenet() {
           return;
         }
       }
-       const res = await fetch(`${process.env.NEXTAUTH_URL}/api/post`, {
+       const res = await fetch(`/api/post`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -86,7 +93,7 @@ function WritPageComponenet() {
           sabk:sabk
         }),
       })
-      console.log(res)
+      //console.log(res)
       if (res.ok) {
         toast.success('پست با موفقیت ایجاد شد.');
         setTimeout(() => {
@@ -151,7 +158,7 @@ function WritPageComponenet() {
       <br />
       <br />
       <form onSubmit={formik.handleSubmit}>
-       <WriteModal openModal={openModal} setOpenModal={setOpenModal} values={formik.values} />
+       <WriteModal openModal={openModal} setOpenModal={setOpenModal} values={updateData} />
 
     
         <div className='mb-8'>

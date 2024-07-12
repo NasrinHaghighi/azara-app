@@ -22,7 +22,7 @@ const data=await getData({postSlug:slug})
 
       {data.length>0 ? data?.map((item:any)=>{
 return <CommentDashboardItem key={item.id} item={item}/>
-      }) : <p>کامنتی برای این پست ثبت نشده است. </p>}
+      }) : <p className='text-white'>کامنتی برای این پست ثبت نشده است. </p>}
       </>
     )
 }

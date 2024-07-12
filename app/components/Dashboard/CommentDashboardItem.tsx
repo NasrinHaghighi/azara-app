@@ -15,8 +15,7 @@ interface Comment {
   }
  
 function CommentDashboardItem({ item }: Props) {
-    const [openreply, setOpenreply] = useState(false);
-    const [des, setDes] = useState('');
+
     const [replies, setReplies] = useState([]);
 
     const router = useRouter();
@@ -64,7 +63,7 @@ function CommentDashboardItem({ item }: Props) {
     }, []);
   
     return (
-        <div className='gird grid-cols-1 md:grid-cols-3 gap-5 mb-5'>
+        <div className='gird grid-cols-1 md:grid-cols-3 gap-5 mb-5 bg-gray-300 rounded-lg'>
             <div className='bg-input-bg p-5 rounded-lg shadow-md '>
 
                 <div className='flex flex-col lg:flex-row justify-between text-sm mb-5 gap-y-3 '>

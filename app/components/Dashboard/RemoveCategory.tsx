@@ -43,7 +43,7 @@ const [value, setValue] = useState('');
        };
 
        const editCategoryName = async (e:any) => {
-        
+        e.preventDefault();
         try {
                // Call API to remove category
                const res = await fetch(`/api/categories`, {
@@ -53,7 +53,7 @@ const [value, setValue] = useState('');
                    },
                    body: JSON.stringify({slug: item.slug, title: value})
                });
-
+console.log('res, ', res)
                if (res.ok) {
                 toast.success('دسته بندی با موفقیت ویرایش شد.');
                 setTimeout(() => {

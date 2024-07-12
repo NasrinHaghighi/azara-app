@@ -14,6 +14,7 @@ import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 Quill.register('modules/imageResize', ImageResize);
 import {Friend, UpdatedData} from '../../../../utils/types'
+import WriteModal from '@/app/components/Dashboard/WriteModal';
 
 
 function DashboardSingleFriend() {
@@ -64,6 +65,10 @@ const updatedData: UpdatedData = {
     img: file || postData?.img,
     
 }
+ // change the conetnet of reacr quill by on cahnge   
+ const handelValue = (value:string) => {
+  setContent(value);
+};
 const handelSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     console.log(updatedData)
@@ -124,7 +129,7 @@ const handleSabkChange = (sabkSlug: string) => {
             <br />
             <br />
 
-         {/* <WriteModal openModal={openModal} setOpenModal={setOpenModal} values={updatedPost} />   */}
+          <WriteModal openModal={openModal} setOpenModal={setOpenModal} values={updatedData} />  
 
             <form onSubmit={handelSubmit}>
             <div className='mb-8'>
@@ -198,7 +203,7 @@ const handleSabkChange = (sabkSlug: string) => {
                     
                     </div>
     {/* DESCRIPTION onChange={handelValue}*/}
- <ReactQuill theme="snow" value={content}   modules={modules} formats={formats}  bounds={'#root'}  placeholder='****'/>  
+ <ReactQuill theme="snow" value={content}   modules={modules} formats={formats}  bounds={'#root'}  placeholder='****' onChange={handelValue}/>  
         <br />
 
         <button className='bg-green-500  text-white w-36  rounded-md px-4 py-2 hover:bg-green-700 transition' type='submit' > ارسال</button>  

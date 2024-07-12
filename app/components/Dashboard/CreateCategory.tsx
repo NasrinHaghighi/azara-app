@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 function Createcategory() {
     const [title, setTitle] = useState('');
     const router = useRouter();
-    // const [img, setImg] = useState('');
-//console.log(title)
+  
     const handleSubmit = async (event:any) => {
         event.preventDefault();
         const slug = title.toLowerCase().replace(/\s+/g, '-');
@@ -22,10 +22,17 @@ function Createcategory() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newCategory) // Remove the extra wrapping of newCategory inside curly braces
             });
-            router.push('/dashboard/category')
-            router.refresh()
-            if (!res.ok) {
-                throw new Error('Failed to create category');
+            
+          
+            if (res.ok) {
+                toast.success('دسته بندی با موفقیت ایجاد شد.');
+                setTimeout(() => {
+                  router.push('/dashboard/poems');
+                  router.refresh();
+                }, 3000);
+            }else {
+                toast.error('خطا در ایجاد دسته بندی.');
+                throw new Error('Failed to update post');
             }
 
             // Reset the title input after successful submission
@@ -38,6 +45,8 @@ function Createcategory() {
     
 
   return (
+    <>
+  <ToastContainer  position="top-right"  autoClose={5000} />
     <div className='bg-slate-200 p-5 rounded-lg shadow-md '>
          <h2 className="text-lg font-semibold mb-4">ایجاد دسته بندی جدید</h2>
             <form onSubmit={handleSubmit}>
@@ -52,6 +61,7 @@ function Createcategory() {
                 <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">ثبت</button>
             </form>
     </div>
+    </>
   )
 }
 

@@ -24,6 +24,7 @@ function SiglePostDashboard() {
     const router = useRouter();
     const params = useParams();
     const { id } = params;
+    
     const [openModal, setOpenModal] = useState(false);
     const [postData, setPostData] = useState<Post | null>(null);
     const [title, setTitle] = useState('');
@@ -77,6 +78,7 @@ function SiglePostDashboard() {
                 }
                 // console.log(response)
                 const data = await response.json();
+            
                 setPostData(data); // Assuming your API returns post data in JSON format
             } catch (error) {
                 console.error('Error fetching post data:', error);
@@ -244,7 +246,7 @@ const getcategpry =async()=>{
                     name="tags"
                     value={tagoption.id}
                     checked={tag ? tag.includes(tagoption.tagSlug) : false}
-                   onChange={() => handleCheckboxChange(tagoption.tagSlug)} required
+                   onChange={() => handleCheckboxChange(tagoption.tagSlug)} 
                   />
                  
                  

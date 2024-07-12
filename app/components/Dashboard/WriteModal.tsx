@@ -34,19 +34,19 @@ const WriteModal:React.FC<ModalProps> =({openModal, setOpenModal, values}) =>{
          
     
                   
-              <div className=' bg-bg text-white rounded-md  max-h-[80vh] overflow-y-auto px-5 py-5 mx-5    sm:text-center'>
+              <div className=' bg-bg text-white rounded-md  max-h-[80vh] overflow-y-auto px-5 py-5 mx-5 w-full   text-center'>
                     <div className="grid md:grid-flow-col grid-flow-row md:justify-around justify-center items-center w-l ">
                        
-                        <div className="col-span-4 mb-10">
-                             <Image src={values?.file ? values.file :''} alt='postimage' width={200} height={200} className='object-cover rounded-md h-[300px] w-[300px]' /> 
+                        <div className="col-span-4 mb-10 ">
+                             <Image src={values?.img ? values.img :''} alt='postimage' width={200} height={200} className='object-cover rounded-md h-[300px] w-[300px]' /> 
                         </div>
-                        <div className="col-span-8 ">  
+                        {/* <div className="col-span-8 ">  
                              <h2 className='md:text-2xl text-l font-bold py-8 text-rigth leading-relaxed'>{values?.title ? values?.title :''}</h2>
-                       </div>
+                       </div> */}
                         
                     </div>
                      <div className=" p-0  grid grid-cols-1 oveflow-auto">
-        <div className=' p-2 text-balance' dangerouslySetInnerHTML={{ __html: values?.value || '' }} />
+        <div className=' p-2 text-balance' dangerouslySetInnerHTML={{ __html: values?.des || '' }} />
    </div> 
                     
                 </div> 
