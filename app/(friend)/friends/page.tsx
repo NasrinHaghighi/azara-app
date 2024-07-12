@@ -6,7 +6,7 @@ import React from 'react'
 
 //const arr = [F1, F2, F3, F4, ]
 const getData = async () => {
-  const res = await fetch(`http://localhost:3000/api/friends`
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/friends`
     , { cache: 'no-store' })
 
   if (!res.ok) throw new Error('fffffffffailed')

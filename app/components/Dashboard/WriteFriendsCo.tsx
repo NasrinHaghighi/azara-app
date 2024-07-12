@@ -56,7 +56,7 @@ function WriteFriendsCo() {
     const handelSubmit = async(values:any) => {
         console.log(values)
         console.log(sabk)
-        const res = await fetch('http://localhost:3000/api/friends', {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/friends`, {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          

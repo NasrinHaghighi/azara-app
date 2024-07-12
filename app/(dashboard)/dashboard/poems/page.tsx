@@ -6,7 +6,7 @@ import Pagination from '@/app/components/Poem/Pagination';
 
 
 const getData = async ({sort, page ,cat,search}:any) => {
-  const res = await fetch(`http://localhost:3000/api/post?&search=${search}&sort=${sort}&page=${page}&cat=${cat}`, { cache: 'no-store' }, );
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/post?&search=${search}&sort=${sort}&page=${page}&cat=${cat}`, { cache: 'no-store' }, );
   if (!res.ok) {
     throw new Error('Network response was not ok');
   }
