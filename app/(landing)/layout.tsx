@@ -1,7 +1,6 @@
 import React from 'react'
 
-import SidebarAndHeader from '../components/Landing/SidebarAndHeader'
-import ChildrenWrapper from '../components/Landing/ChildrenWrapper'
+
 import Header from '../components/Landing/Header'
 
 
