@@ -10,7 +10,7 @@ const searchParams = useSearchParams();
 const pathname = usePathname();
 const router = useRouter();
 const [searchQuery, setSearchQuery] = useState({ search: "" ,page: '1'});
-console.log('searchParams', searchQuery.search);
+//console.log('searchParams', searchQuery.search);
 const handleInputChange = (event:any) => {
     const { name, value } = event.target;
     const updatedQuery = { ...searchQuery, [name]: value };

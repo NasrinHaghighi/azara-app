@@ -13,17 +13,18 @@ import WriteModal from '../../components/Dashboard/WriteModal';
 import Image from 'next/image';
 
 import ReactQuillBox from '../../components/Dashboard/ReactQuilBox';
-import { title } from 'process';
-interface Friend{
-  id:number,
-  createdAt:string,
-  img:string,
-  slug:string,
-  name:string,des:string,poem:string
-  sabk:string[],
-}
+import {sabks } from '../../utils/data'
+//import { Friend } from '@/app/utils/types';
+// interface Friend{
+//   id:number,
+//   createdAt:string,
+//   img:string,
+//   slug:string,
+//   name:string,des:string,poem:string
+//   sabk:string[],
+// }
 
-const sabks=[{id:1,title:'غزل', slug:'ghazal'},{id:2,title:'دوبیتی',slug:'dobaiti'},{id:3,title:'شعر نو',slug:'shoar-no'},{id:4,title:'شعر جوان',slug:'shoar-jahan'},{id:5,title:'مثنوی',slug:'masnavi'},{id:6,title:'قصیده',slug:'ghaside'}, {id:7, title:'ترکیب بند', slug:'tarkibband'}]
+// const sabks=[{id:1,title:'غزل', slug:'ghazal'},{id:2,title:'دوبیتی',slug:'dobaiti'},{id:3,title:'شعر نو',slug:'shoar-no'},{id:4,title:'شعر جوان',slug:'shoar-jahan'},{id:5,title:'مثنوی',slug:'masnavi'},{id:6,title:'قصیده',slug:'ghaside'}, {id:7, title:'ترکیب بند', slug:'tarkibband'}]
 function WriteFriendsCo() {
     const router = useRouter();
     const session = useSession();

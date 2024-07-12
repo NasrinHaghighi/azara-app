@@ -3,7 +3,7 @@ import React from 'react'
 import face from '../../../../public/img/face3.png'
 import Image from 'next/image'
 import PoemUniqe from './PoemUniqe'
-import PoemItem from '../../Poem/PoemItem'
+
 
 const getData = async ( ) => {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/post`

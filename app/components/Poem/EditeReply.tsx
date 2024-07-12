@@ -9,7 +9,7 @@ function EditeReply({reply}:any) {
     const editeHandel = async () => {
    
         try {
-        const res = await fetch(`http://localhost:3000/api/replies`, {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/replies`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json'

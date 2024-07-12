@@ -86,7 +86,7 @@ const handelEditAbout=(e:any)=>{
     image=file
   }
   e.preventDefault()
-   const res=  fetch('http://localhost:3000/api/about', {
+   const res=  fetch(`${process.env.NEXTAUTH_URL}/api/about`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'

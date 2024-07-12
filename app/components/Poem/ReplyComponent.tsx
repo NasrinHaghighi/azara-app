@@ -14,7 +14,7 @@ const handleSubmitReply = async (e:any) => {
         e.preventDefault();
    
       try {
-      const res=  await fetch(`http://localhost:3000/api/replies`, {
+      const res=  await fetch(`${process.env.NEXTAUTH_URL}/api/replies`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

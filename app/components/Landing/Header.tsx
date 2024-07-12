@@ -11,20 +11,20 @@ import Welcome from './Welcome';
 import Book from '../../../public/img/books (1).png'
 
 function Header() {
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  // const [scrollY, setScrollY] = useState(0);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY);
+  //   };
 
-   handleScroll();
+  //  handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
 
-  }, []);
+  // }, []);
 
   return (
     <div className={`md:px-40 px-5 py-5  flex justify-between items-center 

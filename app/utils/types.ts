@@ -63,3 +63,31 @@ sabk:string[] | undefined;
 name:string;
 img:string | File | undefined;
 }
+
+export interface Reply {
+  id: string;
+  createdAt: string;
+  des: string;
+  commentId: string;
+  userEmail: string;
+  userName: string;
+  user: {
+      role:string;
+      id: string;
+      name: string;
+      email: string;
+      emailVerified: string | null;
+      image: string | null;
+  }
+
+
+}
+
+export interface Friend{
+  id:string,
+  createdAt:string,
+  img:string,
+  slug:string,
+  name:string,des:string,poem:string
+  sabk:string[],
+}

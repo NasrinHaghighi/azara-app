@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ModalAboutPage({openModal, setOpenModal, values}:any) {
-console.log(values)
+//console.log(values)
   return (
    
     <>

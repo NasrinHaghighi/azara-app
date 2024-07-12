@@ -17,7 +17,7 @@ const router = useRouter()
   const editeHandel = async () => {
    
     try {
-    const res = await fetch(`http://localhost:3000/api/comments`, {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/comments`, {
       method: 'PUT',
       headers: {
           'Content-Type': 'application/json'

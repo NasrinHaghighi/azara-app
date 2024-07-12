@@ -4,25 +4,16 @@ import RemoveFilters from '../Dashboard/Filters/RemoveFilters'
 
 import RemoveFlitersPoems from './RemoveFlitersPoems'
 import SabkFilter from './SabkFilter'
-import {convertSabkToTitle} from '../../utils/func'
 import CatDropdownPoemsPage from './CatDropdownPoemsPage'
 
 
 function Filters({  cat, search, sabk }: any) {
-//  console.log('sabk...333',sabk)
 
-  //console.log('cat...333',cat)
 
   return (
     <>
     <div className=' mb-5 rounded-md p-3'  
-    // style={{
-    //   backgroundImage: `url(${Blue.src})`,
-    //   backgroundSize: 'cover',
-    //    backgroundPosition: 'center',
-    //    backgroundRepeat: 'no-repeat'
-    //  }}
-     >
+        >
     <div className='flex flex-col lg:flex-row gap-y-5 justify-start items-center py-4 gap-x-36 '>
        <SearchInput/>
        <div className='flex gap-x-5 '>

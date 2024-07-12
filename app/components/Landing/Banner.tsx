@@ -1,10 +1,6 @@
 
 
 import React,{useState, useEffect, useRef} from 'react'
-import Image from 'next/image'
-
-import { gsap } from "gsap";
-import { TextPlugin } from "gsap/TextPlugin";
 import Title from './Title';
 import BannerPhoto from './BannerPhoto';
 import Photo from '../../../public/img/baba1.png'

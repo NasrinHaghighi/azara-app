@@ -16,7 +16,7 @@ function WriteComments({postSlug}:any) {
         //console.log('by ersal nazar', des, postSlug)
           event.preventDefault()
           try {
-            await fetch(`http://localhost:3000/api/comments`, {
+            await fetch(`${process.env.NEXTAUTH_URL}/api/comments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
