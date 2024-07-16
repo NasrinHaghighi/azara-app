@@ -22,8 +22,10 @@ async function PoemsDadshboardPage({searchParams}: any) {
   const search =searchParams.search || ''
   console.log(page,'searchParams', searchParams)
 const { posts, count } = await getData({ sort, page, cat, search });
-
- // console.log('posts',posts)
+const POST_PER_PAGE=5
+  const hasPrev = POST_PER_PAGE * (page - 1) > 0
+  const hasNext = POST_PER_PAGE * (page - 1)+POST_PER_PAGE  < count
+console.log('posts',posts)
   return (
     <>
 <Filters sort={sort} page={page} cat={cat} search={search}/>
@@ -31,7 +33,7 @@ const { posts, count } = await getData({ sort, page, cat, search });
     {posts.map((post:any)=>{
 return <DashboardPostitem key={post.id} post={post}/>
 })} 
-{/* <Pagination page={1} hasPrev={false} hasNext={false} cat={''}/> */}
+ <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} cat={''}/> 
 </>
   )
 }

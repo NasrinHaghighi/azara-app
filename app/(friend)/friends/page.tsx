@@ -20,7 +20,7 @@ async function FriendsPage() {
 
   return (
     <>
-    <div>
+    <div className=''>
      <h1 className='text-center text-3xl font-semibold mb-5 text-bgGolden'> دوستان شاعر</h1>
    {data.map((item:any, index:number)=>{
    //const backgroundImage = arr[index % arr.length];

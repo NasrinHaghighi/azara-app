@@ -13,9 +13,9 @@ function PoemAboutLayout({children}:MainLayoutProps) {
  
   return (
     <>
-    <div  className=" h-screen relative bg-bg">
+    <div  className=" h-screen relative bg-bg m-auto w-full md:w-4/5">
  <Header />
-<div className="grid grid-cols-12 lg:gap-5 gap-0 mt-8  sm:mx-0 md:mx-36 mx-5  ">
+<div className="grid grid-cols-12 lg:gap-8 gap-0 mt-8  sm:mx-0 md:mx-36 mx-5  ">
    
                  
    <div className='xl:col-span-3 col-span-12 lg:order-1 order-1 '>

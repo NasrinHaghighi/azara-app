@@ -71,7 +71,7 @@ const updatedData: UpdatedData = {
 };
 const handelSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log(updatedData)
+   // console.log(updatedData)
     for (const key in updatedData) {
         if (!updatedData[key as keyof UpdatedData]) {
           toast.error(`لطفا فیلد ${key} را پر کنید.`);

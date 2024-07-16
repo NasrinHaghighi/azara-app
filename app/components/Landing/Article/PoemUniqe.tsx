@@ -6,6 +6,9 @@ import { useInView } from 'react-hook-inview'
 import Yellow from '../../../../public/img/yellow.jpg'
 import RenderDangerous from '../../Poem/RenderDangerous'
 
+
+
+const num=1000
 function PoemUniqe({selectedPosts}:any) {
  
 
@@ -33,12 +36,12 @@ function PoemElement({ item,index }: any) {
         ref={ref}
       >
      <div>
-        <h1 className="md:text-3xl mb-8  text-lg">{item.title}</h1>
-<RenderDangerous post={item}/>
-        {/* <div
+        <h1 className="md:text-3xl mb-8  text-2xl">{item.title}</h1>
+ <RenderDangerous post={item} num={num}/> 
+         {/* <div
           className="leading-relaxed text-center text-lg"
-          dangerouslySetInnerHTML={{ __html: item?.des.substring(0, 400) || '' }}
-        /> */}
+          dangerouslySetInnerHTML={{ __html: item?.des.substring(0, 600) || '' }}
+        />  */}
         <div className='text-red-500 my-5 font-semibold'>
           <Link href={item.slug}> ادامه مطلب...</Link>
           </div>

@@ -5,6 +5,9 @@ import RenderDangerous from './RenderDangerous'
 import Link from 'next/link'
 import Yellow from '../../../public/img/yellow.jpg'
 
+
+
+const num =500
 function PoemItem({item, }:any) {
  
   return (
@@ -36,7 +39,7 @@ function PoemItem({item, }:any) {
           </div>
         </div>
         <div className="text-lg ">
-          <RenderDangerous post={item} />
+          <RenderDangerous post={item} num={num}/>
         </div>
         <div className='text-sm flex justify-end xxs:justify-center items-center font-semibold '>
           <Link href={item.slug} className='text-center text-red-700  font-semibold mt-3' >ادامه مطلب ...</Link>

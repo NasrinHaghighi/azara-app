@@ -12,14 +12,14 @@ function FriendItem({ item, isOdd, backgroundImage }: any) {
     // const isOdd = index % 2 !== 0;
     return (
         <>
-        <div className="grid grid-cols-12 lg:px-12 px-3 py-8 text-text rounded-md mb-5 lg:gap-8 gap:0 border-2 "
+        <div className="grid grid-cols-12 lg:px-12  py-8 text-text rounded-md mb-5 lg:gap-8 gap:0 border-2 "
             style={{
                 backgroundImage: `url(${Yellow.src})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}>
 
-            <div className={`lg:col-span-4 col-span-12 flex flex-col justify-center  lg:text-center border-b-2 border-bg  lg:border-b-0 lg:${isOdd ? 'order-1' : 'order-2'} order-1 w-auto`} >
+            <div className={`lg:col-span-4 col-span-12 flex flex-col justify-center  lg:text-center border-b-2 border-bg  lg:border-b-0 lg:${isOdd ? 'order-1' : 'order-2'} order-1`} >
                 <div className='w-full lg:max-w-[250px] max-w-[150px] h-auto m-auto lg:m-1 '>
                     <Image src={item.img} alt="face" width={250} height={250} className="rounded-full mb-5 shadow-lg" />
                 </div>

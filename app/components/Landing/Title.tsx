@@ -106,7 +106,7 @@ const aboutBtn = useRef(null);
       }, []); 
   return (
     <div className=''> 
-    <h1 className='xl:text-7xl md:text-5xl text-3xl font-extrabold  ' ref={titleRef} >     <span> استاد حاج </span>
+    <h1 className='xl:text-6xl md:text-4xl text-2xl font-extrabold  ' ref={titleRef} >     <span> استاد حاج </span>
     <span>    حسن آذریان </span>
  
     </h1>

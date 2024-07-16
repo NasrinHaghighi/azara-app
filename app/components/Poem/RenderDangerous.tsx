@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 //import Loading from '../Loading';
 
-function RenderDangerous({post}:any) {
+function RenderDangerous({post,num}:any) {
     const [render, setRender] = useState(false);
    
     useEffect(() => {
@@ -14,7 +14,7 @@ function RenderDangerous({post}:any) {
     <>
     <div >
     {render ?
-<div className=' ' dangerouslySetInnerHTML={{ __html:render && post?.des.substring(0, 400) + '...' }} />
+<div className=' ' dangerouslySetInnerHTML={{ __html:render && post?.des.substring(0, num) + '...' }} />
         : <p>loading</p>}
         </div>
      </>

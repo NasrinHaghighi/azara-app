@@ -67,14 +67,15 @@ outline: none !important;
   border-radius: 10px !important;
 }
 .ql-editor {
-  text-align: right !important;
-  font-size: 18px !important;
-  font-weight: 600 !important;
+ text-align: right !important; 
+  /* font-size: 18px !important; */
+  /* //font-weight: 600 !important; */
   border: none !important;
   outline: none !important;
   height: 500px !important;
   border-radius: 10px !important;
   color: black !important;
+  line-height: 1.4 !important;
 }
 .ql-editor .ql.blank{
   outline: none !important;
@@ -119,8 +120,8 @@ button:hover .ql-fill,
   stroke: none;
 }
 .ql-syntax{
-  text-align: left !important;
-  direction: ltr !important;
+  /* text-align: left !important;
+  direction: ltr !important; */
  padding: 15px !important;
  background-color: #3d2f4b;
  border-radius: 15px !important;

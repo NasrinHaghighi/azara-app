@@ -14,7 +14,7 @@ function Footer() {
      <Link href='/about'>درباره من</Link>
  
     </div>
-    <div>
+    <div className='my-5'>
     <BackTopTop/>
     </div>
     </div> 

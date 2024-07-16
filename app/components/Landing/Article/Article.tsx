@@ -19,7 +19,7 @@ async function Article() {
   //console.log(selectedPosts)
   return (
     <>
-    <div className='lg:p-24 md:p-12 p-5 grid lg:grid-cols-2 grid-cols-1  relative gap-12  '>
+    <div className='lg:p-24 md:p-12 p-5 grid lg:grid-cols-2 grid-cols-1  relative gap-0  '>
   
  <div className='lg:order-2 order-2 px-5'>
 

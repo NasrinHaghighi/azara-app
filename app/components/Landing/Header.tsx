@@ -11,29 +11,16 @@ import Welcome from './Welcome';
 import Book from '../../../public/img/books (1).png'
 
 function Header() {
-  // const [scrollY, setScrollY] = useState(0);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollY(window.scrollY);
-  //   };
-
-  //  handleScroll();
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-
-  // }, []);
+ 
 
   return (
-    <div className={`md:px-40 px-5 py-5  flex justify-between items-center 
+    <div className={`md:px-12  px-5 py-5  flex justify-between items-center 
       w-full top-0 right-0    bg-trnsparent z-20`}>
 
-      <div className='flex-1 hidden md:flex'>
+      <div className='flex-1 hidden xl:flex'>
         <NavbarLinks />
       </div>
-      <div className='flex-1 md:hidden '>
+      <div className='flex-1 xl:hidden '>
         <NavbarRes />
       </div>
       <div className='hidden lg:flex flex-1 justify-end  gap-5 '>
