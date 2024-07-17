@@ -15,7 +15,41 @@ import 'react-toastify/dist/ReactToastify.css';
 Quill.register('modules/imageResize', ImageResize);
 import {Friend, UpdatedData} from '../../../../utils/types'
 import WriteModal from '@/app/components/Dashboard/WriteModal';
+const modules = {
+  toolbar: [
+    [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    ['blockquote', 'code-block'],
+    [
+      { list: 'ordered' },
+      { list: 'bullet' },
+      { indent: '-1' },
+      { indent: '+1' }
+    ],
+    ['link', 'image', 'video'],
+    ['clean'],
+    [{ 'color': ['red', 'pink', 'orange', 'yellow', 'green', 'blue', 'brown'] }, { 'background': [] }],          // dropdown with defaults from theme
+   
+    [{ 'align': [] }],
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false
+  },
+  imageResize: {
+    parchment: Quill.import('parchment'),
+    modules: ['Resize', 'DisplaySize']
+  }
+}
 
+
+const formats = [
+  'header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote',
+  'list', 'bullet', 'indent', 'link', 'image', 'video', 'color', 'align', 'background',
+  'code-block', 'table', 'table-cell-line', 'table-header-cell-line', 'table-body-cell-line',
+];
+/********** */
 
 function DashboardSingleFriend() {
     const router = useRouter();
@@ -221,55 +255,55 @@ export default DashboardSingleFriend
 
 
 
-const modules = {
-    toolbar: [
-      [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      ['blockquote', 'code-block'],
-      [
-        { list: 'ordered' },
-        { list: 'bullet' },
-        { indent: '-1' },
-        { indent: '+1' }
-      ],
-      ['link', 'image', 'video'],
-      ['clean'],
-       [{ 'color': ['red', 'pink', 'orange', 'yellow', 'green', 'blue', 'brown'] }, { 'background': [] }],          // dropdown with defaults from theme
+// const modules = {
+//     toolbar: [
+//       [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+//       [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+//       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+//       ['blockquote', 'code-block'],
+//       [
+//         { list: 'ordered' },
+//         { list: 'bullet' },
+//         { indent: '-1' },
+//         { indent: '+1' }
+//       ],
+//       ['link', 'image', 'video'],
+//       ['clean'],
+//        [{ 'color': ['red', 'pink', 'orange', 'yellow', 'green', 'blue', 'brown'] }, { 'background': [] }],          // dropdown with defaults from theme
      
-      [{ 'align': [] }],
-    ],
-    clipboard: {
-      // toggle to add extra line breaks when pasting HTML:
-      matchVisual: false
-    },
-    imageResize: {
-      parchment: Quill.import('parchment'),
-      modules: ['Resize', 'DisplaySize']
-    }
-  }
+//       [{ 'align': [] }],
+//     ],
+//     clipboard: {
+//       // toggle to add extra line breaks when pasting HTML:
+//       matchVisual: false
+//     },
+//     imageResize: {
+//       parchment: Quill.import('parchment'),
+//       modules: ['Resize', 'DisplaySize']
+//     }
+//   }
   
   
   
   
-  const formats = [
-    'header',
-    'font',
-    'size',
-    'bold',
-    'italic',
-    'underline',
-    'strike',
-    'blockquote',
-    'list',
-    'bullet',
-    'indent',
-    'link',
-    'image',
-    'video',
-    "code-block", // Include "code-block" format here
-    "bulleted-list",
-    "numbered-list",
-    "width" ,
+//   const formats = [
+//     'header',
+//     'font',
+//     'size',
+//     'bold',
+//     'italic',
+//     'underline',
+//     'strike',
+//     'blockquote',
+//     'list',
+//     'bullet',
+//     'indent',
+//     'link',
+//     'image',
+//     'video',
+//     "code-block", // Include "code-block" format here
+//     "bulleted-list",
+//     "numbered-list",
+//     "width" ,
     
-  ];
+//   ];

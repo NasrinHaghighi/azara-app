@@ -22,6 +22,8 @@ async function page({params}:any) {
   const titles = convertSabkToTitle(data.sabk);
   //console.log(titles)
   return (
+    <>
+   <h1 className='text-center text-3xl font-semibold mb-5 text-bgGolden'>  اشعار دوستان</h1>
     <div className=' border-2  rounded-lg p-5 h-auto mb-24 shadow-lg text-text' style={{
       backgroundImage: `url(${Yellow.src} )`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
       }} >
@@ -30,8 +32,8 @@ async function page({params}:any) {
 
 <Image src={data?.img} alt='logo' width={250}  height={250} className='object-cover rounded-full h-[250px] w-[250px] shadow-lg m-auto '  />
 <div className=''>
-<h1 className='md:text-2xl sm:text-xl  text-md m-3'>{data.name}</h1>
-<h1 className='md:text-2xl sm:text-xl text-md m-3'><span>سبکهای شعر: </span>
+<h1 className='md:text-2xl sm:text-xl text-green-700 text-md m-3'>{data.name}</h1>
+<h1 className='md:text-xl  text-md m-3'><span>سبکهای شعر: </span>
   {titles.map((item, index) => {
     return <span className='text-red-500'> {item}{index < titles.length - 1 && ' - '}</span>
   })}
@@ -47,7 +49,9 @@ async function page({params}:any) {
 </div>
     </div>
     </div>
+    </>
   )
+  
 }
 
 export default page

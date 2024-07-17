@@ -14,7 +14,7 @@ function SidebarPoems() {
   return (
     <div className='md:min-w-[200px] min-w-[200px] md:p-4 p-2 rounded-md shadow-2xl lg:mt-24 mt-5   bg-bgGolden shadow-yellow-500/40   text-black xl:fixed xl:mb-96 mb-10' 
      >
-  <ul className='grid place-items-center py-5 gap-10 mt-5 font-semibold lg:text-lg text-base '>
+  <ul className='flex lg:flex-col flex-wrap place-items-center py-5 gap-10 mt-5 font-semibold lg:text-lg text-base '>
 
 
      {Links.map(link=>(
@@ -41,7 +41,7 @@ export default SidebarPoems
 const Links=[
      {id:1, title:'خانه', link:'/', icon:<FaHome />},
      {id:2, title:'اشعار', link:'/poems', icon:<FaSwatchbook />},
-     {id:3, title:'اشعار دوستان', link:'/friends', icon:<MdPeopleAlt />},
+     {id:3, title:'  دوستان شاعر' , link:'/friends', icon:<MdPeopleAlt />},
      {id:4, title:'درباره من', link:'/about', icon:<FaCircleInfo />},
 
 ]

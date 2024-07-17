@@ -31,7 +31,7 @@ function FriendsCard({item, index}:{item:Props, index:number}) {
   
 <div className='m-3'>
 {/* <h1 className='text-md '>{item.title}</h1> */}
-<div className='text-center md:text-lg  text-sm my-5' dangerouslySetInnerHTML={{ __html: item?.des.substring(0,280) || '' }} />  
+<div className='text-center md:text-lg  text-sm my-5' dangerouslySetInnerHTML={{ __html: item?.des.substring(0,500) || '' }} />  
 <div className='mt-5 text-center'>
   <Link href={`/friends/${item.slug}`} className='text-red-500' >... ادامه مطلب</Link>
 </div>

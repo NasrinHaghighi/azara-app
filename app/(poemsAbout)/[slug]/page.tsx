@@ -37,8 +37,8 @@ const getData = async ( slug : string) => {
     </div> 
 
        <div className="lg:col-span-8  col-span-12 text-center lg:text-right">  
-       
-       <h2 className='sm:text-3xl text-lg  font-bold  mb-10 leading-10 '> <span className='pl-5'>عنوان شعر:</span>{data?.title}</h2>
+       {/* <span className='pl-5'>عنوان شعر:</span> */}
+       <h2 className='sm:text-3xl text-lg  font-bold  mb-10 leading-10 '> {data?.title}</h2>
 
        <div className='text-center lg:text-right'>
         <div><span className='sm:text-l text-lg font-semibold'><span>توسط : </span> <span className='text-green-500'>{data?.userName ? data?.userName : ''}</span>   </span>
