@@ -5,6 +5,7 @@ import Mainpoem from '../../../public/img/mainpoem.png'
 import LikePostco from '@/app/components/Poem/LikePostco'
 import Comments from '@/app/components/Poem/Comments'
 import moment from 'moment-jalaali';
+import { englishToPersianDigits } from '../../utils/func';
 /////
 const getData = async ( slug : string) => {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/post/${slug}`
@@ -46,7 +47,7 @@ const getData = async ( slug : string) => {
   
         </div>
         <div className='mb-10'>
-          <span className='sm:text-l text-lg font-semibold'>تاریخ انتشار  : </span><span className='text-orange-500'>{moment(data?.createdAt).format('jYYYY/jM/jD')}</span>
+          <span className='sm:text-l text-lg font-semibold'>تاریخ انتشار  : </span><span className='text-orange-500'>{englishToPersianDigits(moment(data?.createdAt).format('jYYYY/jM/jD'))}</span>
           
  
         </div>

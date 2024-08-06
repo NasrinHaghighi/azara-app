@@ -51,6 +51,9 @@ export const convertSabkToTitle = (sabkArray:string[]  = []) => {
     return convert(tag)
   };
 
+  export const englishToPersianDigits = (number: string): string => {
+    const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+    return number.replace(/\d/g, (digit) => persianDigits[+digit]);
+  };
   
- 
   
