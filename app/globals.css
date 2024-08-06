@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer utilities {
+.animation-delay-1{
+  animation-delay: 2s;
+}
+.animation-delay-2{
+  animation-delay: 4s;
+}
+  }
 
 
 @font-face {
@@ -273,7 +280,8 @@ a{
   
 }
 .Toastify{
+  width: 250px !important;
   text-align:  right !important;
-  font-family:var(--font-family-body) !important;
+  font-family: vazir !important;
 font-size: 18px !important;
 }

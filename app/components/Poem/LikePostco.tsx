@@ -63,7 +63,7 @@ useEffect(() => {
 
     return (
         <>
-        <div className='flex flex-col justify-center items-center '>
+        <div className='flex flex-col justify-center items-center my-10 '>
         <div onClick={HandelToggelLike} className='text-2xl flex cursor-pointer'> <span className='mx-3'>{likes?.length}</span>{userLiked ? <span className='text-red-400'><IoIosHeart /></span> :<span> <IoIosHeartEmpty /> </span>} </div>
         {message ? <div >برای اینکه لایک کنید باید وارد شوید ... <Link href='/signin' className='text-red-500 '> ورود</Link>  </div> : ''}
         </div>

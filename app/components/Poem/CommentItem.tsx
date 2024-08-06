@@ -44,7 +44,7 @@ const router = useRouter()
 
 
   return (
-    <div className="border-2 border-gray-200 rounded-md p-4 mb-5">
+    <div className="border-2 border-bg rounded-md p-4 mb-5">
         <div className=' mb-3'><span  className='text-gray-500'>کاربر: </span><span className='text-green-500 font-semibold'>{item?.user?.name} </span>
         <div className='flex justify-between py-3 '>
         <span className=''>{item?.des}</span>

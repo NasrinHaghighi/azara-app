@@ -8,6 +8,9 @@ import SignbyGoogle from '../../components/SigninbyGoogle/SignbyGoogle';
 import { signIn } from 'next-auth/react';
 import { ToastContainer, toast,Zoom, Bounce} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Image from "next/image";
+import Book from '../../../public/img/books (1).png'
+
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -50,13 +53,13 @@ function SignPage() {
         <>
          <ToastContainer  position="top-right"  autoClose={5000} />
           <form onSubmit={formik.handleSubmit} >
-            <div className="grid gap-6 mb-5 max-w-3xl mx-auto pt-10">
-                <div className='text-center'>
-                    <Link href='/'>
-                      Logo
+            <div className="grid gap-6 mb-5 max-w-3xl mx-auto pt-10 px-5">
+               
+                    <Link href='/' className='m-auto'>
+                    <Image src={Book}  width={45} height={45} alt="Book" />
                     </Link>
-                    </div>
-            <h1 className='text-4xl font-bold p-8 text-center '>ورود به حساب کاربری </h1>
+             
+            <h1 className='text-2xl font-bold p-8 text-center '>ورود به حساب کاربری </h1>
       
     
               <div className='mb-5'>

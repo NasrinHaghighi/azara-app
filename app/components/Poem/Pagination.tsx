@@ -10,15 +10,16 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 
 function Pagination({ page, hasPrev, hasNext, cat }: {page:number,hasPrev:boolean,hasNext:boolean, cat:string}) {
- console.log(page,'page')
+ console.log('hasPrev')
+ console.log(hasNext,'hasNext')
   const router=useRouter()
   return (
     <div className='my-12 flex justify-center items-center gap-12 text-white '>
-<button className=' rounded-md   font-medium text-l bg-orangecolor px-3 py-2  flex justify-between items-center shadow-lg hover:scale-105 transition duration-300 ease-out'
+<button className={`rounded-md font-medium text-l bg-orangecolor px-3 py-2 flex justify-between items-center shadow-lg hover:scale-105 transition duration-300 ease-out ${hasNext ? 'opacity-100' : 'opacity-50'}`}
  onClick={() => router.push(`?page=${page + 1}&cat=${cat}`)}
  disabled={!hasNext}
 ><span className='mx-2'> <FaArrowRightLong /></span> بعدی   </button>
-<button className='rounded-md   font-medium text-l bg-orangecolor px-3 py-2  flex justify-between items-center shadow-lg hover:scale-105 transition duration-300 ease-out'
+<button className={`rounded-md font-medium text-l bg-orangecolor px-3 py-2 flex justify-between items-center shadow-lg hover:scale-105 transition duration-300 ease-out ${hasPrev ? 'opacity-100' : 'opacity-50'}`}
  onClick={()=>router.push(`?page=${page - 1}&cat=${cat}`)}
  disabled={!hasPrev}
 

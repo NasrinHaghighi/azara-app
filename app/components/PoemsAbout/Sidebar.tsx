@@ -12,14 +12,14 @@ function SidebarPoems() {
      const pathname  = usePathname();
    //  console.log(pathname)
   return (
-    <div className='md:min-w-[200px] min-w-[200px] md:p-4 p-2 rounded-md shadow-2xl lg:mt-24 mt-5   bg-bgGolden shadow-yellow-500/40   text-black xl:fixed xl:mb-96 mb-10' 
+    <div className='md:min-w-[200px] min-w-[200px] md:p-4 p-2 rounded-md shadow-2xl xl:mt-24 mt-5   bg-bgGolden shadow-yellow-500/40   text-black xl:fixed xl:mb-96 mb-10' 
      >
-  <ul className='flex lg:flex-col flex-wrap place-items-center py-5 gap-10 mt-5 font-semibold lg:text-lg text-base '>
+  <ul className='flex xl:flex-col flex-wrap place-items-center py-5 gap-10 mt-5 font-semibold xl:text-lg text-base '>
 
 
      {Links.map(link=>(
           <li 
-          className={`flex gap-x-2 items-baseline lg:text-right text-center min-w-[200px] hover:border-b-4 border-yellow-600 transition-all hover:-translate-x-3 ${
+          className={`flex gap-x-2 items-baseline xl:text-right text-center min-w-[200px] hover:border-b-4 border-yellow-600 transition-all hover:-translate-x-3 ${
                pathname === link.link ? 'border-b-4 border-yellow-600' : ''
              }`}
           key={link.id}>

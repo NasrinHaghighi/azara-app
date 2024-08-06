@@ -4,7 +4,7 @@ import Yellow from '../../../public/img/yellow.jpg'
 import Mainpoem from '../../../public/img/mainpoem.png'
 import LikePostco from '@/app/components/Poem/LikePostco'
 import Comments from '@/app/components/Poem/Comments'
-
+import moment from 'moment-jalaali';
 /////
 const getData = async ( slug : string) => {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/post/${slug}`
@@ -21,7 +21,7 @@ const getData = async ( slug : string) => {
   const {slug}=params
   const data = await getData( slug )
  
- 
+ console.log( moment(data.createdAt).format('jYYYY/jM/jD'));
 
   return (
     <div className=' border-2   rounded-lg relative my-24  p-5 text-black'    style={{
@@ -46,7 +46,7 @@ const getData = async ( slug : string) => {
   
         </div>
         <div className='mb-10'>
-          <span className='sm:text-l text-lg font-semibold'>تاریخ انتشار  : </span><span className='text-orange-500'>{data?.createdAt.substring(0, 10)}</span>
+          <span className='sm:text-l text-lg font-semibold'>تاریخ انتشار  : </span><span className='text-orange-500'>{moment(data?.createdAt).format('jYYYY/jM/jD')}</span>
           
  
         </div>

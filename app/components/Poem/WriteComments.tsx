@@ -40,9 +40,9 @@ function WriteComments({postSlug}:any) {
         <button type="submit" className="bg-blue-500 text-white px-5 py-2 rounded-md mt-5">ارسال</button>
         </form>
     </div>
-        : <div>
+        : <div className='py-10'>
          <span>لظفا برای ثبت نظر وارد شوید...</span>
-         <Link href='/auth/signin'> ورود </Link>
+         <Link href='/signin' className='text-red-700 font-semibold'> ورود </Link>
         </div> } 
         <br/>
         </>

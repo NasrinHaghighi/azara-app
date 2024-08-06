@@ -30,9 +30,9 @@ async function page({params}:any) {
 <div>
 <div className=' w-full lg:flex lg:flex-col lg:justify-start lg:items-center border-b-2 border-gray-200 p-5 shadow-lg text-center '>
 
-<Image src={data?.img} alt='logo' width={250}  height={250} className='object-cover rounded-full h-[250px] w-[250px] shadow-lg m-auto '  />
+<Image src={data?.img} alt='logo' width={250}  height={250} className='object-cover rounded-full xl:h-[250px] xl:w-[250px] h-[150px] w-[150px] shadow-lg m-auto '  />
 <div className=''>
-<h1 className='md:text-2xl sm:text-xl text-green-700 text-md m-3'>{data.name}</h1>
+<h1 className='md:text-2xl sm:text-xl text-green-700 text-md m-3 font-semibold'>{data.name}</h1>
 <h1 className='md:text-xl  text-md m-3'><span>سبکهای شعر: </span>
   {titles.map((item, index) => {
     return <span className='text-red-500'> {item}{index < titles.length - 1 && ' - '}</span>

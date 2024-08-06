@@ -19,6 +19,7 @@
     "gsap": "^3.12.5",
     "html-react-parser": "^5.1.10",
     "html-to-react": "^1.7.0",
+    "moment-jalaali": "^0.10.1",
     "next": "14.2.2",
     "next-auth": "^4.24.7",
     "quill-better-table": "^1.2.10",
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/moment-jalaali": "^0.7.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

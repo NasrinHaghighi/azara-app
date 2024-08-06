@@ -6,6 +6,7 @@ import Friends from "../components/Landing/Firends/Friends";
 import { GrGallery } from "react-icons/gr";
 import Gallery from "../components/Landing/Gallery/Gallery";
 import Footer from "../components/Landing/Footer";
+import Books from "../components/Landing/Books/Books";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
   <MovingText/> 
   <br/> 
  <Gallery /> 
+ <Books />
   <Footer />
     </main>
   );

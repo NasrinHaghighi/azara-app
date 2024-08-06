@@ -10,7 +10,6 @@ const config: Config = {
   ],
   
   theme: {
-
     extend: {
       backgroundImage: {
         'blue-gradient': 'linear-gradient(109.6deg, rgba(204, 239, 235, 0.8) 11.2%, rgba(89, 175, 181, 0.8) 91.1%)',
@@ -20,6 +19,12 @@ const config: Config = {
       },
 
       keyframes: {
+        blob: {
+          '0%': {  transform: 'scale(1)', },
+          '33%': { transform: 'scale(1.1)',  },
+          '66%': { transform: 'scale(0.9)' ,  },
+          '100%': { transform: 'scale(1)' , },
+        },
         fadeIn: {
           '0%': { transform: 'translateX(10%)', opacity: '0' },
           '100%': { transform: 'translateX(0%)', opacity: '1' },
@@ -87,6 +92,7 @@ const config: Config = {
       },
 
       animation: {
+        'blob':'blob 4s  infinite',
         'progress': 'progress 3s ease-out',
         'progress2': 'progress2 2s ease-out 1s',
         'marquee': 'marquee 25s linear infinite',
