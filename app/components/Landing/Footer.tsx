@@ -5,7 +5,7 @@ import BackTopTop from './BacktoTop'
 function Footer() {
   return (
    <>
-   <div className='text-bg bg-bgGolden h-96 md:flex flex-col justify-center gap-5 items-center md:px-3 py-5'>
+   <div className='rounded-md text-bg bg-bgGolden h-96 md:flex flex-col justify-center gap-5 items-center md:px-3 py-5'>
       <div className='   font-semibold text-lg flex md:flex-row flex-col justify-center gap-5 items-center'>
      <Link  href='/'>خانه</Link>
    

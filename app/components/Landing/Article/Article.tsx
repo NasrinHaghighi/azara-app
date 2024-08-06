@@ -1,6 +1,6 @@
 import React from 'react'
 
-import face from '../../../../public/img/face3.png'
+import face from '../../../../public/img/facegenerate5.png'
 import Image from 'next/image'
 import PoemUniqe from './PoemUniqe'
 
@@ -34,8 +34,8 @@ async function Article() {
      
      <h2 className=' p-4 text-4xl text-bgGolden'>گزیده اشعار</h2> 
      {/* <p>لورم ایپسوم استفاده  روزنامه و مجله در ستون و سطرآنچنان که لازم است و </p> */}
-<div className='   md:w-[500px] md:h-[350px] w-[250px] h-[300px]flex justify-center items-center  m-auto mb-14 '>
-    <Image src={face} alt="face" layout='fit' objectFit='content' />
+<div className='   md:w-[500px] md:h-[350px] w-[250px] h-[300px]flex justify-center items-center  m-auto mb-5 '>
+    <Image src={face} alt="face" layout='fit' objectFit='content' className='m-auto'/>
      </div>
     <p className='text-xl md:text-md'>شاعر اشعار خود را در قالبهای غزل ، مثنوی ، چهار پاره ، دوبیتی ، رباعی و شعر نو سروده است و بیشتر اشعار خود را در موضوع های عاشقانه ، عارفانه و اجتماعی سروده است </p>
         </div>

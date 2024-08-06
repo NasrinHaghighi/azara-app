@@ -1,7 +1,7 @@
 'use client'
 import React ,{useState, useEffect}from 'react'
 import Image from 'next/image'
-import Photo from '../../../public/img/baba1.png'
+import Photo from '../../../public/img/facegenerate3.png'
 
 function BannerPhoto() {
 const [timer, setTimers] = useState(false);

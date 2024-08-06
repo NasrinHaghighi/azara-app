@@ -20,8 +20,8 @@ export default function Home() {
   <br/> 
   <MovingText/> 
   <br/> 
- <Gallery /> 
- <Books />
+ {/* <Gallery /> 
+ <Books /> */}
   <Footer />
     </main>
   );

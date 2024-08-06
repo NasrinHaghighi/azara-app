@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-
+import IMg from '../../../public/img/facegenerate5.png'
 
 
 
@@ -24,7 +24,7 @@ return (
 <div className='relative   md:px-24 px-0  '>
 <div className="grid grid-cols-6 grid-rows-2 gap-4 my-4  mx-auto   ">
 <div className='w-[350px] h-[350px] col-span-3 row-span-2 m-auto  '>
-<Image src={data[0].img} alt="Description" className='w-full h-full rounded-lg' objectFit='cover' width={200} height={200} />
+<Image src={IMg} alt="Description" className='w-full h-full rounded-lg' objectFit='cover' width={200} height={200} />
 </div>
 <div className=' col-span-3 row-span-1    '></div>
 <div className=' col-span-3 row-span-1   '>
